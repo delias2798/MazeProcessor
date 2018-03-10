@@ -3,10 +3,14 @@ import lc3b_types::*;
 module cpu_datapath
 (
 	input clk,
+	
 	/* Input and Output for Instruction Cache */
 	input lc3b_data imem_rdata,
 	input imem_resp,
 	output lc3b_word imem_address,
+	output logic imem_action_stb,
+	output logic imem_action_cyc,
+	
 	/* Input and Output for Data Cache */
 	input lc3b_data dmem_rdata,
 	input dmem_resp,
@@ -31,6 +35,8 @@ fetch_stage if_stage
 (
 	.clk(clk),
 	.imem_rdata(imem_rdata),
+	.new_pc(new_pc_mem_wb_out),
+	.branch_enable(branch_enable),
 	.imem_address(imem_address),
 	.pc_plus2_out(pc_plus2_out),
 	.imem_rdata_out(imem_rdata_out)
@@ -55,8 +61,6 @@ register if_id_ir
 
 /* Internal Signals - Decode*/
 logic load_id_ex;
-lc3b_reg write_register;
-lc3b_word write_data;
 lc3b_control_word ctrl;
 
 lc3b_word sr1_out;
@@ -236,13 +240,110 @@ register #(.width(3)) ex_mem_dest_reg
 	.out(dest_ex_mem_register)
 );
 
+/* Internal Signals - Memory */
+logic load_mem_wb;
+lc3b_word new_pc;
+
+lc3b_word pc_mem_wb_out;
+lc3b_word new_pc_mem_wb_out;
+lc3b_word pc_br_mem_wb_out;
+lc3b_word dmem_wdata_mem_wb;
+lc3b_word alu_mem_wb_out;
+lc3b_word dmem_address_mem_wb;
+lc3b_reg dest_mem_wb_register;
+
 /* Memory Stage (MEM) */
 memory_stage mem_stage
 (
+	.clk(clk),
+	.alu_out(alu_ex_mem_out),
+	.pc_br_out(pc_br_ex_mem_out),
+	.pc_j_out(pc_j_ex_mem_out),
+	.dmem_rdata(dmem_rdata),
+	.dest_out(dest_ex_mem_out),
+	.pc_out(new_pc),
+	.dmem_address(dmem_address),
+	.dmem_wdata(dmem_wdata),
+	.dmem_write(dmem_write),
+	.dmem_byte_enable(dmem_byte_enable)
 );
 
 /* Memory - Write-Back Registers (MEM/WB) */
+register mem_wb_pc
+(
+	.clk(clk),
+	.load(load_mem_wb),
+	.in(pc_ex_mem_out),
+	.out(pc_mem_wb_out)
+);
 
-/* Write-Back Stage */
+register mem_wb_dmem_address
+(
+	.clk(clk),
+	.load(load_mem_wb),
+	.in(dmem_address),
+	.out(dmem_address_mem_wb)
+);
+
+register mem_wb_new_pc
+(
+	.clk(clk),
+	.load(load_mem_wb),
+	.in(new_pc),
+	.out(new_pc_mem_wb_out)
+);
+
+register mem_wb_pc_br
+(
+	.clk(clk),
+	.load(load_mem_wb),
+	.in(pc_br_ex_mem_out),
+	.out(pc_br_mem_wb_out)
+);
+
+register mem_wb_mem_wdata
+(
+	.clk(clk),
+	.load(load_mem_wb),
+	.in(dmem_wdata),
+	.out(dmem_wdata_mem_wb)
+);
+
+register mem_wb_alu
+(
+	.clk(clk),
+	.load(load_mem_wb),
+	.in(alu_ex_mem_out),
+	.out(alu_mem_wb_out)
+);
+
+register #(.width(3)) mem_wb_dest_reg
+(
+	.clk(clk),
+	.load(load_mem_wb),
+	.in(dest_ex_mem_register),
+	.out(dest_mem_wb_register)
+);
+
+/* Internal Signals - Write-Back */
+lc3b_reg write_register;
+lc3b_word write_data;
+logic branch_enable;
+
+/* Write-Back Stage (WB) */
+write_back_stage wb_stage
+(
+	.clk(clk),
+	.pc_br(pc_br_mem_wb_out),
+	.pc(pc_mem_wb_out),
+	.dmem_address(dmem_address_mem_wb),
+	.dmem_wdata(dmem_wdata_mem_wb),
+	.alu_out(alu_mem_wb_out),
+	.dest_register(dest_mem_wb_register),
+	.write_data(write_data),
+	.branch_enable(branch_enable)
+);
+
+assign write_register = dest_mem_wb_register;
 
 endmodule: cpu_datapath

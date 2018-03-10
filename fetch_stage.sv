@@ -4,24 +4,24 @@ module fetch_stage
 (
 	input clk,
 	input lc3b_data imem_rdata,
+	input lc3b_word new_pc,
+	input branch_enable,
 	output lc3b_word imem_address,
 	output lc3b_word pc_plus2_out,
 	output lc3b_word imem_rdata_out
 );
 
 /* Control Signals */
-logic pc_mux_sel;
 logic load_pc;
 
 /* Internal Signals */
 lc3b_word pc_in;
 
-/* Fetch Stage (IF) */
 mux2 pc_mux
 (
-	.sel(pc_mux_sel),
+	.sel(branch_enable),
 	.a(pc_plus2_out),
-	.b(pc_plus2_out),
+	.b(new_pc),
 	.f(pc_in)
 );
 

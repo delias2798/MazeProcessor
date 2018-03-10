@@ -51,7 +51,6 @@ typedef struct packed {
 	lc3b_opcode opcode;
 	/* Fetch Stage */
 	logic load_pc;
-	logic pc_mux_sel;
 	/* Decode Stage */
 	logic load_regfile;
 	logic [1:0] sr2mux_sel;
@@ -63,6 +62,9 @@ typedef struct packed {
 	lc3b_aluop aluop;
 	logic alumux_sel;
 	/* Memory Stage */
+	logic mem_addr_mux_sel;
+	logic [1:0] newpcmux_sel;
+	/* Write-Back Stage */
 } lc3b_control_word;
 
 endpackage : lc3b_types

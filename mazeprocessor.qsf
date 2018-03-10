@@ -69,3 +69,4 @@ set_global_assignment -name SYSTEMVERILOG_FILE execute_stage.sv
 set_global_assignment -name SYSTEMVERILOG_FILE br_add.sv
 set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE zext_s.sv
+set_global_assignment -name SYSTEMVERILOG_FILE memory_stage.sv
