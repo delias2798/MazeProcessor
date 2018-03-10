@@ -14,6 +14,8 @@ module fetch_stage
 /* Control Signals */
 logic load_pc;
 
+assign load_pc = clk; // only for cp1
+
 /* Internal Signals */
 lc3b_word pc_in;
 

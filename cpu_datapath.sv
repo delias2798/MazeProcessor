@@ -23,6 +23,12 @@ module cpu_datapath
 	output lc3b_mem_wmask dmem_byte_enable
 );
 
+/* Assign load signals for CP1 */
+assign load_if_id = 1;
+assign load_id_ex = 1;
+assign load_ex_mem = 1;
+assign load_mem_wb = 1;
+
 /* Internal Signals - Fetch*/
 logic load_if_id;
 lc3b_word pc_plus2_out;
@@ -285,8 +291,10 @@ memory_stage mem_stage
 	.pc_j_out(pc_j_ex_mem_out),
 	.dmem_rdata(dmem_rdata),
 	.dest_out(dest_ex_mem_out),
+	.dmem_resp(dmem_resp),
 	.mem_addr_mux_sel(ctrl_ex_mem.mem_addr_mux_sel),
 	.newpcmux_sel(ctrl_ex_mem.newpcmux_sel),
+	.opcode(ctrl_ex_mem.opcode),
 	.pc_out(new_pc),
 	.dmem_address(dmem_address),
 	.dmem_wdata(dmem_wdata),

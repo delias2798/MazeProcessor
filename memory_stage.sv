@@ -8,10 +8,12 @@ module memory_stage
 	input lc3b_word pc_j_out,
 	input lc3b_data dmem_rdata,
 	input lc3b_word dest_out,
-	
+	input dmem_resp,
+
 	/* Control Signals */
 	input mem_addr_mux_sel,
 	input [1:0] newpcmux_sel,
+	input lc3b_opcode opcode,
 
 	output lc3b_word pc_out,
 	output lc3b_word dmem_address,
@@ -22,6 +24,24 @@ module memory_stage
 
 /* Internal Signals */
 lc3b_word dmem_rdata_out;
+
+/* Assign Values */
+always_comb
+begin:
+	// Write Signal
+	if (opcode == op_stb) || (opcode == op_str)
+		dmem_write = 1;
+	else
+		dmem_write = 0;
+
+	// Mem Byte Enable Signal
+	if (opcode == op_stb) && (dmem_address[0] == 1)
+		dmem_byte_enable = 2'b10;
+	else if (opcode == op_stb) && (dmem_address[0] == 0)
+		dmem_byte_enable = 2'b01;
+	else
+		dmem_byte_enable = 2'b11;
+end
 
 mux8 dmem_rdata_mux
 (

@@ -67,7 +67,7 @@ begin
 		end
 
 		op_ldr: begin
-			/* DR = memWord[BaseR + (SEXT(offset6) << 1)]; */
+			/* DR = memWord[BaseR + (SEXT(offset6) << 1)] */
 			ctrl.sr2mux2_sel = 1;
 			ctrl.aluop = alu_add;
 			ctrl.regfilemux_sel = 3'b001;
@@ -76,9 +76,74 @@ begin
 		end
 
 		op_str: begin
-			/* memWord[BaseR + (SEXT(offset6) << 1)] = SR; */
+			/* memWord[BaseR + (SEXT(offset6) << 1)] = SR */
 			ctrl.sr2mux2_sel = 1;
 			ctrl.aluop = alu_add;
+		end
+
+		op_jmp: begin
+			/* PC = BaseR */
+			ctrl.bradd2mux_sel = 1;
+		end
+
+		op_jsr: begin
+			/* R7 <= PC */
+			ctrl.writemux_sel = 1;
+			ctrl.regfilemux_sel = 3'b010;
+			ctrl.load_regfile = 1;
+			if (ir11 == 0)
+				ctrl.bradd2mux_sel = 1; /* PC = BaseR */
+		end
+
+		op_ldb: begin
+			/* DR = ZEXT(mem[BaseR + SEXT(offset6)]) */
+			ctrl.sr2mux_sel = 2'b01;
+			ctrl.sr2mux2_sel = 1;
+			ctrl.aluop = alu_add;
+			ctrl.regfilemux_sel = 3'b100;
+			ctrl.load_regfile = 1;
+			ctrl.load_cc = 1;
+		end
+
+		op_lea: begin
+			/* DR = PC + (SEXT(PCoffset9) << 1) */
+			ctrl.regfilemux_sel = 3'b011;
+			ctrl.load_regfile = 1;
+			ctrl.load_cc = 1;
+		end
+
+		op_shf: begin
+			/* DR = SR >> / << imm4 */
+			ctrl.sr2mux_sel = 2'b11;
+			ctrl.sr2mux2_sel = 1;
+			if (ir4 == 0)
+				ctrl.aluop = alu_sll;
+			else
+			begin
+				if (ir5 == 0)
+					ctrl.aluop = alu_srl;
+				else
+					ctrl.aluop = alu_sra;
+			end
+			ctrl.load_regfile = 1;
+			ctrl.load_cc = 1;
+		end
+
+		op_stb: begin
+			/* mem[BaseR + SEXT(offset6)] = SR[7:0] */
+			ctrl.sr2mux_sel = 2'b01;
+			ctrl.sr2mux2_sel = 1;
+			ctrl.aluop = alu_add;
+		end
+
+		op_trap: begin
+			/* R7 = PC */
+			ctrl.writemux_sel = 1;
+			ctrl.regfilemux_sel = 3'b010;
+			ctrl.load_regfile = 1;
+			/* PC = memWord[ZEXT(trapvect8) << 1]; */
+			ctrl.alumux_sel = 1;
+			ctrl.newpcmux_sel = 2'b10;
 		end
 
 		default: begin

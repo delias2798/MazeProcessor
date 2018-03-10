@@ -11,9 +11,9 @@ module write_back_stage
 	input lc3b_reg dest_register,
 	
 	/* Input Control Signals */
-	input lc3b_opcode opcode;
-	input load_cc;
-	input [2:0] regfilemux_sel;
+	input lc3b_opcode opcode,
+	input load_cc,
+	input [2:0] regfilemux_sel,
 
 	output lc3b_word write_data,
 	output logic branch_enable
@@ -76,6 +76,6 @@ cc_comp cccomp
 );
 
 /* Check if opcode is branch/jsr/jsrr/jmp/trap. */
-assign branch_enable = (branch_signal && opcode == op_br) || (opcode == op_jmp) || (opcode == op_jsr) || (opcode == op_trap);
+assign branch_enable = (branch_signal && (opcode == op_br)) || (opcode == op_jmp) || (opcode == op_jsr) || (opcode == op_trap);
 
 endmodule: write_back_stage

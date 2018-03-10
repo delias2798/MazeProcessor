@@ -2,15 +2,15 @@ import lc3b_types::*;
 
 module ir
 (
-   input lc3b_word in,
+   	input lc3b_word in,
 	output lc3b_opcode opcode,
-   output lc3b_reg dest, src1, src2,
+   	output lc3b_reg dest, src1, src2,
 	output lc3b_offset4 offset4,
 	output lc3b_offset5 offset5,
-   output lc3b_offset6 offset6,
-   output lc3b_offset8 offset8,
-   output lc3b_offset9 offset9,
-   output lc3b_offset11 offset11
+   	output lc3b_offset6 offset6,
+   	output lc3b_offset8 offset8,
+   	output lc3b_offset9 offset9,
+   	output lc3b_offset11 offset11
 );
 
 assign opcode = lc3b_opcode'(in[15:12]);
