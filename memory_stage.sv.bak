@@ -1,0 +1,7 @@
+import lc3b_types::*;
+
+module memory_stage
+(
+);
+
+endmodule: memory_stage
