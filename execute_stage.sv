@@ -10,15 +10,15 @@ module execute_stage
 	input lc3b_word sr2,
 	input lc3b_offset8 offset8,
 	
+	/* Input Control Signals */
+	input bradd2mux_sel,
+	input lc3b_aluop aluop,
+	input alumux_sel,
+
 	output lc3b_word br_add_out,
 	output lc3b_word bradd2mux_out,
 	output lc3b_word alumux_out
 );
-
-/* Control Signals */
-logic bradd2mux_sel;
-lc3b_aluop aluop;
-logic alumux_sel;
 
 /* Internal Signals */
 lc3b_word adj9_out;

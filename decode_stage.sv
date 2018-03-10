@@ -6,6 +6,7 @@ module decode_stage
 	input lc3b_word instruction,
 	input lc3b_reg write_register,
 	input lc3b_word write_data,
+	input load_regfile,
 	
 	output lc3b_offset8 offset8,
 	output lc3b_offset9 offset9,
@@ -18,12 +19,11 @@ module decode_stage
 );
 
 /* Control Signals */
-logic load_regfile;
 logic [1:0] sr2mux_sel;
 logic sr2mux2_sel;
 logic writemux_sel;
 logic destmux_sel;
-	
+
 /* Internal Signals*/
 lc3b_opcode opcode;
 lc3b_reg dest;
@@ -61,8 +61,16 @@ ir inst_reg
 control_rom ctrl_r
 (
 	.opcode(opcode),
+	.ir4(instruction[4]),
+	.ir5(instruction[5]),
+	.ir11(instruction[11])
 	.ctrl(ctrl)
 );
+
+assign sr2mux_sel = ctrl.sr2mux_sel;
+assign sr2mux2_sel = ctrl.sr2mux2_sel;
+assign writemux_sel = ctrl.writemux_sel;
+assign destmux_sel = ctrl.destmux_sel;
 
 regfile reg_file
 (

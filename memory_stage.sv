@@ -9,16 +9,16 @@ module memory_stage
 	input lc3b_data dmem_rdata,
 	input lc3b_word dest_out,
 	
+	/* Control Signals */
+	input mem_addr_mux_sel,
+	input [1:0] newpcmux_sel,
+
 	output lc3b_word pc_out,
 	output lc3b_word dmem_address,
 	output lc3b_word dmem_wdata,
 	output logic dmem_write,
 	output lc3b_mem_wmask dmem_byte_enable
 );
-
-/* Control Signals */
-logic mem_addr_mux_sel;
-logic [1:0] newpcmux_sel;
 
 /* Internal Signals */
 lc3b_word dmem_rdata_out;

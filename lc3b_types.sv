@@ -49,22 +49,27 @@ typedef enum bit [3:0] {
 
 typedef struct packed {
 	lc3b_opcode opcode;
-	/* Fetch Stage */
-	logic load_pc;
+
 	/* Decode Stage */
 	logic load_regfile;
 	logic [1:0] sr2mux_sel;
 	logic sr2mux2_sel;
 	logic writemux_sel;
 	logic destmux_sel;
+
 	/* Execute Stage */
 	logic bradd2mux_sel;
 	lc3b_aluop aluop;
 	logic alumux_sel;
+
 	/* Memory Stage */
 	logic mem_addr_mux_sel;
 	logic [1:0] newpcmux_sel;
+
 	/* Write-Back Stage */
+    logic [2:0] regfilemux_sel;
+    logic load_cc;
+    
 } lc3b_control_word;
 
 endpackage : lc3b_types

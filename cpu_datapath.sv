@@ -61,6 +61,7 @@ register if_id_ir
 
 /* Internal Signals - Decode*/
 logic load_id_ex;
+logic load_regfile;
 lc3b_control_word ctrl;
 
 lc3b_word sr1_out;
@@ -71,6 +72,7 @@ lc3b_offset8 offset8;
 lc3b_offset9 offset9;
 lc3b_offset11 offset11;
 
+lc3b_control_word ctrl_id_ex;
 lc3b_word pc_id_ex_out;
 lc3b_word sr1_id_ex_out;
 lc3b_word sr2_id_ex_out;
@@ -87,6 +89,7 @@ decode_stage id_stage
 	.instruction(imem_rdata_if_id_out),
 	.write_register(write_register),
 	.write_data(write_data),
+	.load_regfile(load_regfile),
 	.offset8(offset8),
 	.offset9(offset9),
 	.offset11(offset11),
@@ -98,6 +101,14 @@ decode_stage id_stage
 );
 
 /* Decode - Execute Registers (ID/EX) */
+register_control_rom id_ex_ctrl
+(
+	.clk(clk),
+	.load(load_id_ex),
+	.in(ctrl),
+	.out(ctrl_id_ex)
+);
+
 register id_ex_pc
 (
 	.clk(clk),
@@ -169,6 +180,7 @@ lc3b_word pc_br;
 lc3b_word pc_j;
 lc3b_word alu_out;
 
+lc3b_control_word ctrl_ex_mem;
 lc3b_word pc_ex_mem_out;
 lc3b_word pc_br_ex_mem_out;
 lc3b_word pc_j_ex_mem_out;
@@ -186,12 +198,23 @@ execute_stage ex_stage
 	.sr1(sr1_id_ex_out),
 	.sr2(sr2_id_ex_out),
 	.offset8(offset8_id_ex_out),
+	.bradd2mux_sel(ctrl_id_ex.bradd2mux_sel),
+	.aluop(ctrl_id_ex.aluop),
+	.alumux_sel(ctrl_id_ex.alumux_sel),
 	.br_add_out(pc_br),
 	.bradd2mux_out(pc_j),
 	.alumux_out(alu_out)
 );
 
 /* Execute - Memory Registers (EX/MEM) */
+register_control_rom ex_mem_ctrl
+(
+	.clk(clk),
+	.load(load_ex_mem),
+	.in(ctrl_id_ex),
+	.out(ctrl_ex_mem)
+);
+
 register ex_mem_pc
 (
 	.clk(clk),
@@ -244,6 +267,7 @@ register #(.width(3)) ex_mem_dest_reg
 logic load_mem_wb;
 lc3b_word new_pc;
 
+lc3b_control_word ctrl_mem_wb;
 lc3b_word pc_mem_wb_out;
 lc3b_word new_pc_mem_wb_out;
 lc3b_word pc_br_mem_wb_out;
@@ -261,6 +285,8 @@ memory_stage mem_stage
 	.pc_j_out(pc_j_ex_mem_out),
 	.dmem_rdata(dmem_rdata),
 	.dest_out(dest_ex_mem_out),
+	.mem_addr_mux_sel(ctrl_ex_mem.mem_addr_mux_sel),
+	.newpcmux_sel(ctrl_ex_mem.newpcmux_sel),
 	.pc_out(new_pc),
 	.dmem_address(dmem_address),
 	.dmem_wdata(dmem_wdata),
@@ -269,6 +295,14 @@ memory_stage mem_stage
 );
 
 /* Memory - Write-Back Registers (MEM/WB) */
+register_control_rom mem_wb_ctrl
+(
+	.clk(clk),
+	.load(load_mem_wb),
+	.in(ctrl_ex_mem),
+	.out(ctrl_mem_wb)
+);
+
 register mem_wb_pc
 (
 	.clk(clk),
@@ -340,10 +374,14 @@ write_back_stage wb_stage
 	.dmem_wdata(dmem_wdata_mem_wb),
 	.alu_out(alu_mem_wb_out),
 	.dest_register(dest_mem_wb_register),
+	.opcode(ctrl_mem_wb.opcode),
+	.load_cc(ctrl_mem_wb.load_cc),
+	.regfilemux_sel(ctrl_mem_wb.regfilemux_sel),
 	.write_data(write_data),
 	.branch_enable(branch_enable)
 );
 
 assign write_register = dest_mem_wb_register;
+assign load_regfile = ctrl_mem_wb.load_regfile;
 
 endmodule: cpu_datapath
