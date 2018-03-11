@@ -3,9 +3,9 @@ import lc3b_types::*;
 module control_rom
 (
 	input lc3b_opcode opcode,
-	input ir4,
-	input ir5,
-	input ir11,
+	input logic ir4,
+	input logic ir5,
+	input logic ir11,
 	output lc3b_control_word ctrl
 );
 

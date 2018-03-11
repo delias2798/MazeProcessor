@@ -1,3 +1,5 @@
+import lc3b_types::*;
+
 module register_control_rom
 (
     input clk,

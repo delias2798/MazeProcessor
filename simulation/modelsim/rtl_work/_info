@@ -1,0 +1,1191 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Spring2018\ECE411\mazeprocessor\simulation\modelsim
+vadj
+Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+Z2 DXx4 work 10 lc3b_types 0 22 TGWfRg@Q>UoLc^07QXRMY2
+DXx4 work 11 adj_sv_unit 0 22 =AQO=e6;G33LD==ZEN9IV0
+VE;zLPZ?c`8[LaP1M[Ui<V1
+r1
+31
+I61iz2=6:dDU<Z72mW]c`H3
+S1
+Z3 dD:\Spring2018\ECE411\mazeprocessor\simulation\modelsim
+Z4 w1520744948
+Z5 8D:/Spring2018/ECE411/mazeprocessor/adj.sv
+Z6 FD:/Spring2018/ECE411/mazeprocessor/adj.sv
+L0 6
+Z7 OV;L;10.1d;51
+Z8 !s108 1520748196.678000
+Z9 !s107 D:/Spring2018/ECE411/mazeprocessor/adj.sv|
+Z10 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/adj.sv|
+Z11 o-sv -work work -O0
+Z12 !s92 -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor -O0
+!s85 0
+!i10b 1
+!s100 YoUWDL[?<T^FAFd0nZBk`2
+!s105 adj_sv_unit
+!s101 -O0
+Xadj_sv_unit
+R1
+R2
+V=AQO=e6;G33LD==ZEN9IV0
+r1
+31
+I=AQO=e6;G33LD==ZEN9IV0
+S1
+R3
+R4
+R5
+R6
+L0 1
+R7
+R8
+R9
+R10
+R11
+R12
+!s85 0
+!i10b 1
+!s100 ]@bec_bU=P>4o`Y0aAdjI1
+!i103 1
+!s101 -O0
+valu
+R1
+R2
+DXx4 work 11 alu_sv_unit 0 22 Q84gFhb^9aRoM[M4jI_cS0
+V=ZN?TEUMd1Ge?6dcD7B5a3
+r1
+31
+IJaN=ec:;a<TYkB]nWdYan2
+S1
+R3
+R4
+Z13 8D:/Spring2018/ECE411/mazeprocessor/alu.sv
+Z14 FD:/Spring2018/ECE411/mazeprocessor/alu.sv
+L0 3
+R7
+Z15 !s108 1520748198.172000
+Z16 !s107 D:/Spring2018/ECE411/mazeprocessor/alu.sv|
+Z17 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/alu.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 LG[gW5K6;j8mQ5@I^i`PS2
+!s105 alu_sv_unit
+!s101 -O0
+Xalu_sv_unit
+R1
+R2
+VQ84gFhb^9aRoM[M4jI_cS0
+r1
+31
+IQ84gFhb^9aRoM[M4jI_cS0
+S1
+R3
+R4
+R13
+R14
+L0 1
+R7
+R15
+R16
+R17
+R11
+R12
+!s85 0
+!i10b 1
+!s100 7=Kjc`]<hNR;fAR=l;1O]1
+!i103 1
+!s101 -O0
+vbr_add
+R1
+R2
+DXx4 work 14 br_add_sv_unit 0 22 VS^glMh9S:AGnn=6ildVP2
+V=@EDF@2Lk8;aM]oHnn^391
+r1
+31
+I]HIK[F3RmIR@Y7dieX7>H1
+S1
+R3
+R4
+Z18 8D:/Spring2018/ECE411/mazeprocessor/br_add.sv
+Z19 FD:/Spring2018/ECE411/mazeprocessor/br_add.sv
+L0 3
+R7
+Z20 !s108 1520748197.854000
+Z21 !s107 D:/Spring2018/ECE411/mazeprocessor/br_add.sv|
+Z22 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/br_add.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 lkKXm;0mib;34jW6PVba50
+!s105 br_add_sv_unit
+!s101 -O0
+Xbr_add_sv_unit
+R1
+R2
+VVS^glMh9S:AGnn=6ildVP2
+r1
+31
+IVS^glMh9S:AGnn=6ildVP2
+S1
+R3
+R4
+R18
+R19
+L0 1
+R7
+R20
+R21
+R22
+R11
+R12
+!s85 0
+!i10b 1
+!s100 l_ndOaIE;i<BLEAE_zC3]3
+!i103 1
+!s101 -O0
+vcc_comp
+R1
+R2
+DXx4 work 15 cc_comp_sv_unit 0 22 =e9;^a=d;F?YLFFchXDjP3
+V<39hf]f@@3SEcV??[Fd^N0
+r1
+31
+IW>O]:4zW`DZfX5EdLgX[71
+S1
+R3
+R4
+Z23 8D:/Spring2018/ECE411/mazeprocessor/cc_comp.sv
+Z24 FD:/Spring2018/ECE411/mazeprocessor/cc_comp.sv
+L0 3
+R7
+Z25 !s108 1520748194.787000
+Z26 !s107 D:/Spring2018/ECE411/mazeprocessor/cc_comp.sv|
+Z27 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/cc_comp.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 4=M7k<<m?7E?Z?03E@Pzo0
+!s105 cc_comp_sv_unit
+!s101 -O0
+Xcc_comp_sv_unit
+R1
+R2
+V=e9;^a=d;F?YLFFchXDjP3
+r1
+31
+I=e9;^a=d;F?YLFFchXDjP3
+S1
+R3
+R4
+R23
+R24
+L0 1
+R7
+R25
+R26
+R27
+R11
+R12
+!s85 0
+!i10b 1
+!s100 QCbHUjn`UOk^[D?97KJVl2
+!i103 1
+!s101 -O0
+vcontrol_rom
+R1
+R2
+DXx4 work 19 control_rom_sv_unit 0 22 ARedVJ1:`FHShE>fCa3Yj1
+V9mBngOWBTR3=?gBlSBDUW0
+r1
+31
+IT?F3Y=<X4Td^Xd3P=i]Cb0
+S1
+R3
+Z28 w1520744028
+Z29 8D:/Spring2018/ECE411/mazeprocessor/control_rom.sv
+Z30 FD:/Spring2018/ECE411/mazeprocessor/control_rom.sv
+L0 3
+R7
+Z31 !s108 1520748195.462000
+Z32 !s107 D:/Spring2018/ECE411/mazeprocessor/control_rom.sv|
+Z33 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/control_rom.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 bOk8KAQP54YaHNB`6hBPb0
+!s105 control_rom_sv_unit
+!s101 -O0
+Xcontrol_rom_sv_unit
+R1
+R2
+VARedVJ1:`FHShE>fCa3Yj1
+r1
+31
+IARedVJ1:`FHShE>fCa3Yj1
+S1
+R3
+R28
+R29
+R30
+L0 1
+R7
+R31
+R32
+R33
+R11
+R12
+!s85 0
+!i10b 1
+!s100 54OJJdLj?bi?X06790;XW3
+!i103 1
+!s101 -O0
+vcpu
+R1
+R2
+DXx4 work 11 cpu_sv_unit 0 22 DXU`;5G5:KFa[Cj4Vo[Y20
+Vh1g>PZF>:fH;@=22ObH[P3
+r1
+31
+IfAofLD_11f;i0<ma4cB]:0
+S1
+R3
+Z34 w1520726974
+Z35 8D:/Spring2018/ECE411/mazeprocessor/cpu.sv
+Z36 FD:/Spring2018/ECE411/mazeprocessor/cpu.sv
+L0 3
+R7
+Z37 !s108 1520748199.117000
+Z38 !s107 D:/Spring2018/ECE411/mazeprocessor/cpu.sv|
+Z39 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/cpu.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 Y=6RXVH1O_Q66MHIJFThc2
+!s105 cpu_sv_unit
+!s101 -O0
+vcpu_datapath
+R1
+R2
+DXx4 work 20 cpu_datapath_sv_unit 0 22 2jbnWV<DDfX2C=kP=n@Cc1
+VSSM6da^M<EhESJMn4^[J]2
+r1
+31
+IS?oE>B0D>hjciBLY7KC4Q0
+S1
+R3
+Z40 w1520748104
+Z41 8D:/Spring2018/ECE411/mazeprocessor/cpu_datapath.sv
+Z42 FD:/Spring2018/ECE411/mazeprocessor/cpu_datapath.sv
+L0 3
+R7
+Z43 !s108 1520748195.054000
+Z44 !s107 D:/Spring2018/ECE411/mazeprocessor/cpu_datapath.sv|
+Z45 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/cpu_datapath.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 `5`V6G?Y:_=mYkM6z:]fc3
+!s105 cpu_datapath_sv_unit
+!s101 -O0
+Xcpu_datapath_sv_unit
+R1
+R2
+V2jbnWV<DDfX2C=kP=n@Cc1
+r1
+31
+I2jbnWV<DDfX2C=kP=n@Cc1
+S1
+R3
+R40
+R41
+R42
+L0 1
+R7
+R43
+R44
+R45
+R11
+R12
+!s85 0
+!i10b 1
+!s100 U?9gRi6?KR0LG03_C47fW0
+!i103 1
+!s101 -O0
+Xcpu_sv_unit
+R1
+R2
+VDXU`;5G5:KFa[Cj4Vo[Y20
+r1
+31
+IDXU`;5G5:KFa[Cj4Vo[Y20
+S1
+R3
+R34
+R35
+R36
+L0 1
+R7
+R37
+R38
+R39
+R11
+R12
+!s85 0
+!i10b 1
+!s100 @EabgJaP_F5nDcD7X[h313
+!i103 1
+!s101 -O0
+vdecode_stage
+R1
+R2
+DXx4 work 20 decode_stage_sv_unit 0 22 [=[GD<7NNYe5X<=L?fA:M1
+V`5N3`ca84z@7n7RdfzA6^1
+r1
+31
+IJ_@m9@=hR`=M4m>EfOhd>2
+S1
+R3
+Z46 w1520726897
+Z47 8D:/Spring2018/ECE411/mazeprocessor/decode_stage.sv
+Z48 FD:/Spring2018/ECE411/mazeprocessor/decode_stage.sv
+L0 3
+R7
+Z49 !s108 1520748197.420000
+Z50 !s107 D:/Spring2018/ECE411/mazeprocessor/decode_stage.sv|
+Z51 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/decode_stage.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 YOGhkGS`Xzg??P6I^S6D00
+!s105 decode_stage_sv_unit
+!s101 -O0
+Xdecode_stage_sv_unit
+R1
+R2
+V[=[GD<7NNYe5X<=L?fA:M1
+r1
+31
+I[=[GD<7NNYe5X<=L?fA:M1
+S1
+R3
+R46
+R47
+R48
+L0 1
+R7
+R49
+R50
+R51
+R11
+R12
+!s85 0
+!i10b 1
+!s100 P8<]JGn64>W6n;HUoQfOm0
+!i103 1
+!s101 -O0
+vexecute_stage
+R1
+R2
+DXx4 work 21 execute_stage_sv_unit 0 22 lJczjomI0BjiOjXWolnDc2
+Vi:>?lEE90iCBjNI;>@2mF0
+r1
+31
+Ic]E3Y7L91^_e^UV>ER38@2
+S1
+R3
+R4
+Z52 8D:/Spring2018/ECE411/mazeprocessor/execute_stage.sv
+Z53 FD:/Spring2018/ECE411/mazeprocessor/execute_stage.sv
+L0 3
+R7
+Z54 !s108 1520748197.607000
+Z55 !s107 D:/Spring2018/ECE411/mazeprocessor/execute_stage.sv|
+Z56 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/execute_stage.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 H@eC3W^gaR9WOXj9:bzzZ3
+!s105 execute_stage_sv_unit
+!s101 -O0
+Xexecute_stage_sv_unit
+R1
+R2
+VlJczjomI0BjiOjXWolnDc2
+r1
+31
+IlJczjomI0BjiOjXWolnDc2
+S1
+R3
+R4
+R52
+R53
+L0 1
+R7
+R54
+R55
+R56
+R11
+R12
+!s85 0
+!i10b 1
+!s100 TGBIcL2jWA8Q[2Oa7<_SK2
+!i103 1
+!s101 -O0
+vfetch_stage
+R1
+R2
+DXx4 work 19 fetch_stage_sv_unit 0 22 ofI=9g2z@0KL=U4iX]A8J3
+VT6LbW7]QWaNaWYRUnNU_O1
+r1
+31
+In3he6PPhNPB4nEHB:Y?h=3
+S1
+R3
+Z57 w1520726639
+Z58 8D:/Spring2018/ECE411/mazeprocessor/fetch_stage.sv
+Z59 FD:/Spring2018/ECE411/mazeprocessor/fetch_stage.sv
+L0 3
+R7
+Z60 !s108 1520748197.236000
+Z61 !s107 D:/Spring2018/ECE411/mazeprocessor/fetch_stage.sv|
+Z62 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/fetch_stage.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 :=1LjBPT6];@F@K?RO1Sc3
+!s105 fetch_stage_sv_unit
+!s101 -O0
+Xfetch_stage_sv_unit
+R1
+R2
+VofI=9g2z@0KL=U4iX]A8J3
+r1
+31
+IofI=9g2z@0KL=U4iX]A8J3
+S1
+R3
+R57
+R58
+R59
+L0 1
+R7
+R60
+R61
+R62
+R11
+R12
+!s85 0
+!i10b 1
+!s100 AbEZ_CCQNclHJST2kA5e91
+!i103 1
+!s101 -O0
+vgencc
+R1
+R2
+DXx4 work 13 gencc_sv_unit 0 22 `CCjo8J42mCECT35z`K]e3
+VWC`9gVLYW_h075<FQmcHc2
+r1
+31
+IfSAJiOGL<RQmnGQ@=f2g[2
+S1
+R3
+R4
+Z63 8D:/Spring2018/ECE411/mazeprocessor/gencc.sv
+Z64 FD:/Spring2018/ECE411/mazeprocessor/gencc.sv
+L0 3
+R7
+Z65 !s108 1520748194.510000
+Z66 !s107 D:/Spring2018/ECE411/mazeprocessor/gencc.sv|
+Z67 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/gencc.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 bW__]]Z`eWRHHf:Z5z[GQ3
+!s105 gencc_sv_unit
+!s101 -O0
+Xgencc_sv_unit
+R1
+R2
+V`CCjo8J42mCECT35z`K]e3
+r1
+31
+I`CCjo8J42mCECT35z`K]e3
+S1
+R3
+R4
+R63
+R64
+L0 1
+R7
+R65
+R66
+R67
+R11
+R12
+!s85 0
+!i10b 1
+!s100 HjjRIR=`bAY]HVezTGS4Y0
+!i103 1
+!s101 -O0
+vir
+R1
+R2
+DXx4 work 10 ir_sv_unit 0 22 i;dbCz?B>mJ=JL>V5<lP?0
+V[TfC^JYi@Tb_<kkoh[^bz3
+r1
+31
+IBWBVY=d:W>aW=j=Wh9dNo3
+S1
+R3
+R4
+Z68 8D:/Spring2018/ECE411/mazeprocessor/ir.sv
+Z69 FD:/Spring2018/ECE411/mazeprocessor/ir.sv
+L0 3
+R7
+Z70 !s108 1520748196.974000
+Z71 !s107 D:/Spring2018/ECE411/mazeprocessor/ir.sv|
+Z72 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/ir.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 W`[@cNee9_118Md=XKN5c1
+!s105 ir_sv_unit
+!s101 -O0
+Xir_sv_unit
+R1
+R2
+Vi;dbCz?B>mJ=JL>V5<lP?0
+r1
+31
+Ii;dbCz?B>mJ=JL>V5<lP?0
+S1
+R3
+R4
+R68
+R69
+L0 1
+R7
+R70
+R71
+R72
+R11
+R12
+!s85 0
+!i10b 1
+!s100 ;anj3:IaIIm96U_BChh`61
+!i103 1
+!s101 -O0
+Xlc3b_types
+R1
+ITGWfRg@Q>UoLc^07QXRMY2
+VTGWfRg@Q>UoLc^07QXRMY2
+S1
+R3
+R4
+8D:/Spring2018/ECE411/mazeprocessor/lc3b_types.sv
+FD:/Spring2018/ECE411/mazeprocessor/lc3b_types.sv
+L0 1
+R7
+r1
+31
+R11
+R12
+!i10b 1
+!s100 ^9_X6:0[E`bM3RGmIWRf40
+!s85 0
+!s108 1520748192.726000
+!s107 D:/Spring2018/ECE411/mazeprocessor/lc3b_types.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/lc3b_types.sv|
+!s101 -O0
+vmagic_memory
+R1
+!i10b 1
+!s100 9UocLmoifVPOYV:9dfXXE1
+I<QBU8CZzkoiE=YGlIEWbg0
+VFVD<m905E]77I77nc2bUb3
+!s105 magic_memory_dual_port_sv_unit
+S1
+R3
+R4
+8D:/Spring2018/ECE411/mazeprocessor/magic_memory_dual_port.sv
+FD:/Spring2018/ECE411/mazeprocessor/magic_memory_dual_port.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1520748199.984000
+!s107 D:/Spring2018/ECE411/mazeprocessor/magic_memory_dual_port.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/magic_memory_dual_port.sv|
+!s101 -O0
+R11
+R12
+vmazeprocessor
+R1
+R2
+DXx4 work 21 mazeprocessor_sv_unit 0 22 d@C6@W6<oVIfV1dM85<Dm3
+VB`2fZF`Cm@z>4h?=bUd920
+r1
+31
+IobA_eO]aiNAT=T6W9:fMl0
+S1
+R3
+Z73 w1520725369
+Z74 8D:/Spring2018/ECE411/mazeprocessor/mazeprocessor.sv
+Z75 FD:/Spring2018/ECE411/mazeprocessor/mazeprocessor.sv
+L0 3
+R7
+Z76 !s108 1520748199.496000
+Z77 !s107 D:/Spring2018/ECE411/mazeprocessor/mazeprocessor.sv|
+Z78 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/mazeprocessor.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 m`;AfS=>`JO9`a]fVJ2c41
+!s105 mazeprocessor_sv_unit
+!s101 -O0
+Xmazeprocessor_sv_unit
+R1
+R2
+Vd@C6@W6<oVIfV1dM85<Dm3
+r1
+31
+Id@C6@W6<oVIfV1dM85<Dm3
+S1
+R3
+R73
+R74
+R75
+L0 1
+R7
+R76
+R77
+R78
+R11
+R12
+!s85 0
+!i10b 1
+!s100 mg?5kdMNez_m28mML^7G92
+!i103 1
+!s101 -O0
+vmemory_stage
+R1
+R2
+DXx4 work 20 memory_stage_sv_unit 0 22 dEf=b0oRD[=ajWU@dd_K^2
+V>^hbR<3e1ZKC;Of?IeGTi0
+r1
+31
+IiY[c>SCRf[A><?iaaT2nP1
+S1
+R3
+Z79 w1520748038
+Z80 8D:/Spring2018/ECE411/mazeprocessor/memory_stage.sv
+Z81 FD:/Spring2018/ECE411/mazeprocessor/memory_stage.sv
+L0 3
+R7
+Z82 !s108 1520748198.794000
+Z83 !s107 D:/Spring2018/ECE411/mazeprocessor/memory_stage.sv|
+Z84 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/memory_stage.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 JC9gEo`FzD`_MggG4FRaK1
+!s105 memory_stage_sv_unit
+!s101 -O0
+Xmemory_stage_sv_unit
+R1
+R2
+VdEf=b0oRD[=ajWU@dd_K^2
+r1
+31
+IdEf=b0oRD[=ajWU@dd_K^2
+S1
+R3
+R79
+R80
+R81
+L0 1
+R7
+R82
+R83
+R84
+R11
+R12
+!s85 0
+!i10b 1
+!s100 CA?XD;=DZ7D_igT6gONG`3
+!i103 1
+!s101 -O0
+vmux2
+R1
+InXAoMhU6?OFD@k?=NlVmP3
+V8m]l]_QnJ>bC;o8UdVIPk2
+S1
+R3
+R4
+8D:/Spring2018/ECE411/mazeprocessor/mux2.sv
+FD:/Spring2018/ECE411/mazeprocessor/mux2.sv
+L0 1
+R7
+r1
+31
+R11
+R12
+!i10b 1
+!s100 Bf^de9b<egjOF4zKiUK4T0
+!s105 mux2_sv_unit
+!s85 0
+!s108 1520748193.489000
+!s107 D:/Spring2018/ECE411/mazeprocessor/mux2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/mux2.sv|
+!s101 -O0
+vmux4
+R1
+Ij8JI`TbHKS3_hk512;J3J2
+VYCkK`QGYSnR6BP^DhRdne0
+S1
+R3
+R4
+8D:/Spring2018/ECE411/mazeprocessor/mux4.sv
+FD:/Spring2018/ECE411/mazeprocessor/mux4.sv
+L0 1
+R7
+r1
+31
+R11
+R12
+!i10b 1
+!s100 6nU^UGlAVMdnK_=NTOW150
+!s105 mux4_sv_unit
+!s85 0
+!s108 1520748193.607000
+!s107 D:/Spring2018/ECE411/mazeprocessor/mux4.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/mux4.sv|
+!s101 -O0
+vmux8
+R1
+Il[OXb<6MS_HNm2KPlTAZ71
+VW=6Je8Th<NbH>0:W^=lkS1
+S1
+R3
+R4
+8D:/Spring2018/ECE411/mazeprocessor/mux8.sv
+FD:/Spring2018/ECE411/mazeprocessor/mux8.sv
+L0 1
+R7
+r1
+31
+R11
+R12
+!i10b 1
+!s100 JZ^SG2WMFV9YD9FhmjhhV1
+!s105 mux8_sv_unit
+!s85 0
+!s108 1520748193.276000
+!s107 D:/Spring2018/ECE411/mazeprocessor/mux8.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/mux8.sv|
+!s101 -O0
+vplus2
+R1
+IiYPU6G<mb6nn4N_bMd3T^0
+V8Yjd6>kf[QVaNB:l@BLiW1
+S1
+R3
+R4
+8D:/Spring2018/ECE411/mazeprocessor/plus2.sv
+FD:/Spring2018/ECE411/mazeprocessor/plus2.sv
+L0 1
+R7
+r1
+31
+R11
+R12
+!i10b 1
+!s100 lJ?OF[W=k]fL=6PVXZkzb3
+!s105 plus2_sv_unit
+!s85 0
+!s108 1520748193.765000
+!s107 D:/Spring2018/ECE411/mazeprocessor/plus2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/plus2.sv|
+!s101 -O0
+vregfile
+R1
+R2
+DXx4 work 15 regfile_sv_unit 0 22 5?Z8WVhNBfEb0HNDRiFY<1
+V9JTZc`ZX06EN4UTz`z`H43
+r1
+31
+ID`i5^W8GVZQ2A1h1GkX_?0
+S1
+R3
+R4
+Z85 8D:/Spring2018/ECE411/mazeprocessor/regfile.sv
+Z86 FD:/Spring2018/ECE411/mazeprocessor/regfile.sv
+L0 3
+R7
+Z87 !s108 1520748195.750000
+Z88 !s107 D:/Spring2018/ECE411/mazeprocessor/regfile.sv|
+Z89 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/regfile.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 =KUYDJ5iz?HQzPOON_P^_0
+!s105 regfile_sv_unit
+!s101 -O0
+Xregfile_sv_unit
+R1
+R2
+V5?Z8WVhNBfEb0HNDRiFY<1
+r1
+31
+I5?Z8WVhNBfEb0HNDRiFY<1
+S1
+R3
+R4
+R85
+R86
+L0 1
+R7
+R87
+R88
+R89
+R11
+R12
+!s85 0
+!i10b 1
+!s100 jGCI<8kied=Sa9KWc<3G51
+!i103 1
+!s101 -O0
+vregister
+R1
+In5@k9DB`<hf;D_MURI;;P3
+VVWH2GIcWRQ29K?3;26c491
+S1
+R3
+R4
+8D:/Spring2018/ECE411/mazeprocessor/register.sv
+FD:/Spring2018/ECE411/mazeprocessor/register.sv
+L0 1
+R7
+r1
+31
+R11
+R12
+!i10b 1
+!s100 ZOK@@b`SbzGNJnEG<h_9b3
+!s105 register_sv_unit
+!s85 0
+!s108 1520748192.929000
+!s107 D:/Spring2018/ECE411/mazeprocessor/register.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/register.sv|
+!s101 -O0
+vregister_control_rom
+R1
+R2
+DXx4 work 28 register_control_rom_sv_unit 0 22 AkIm@;O7<@k;?Yo2Of8RZ1
+Vj<e;ZV`VKlF6HS>JJMTF:3
+r1
+31
+I2l0e3AmLgOiUgbU6Vn:Hz2
+S1
+R3
+Z90 w1520744087
+Z91 8D:/Spring2018/ECE411/mazeprocessor/register_control_rom.sv
+Z92 FD:/Spring2018/ECE411/mazeprocessor/register_control_rom.sv
+L0 3
+R7
+Z93 !s108 1520748194.189000
+Z94 !s107 D:/Spring2018/ECE411/mazeprocessor/register_control_rom.sv|
+Z95 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/register_control_rom.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 45ob6dCUE>oz1JH6f`1fL3
+!s105 register_control_rom_sv_unit
+!s101 -O0
+Xregister_control_rom_sv_unit
+R1
+R2
+VAkIm@;O7<@k;?Yo2Of8RZ1
+r1
+31
+IAkIm@;O7<@k;?Yo2Of8RZ1
+S1
+R3
+R90
+R91
+R92
+L0 1
+R7
+R93
+R94
+R95
+R11
+R12
+!s85 0
+!i10b 1
+!s100 BAgX;??f]d^FIjH`J>o6b0
+!i103 1
+!s101 -O0
+vsext
+R1
+R2
+DXx4 work 12 sext_sv_unit 0 22 gD<I>`jJ47kjVF?_LG8;j3
+VlViJ]MWnKmm67DC4jAYD_2
+r1
+31
+I0@?8dAim14ibRKnMkGWZ63
+S1
+R3
+R4
+Z96 8D:/Spring2018/ECE411/mazeprocessor/sext.sv
+Z97 FD:/Spring2018/ECE411/mazeprocessor/sext.sv
+L0 6
+R7
+Z98 !s108 1520748196.375000
+Z99 !s107 D:/Spring2018/ECE411/mazeprocessor/sext.sv|
+Z100 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/sext.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 g>bH2DbNQKQTeL0N:Q@5K1
+!s105 sext_sv_unit
+!s101 -O0
+Xsext_sv_unit
+R1
+R2
+VgD<I>`jJ47kjVF?_LG8;j3
+r1
+31
+IgD<I>`jJ47kjVF?_LG8;j3
+S1
+R3
+R4
+R96
+R97
+L0 1
+R7
+R98
+R99
+R100
+R11
+R12
+!s85 0
+!i10b 1
+!s100 eoFD=F^:?KiFD7dd>A7a33
+!i103 1
+!s101 -O0
+vtestbench
+R1
+I:^Efb[0lf^ajo7@aN?8IP3
+VhGfW:390DM[oDMzegDH9`2
+S1
+R3
+w1520744554
+8D:/Spring2018/ECE411/mazeprocessor/testbench.sv
+FD:/Spring2018/ECE411/mazeprocessor/testbench.sv
+L0 1
+R7
+r1
+31
+R11
+R12
+!i10b 1
+!s100 YNm@lQh9<lLLlORO1Df?63
+!s105 testbench_sv_unit
+!s85 0
+!s108 1520748199.803000
+!s107 D:/Spring2018/ECE411/mazeprocessor/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/testbench.sv|
+!s101 -O0
+Ywishbone
+R1
+ICWn6C8[?6Dk3^QYRkoQ1W2
+VPb?@ZGYY13KOKQz0;6;n91
+S1
+R3
+R4
+8D:/Spring2018/ECE411/mazeprocessor/wishbone.sv
+FD:/Spring2018/ECE411/mazeprocessor/wishbone.sv
+L0 1
+R7
+r1
+31
+R11
+R12
+!i10b 1
+!s100 1lGl1d<MQDaFK8jV1jh6l0
+!s105 wishbone_sv_unit
+!s85 0
+!s108 1520748193.094000
+!s107 D:/Spring2018/ECE411/mazeprocessor/wishbone.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/wishbone.sv|
+!s101 -O0
+vwrite_back_stage
+R1
+R2
+DXx4 work 24 write_back_stage_sv_unit 0 22 3<KAf3Q`DN?=SzHXb062:1
+VPKAlM[CCcJ7`?Ca>z7K6T3
+r1
+31
+IER>V;bdonzNWBeGjfhR]40
+S1
+R3
+R4
+Z101 8D:/Spring2018/ECE411/mazeprocessor/write_back_stage.sv
+Z102 FD:/Spring2018/ECE411/mazeprocessor/write_back_stage.sv
+L0 3
+R7
+Z103 !s108 1520748193.904000
+Z104 !s107 D:/Spring2018/ECE411/mazeprocessor/write_back_stage.sv|
+Z105 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/write_back_stage.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 DbWQ5[FBbP`zSEJzB>]1Y0
+!s105 write_back_stage_sv_unit
+!s101 -O0
+Xwrite_back_stage_sv_unit
+R1
+R2
+V3<KAf3Q`DN?=SzHXb062:1
+r1
+31
+I3<KAf3Q`DN?=SzHXb062:1
+S1
+R3
+R4
+R101
+R102
+L0 1
+R7
+R103
+R104
+R105
+R11
+R12
+!s85 0
+!i10b 1
+!s100 i6`KcSK9J8T?aS^Z:<WTW0
+!i103 1
+!s101 -O0
+vzext
+R1
+R2
+DXx4 work 12 zext_sv_unit 0 22 246;P_oHkdUcJn7h1g[:V0
+VBN63hg]7XG]MT<oJ=W;L92
+r1
+31
+IXD?VomCBk[jn9[2c[dY]e0
+S1
+R3
+R4
+Z106 8D:/Spring2018/ECE411/mazeprocessor/zext.sv
+Z107 FD:/Spring2018/ECE411/mazeprocessor/zext.sv
+L0 6
+R7
+Z108 !s108 1520748196.062000
+Z109 !s107 D:/Spring2018/ECE411/mazeprocessor/zext.sv|
+Z110 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/zext.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 l]K<P5VZU7fJef?bEoA2W2
+!s105 zext_sv_unit
+!s101 -O0
+vzext_s
+R1
+R2
+DXx4 work 14 zext_s_sv_unit 0 22 :9jYmo5=78OP5U:[DI4K61
+VSCGbX1dCIZGZY`PgOnC[T2
+r1
+31
+IFzd6bQ=bQ_JOW5GnER58M2
+S1
+R3
+R4
+Z111 8D:/Spring2018/ECE411/mazeprocessor/zext_s.sv
+Z112 FD:/Spring2018/ECE411/mazeprocessor/zext_s.sv
+L0 6
+R7
+Z113 !s108 1520748198.509000
+Z114 !s107 D:/Spring2018/ECE411/mazeprocessor/zext_s.sv|
+Z115 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/zext_s.sv|
+R11
+R12
+!s85 0
+!i10b 1
+!s100 GB1[7U6:W`P>GzXh=bEgG0
+!s105 zext_s_sv_unit
+!s101 -O0
+Xzext_s_sv_unit
+R1
+R2
+V:9jYmo5=78OP5U:[DI4K61
+r1
+31
+I:9jYmo5=78OP5U:[DI4K61
+S1
+R3
+R4
+R111
+R112
+L0 1
+R7
+R113
+R114
+R115
+R11
+R12
+!s85 0
+!i10b 1
+!s100 1a]i435EbJPLA3angKEhO0
+!i103 1
+!s101 -O0
+Xzext_sv_unit
+R1
+R2
+V246;P_oHkdUcJn7h1g[:V0
+r1
+31
+I246;P_oHkdUcJn7h1g[:V0
+S1
+R3
+R4
+R106
+R107
+L0 1
+R7
+R108
+R109
+R110
+R11
+R12
+!s85 0
+!i10b 1
+!s100 ^a>dlBJNzTzUE?fofWL`A3
+!i103 1
+!s101 -O0

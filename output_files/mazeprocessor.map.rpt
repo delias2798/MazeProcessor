@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mazeprocessor
-Sat Mar 10 18:12:37 2018
+Sun Mar 11 00:03:00 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -105,13 +105,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +-----------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status       ; Successful - Sat Mar 10 18:12:37 2018      ;
+; Analysis & Synthesis Status       ; Successful - Sun Mar 11 00:03:00 2018      ;
 ; Quartus II 64-Bit Version         ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                     ; mazeprocessor                              ;
 ; Top-level Entity Name             ; mazeprocessor                              ;
 ; Family                            ; Arria II GX                                ;
 ; Logic utilization                 ; N/A                                        ;
-;     Combinational ALUTs           ; 570                                        ;
+;     Combinational ALUTs           ; 607                                        ;
 ;     Memory ALUTs                  ; 0                                          ;
 ;     Dedicated logic registers     ; 397                                        ;
 ; Total registers                   ; 397                                        ;
@@ -276,31 +276,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------------------+
 ; Resource                                      ; Usage             ;
 +-----------------------------------------------+-------------------+
-; Estimated ALUTs Used                          ; 570               ;
-;     -- Combinational ALUTs                    ; 570               ;
+; Estimated ALUTs Used                          ; 607               ;
+;     -- Combinational ALUTs                    ; 607               ;
 ;     -- Memory ALUTs                           ; 0                 ;
 ;     -- LUT_REGs                               ; 0                 ;
 ; Dedicated logic registers                     ; 397               ;
 ;                                               ;                   ;
-; Estimated ALUTs Unavailable                   ; 13                ;
-;     -- Due to unpartnered combinational logic ; 13                ;
+; Estimated ALUTs Unavailable                   ; 8                 ;
+;     -- Due to unpartnered combinational logic ; 8                 ;
 ;     -- Due to Memory ALUTs                    ; 0                 ;
 ;                                               ;                   ;
-; Total combinational functions                 ; 570               ;
+; Total combinational functions                 ; 607               ;
 ; Combinational ALUT usage by number of inputs  ;                   ;
-;     -- 7 input functions                      ; 7                 ;
-;     -- 6 input functions                      ; 152               ;
-;     -- 5 input functions                      ; 83                ;
-;     -- 4 input functions                      ; 188               ;
-;     -- <=3 input functions                    ; 140               ;
+;     -- 7 input functions                      ; 8                 ;
+;     -- 6 input functions                      ; 127               ;
+;     -- 5 input functions                      ; 99                ;
+;     -- 4 input functions                      ; 232               ;
+;     -- <=3 input functions                    ; 141               ;
 ;                                               ;                   ;
 ; Combinational ALUTs by mode                   ;                   ;
-;     -- normal mode                            ; 502               ;
-;     -- extended LUT mode                      ; 7                 ;
+;     -- normal mode                            ; 538               ;
+;     -- extended LUT mode                      ; 8                 ;
 ;     -- arithmetic mode                        ; 61                ;
 ;     -- shared arithmetic mode                 ; 0                 ;
 ;                                               ;                   ;
-; Estimated ALUT/register pairs used            ; 787               ;
+; Estimated ALUT/register pairs used            ; 801               ;
 ;                                               ;                   ;
 ; Total registers                               ; 397               ;
 ;     -- Dedicated logic registers              ; 397               ;
@@ -314,8 +314,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; DSP block 18-bit elements                     ; 0                 ;
 ; Maximum fan-out node                          ; imem_wb.CLK~input ;
 ; Maximum fan-out                               ; 447               ;
-; Total fan-out                                 ; 4651              ;
-; Average fan-out                               ; 2.14              ;
+; Total fan-out                                 ; 4762              ;
+; Average fan-out                               ; 2.15              ;
 +-----------------------------------------------+-------------------+
 
 
@@ -324,9 +324,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Library Name ;
 +----------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |mazeprocessor                                     ; 570 (0)           ; 397 (0)      ; 384               ; 0            ; 0       ; 0         ; 0         ; 0         ; 580  ; 0            ; |mazeprocessor                                                                                                                      ; work         ;
-;    |cpu:c|                                         ; 570 (152)         ; 397 (0)      ; 384               ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c                                                                                                                ; work         ;
-;       |cpu_datapath:cpu_d|                         ; 418 (0)           ; 397 (0)      ; 384               ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d                                                                                             ; work         ;
+; |mazeprocessor                                     ; 607 (0)           ; 397 (0)      ; 384               ; 0            ; 0       ; 0         ; 0         ; 0         ; 580  ; 0            ; |mazeprocessor                                                                                                                      ; work         ;
+;    |cpu:c|                                         ; 607 (150)         ; 397 (0)      ; 384               ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c                                                                                                                ; work         ;
+;       |cpu_datapath:cpu_d|                         ; 457 (0)           ; 397 (0)      ; 384               ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d                                                                                             ; work         ;
 ;          |decode_stage:id_stage|                   ; 46 (0)            ; 69 (0)       ; 384               ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|decode_stage:id_stage                                                                       ; work         ;
 ;             |control_rom:ctrl_r|                   ; 18 (18)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|decode_stage:id_stage|control_rom:ctrl_r                                                    ; work         ;
 ;             |mux2:sr2mux2|                         ; 18 (18)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|decode_stage:id_stage|mux2:sr2mux2                                                          ; work         ;
@@ -339,18 +339,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                   |altsyncram_8jo1:auto_generated| ; 0 (0)             ; 0 (0)        ; 128               ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|decode_stage:id_stage|regfile:reg_file|altsyncram:data_rtl_1|altsyncram_8jo1:auto_generated ; work         ;
 ;                |altsyncram:data_rtl_2|             ; 0 (0)             ; 0 (0)        ; 128               ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|decode_stage:id_stage|regfile:reg_file|altsyncram:data_rtl_2                                ; work         ;
 ;                   |altsyncram_8jo1:auto_generated| ; 0 (0)             ; 0 (0)        ; 128               ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|decode_stage:id_stage|regfile:reg_file|altsyncram:data_rtl_2|altsyncram_8jo1:auto_generated ; work         ;
-;          |execute_stage:ex_stage|                  ; 201 (0)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|execute_stage:ex_stage                                                                      ; work         ;
-;             |alu:arith_unit|                       ; 115 (115)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|execute_stage:ex_stage|alu:arith_unit                                                       ; work         ;
+;          |execute_stage:ex_stage|                  ; 193 (0)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|execute_stage:ex_stage                                                                      ; work         ;
+;             |alu:arith_unit|                       ; 111 (111)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|execute_stage:ex_stage|alu:arith_unit                                                       ; work         ;
 ;             |br_add:bradd2|                        ; 15 (15)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|execute_stage:ex_stage|br_add:bradd2                                                        ; work         ;
 ;             |br_add:bradd|                         ; 15 (15)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|execute_stage:ex_stage|br_add:bradd                                                         ; work         ;
-;             |mux2:alumux|                          ; 56 (56)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|execute_stage:ex_stage|mux2:alumux                                                          ; work         ;
+;             |mux2:alumux|                          ; 52 (52)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|execute_stage:ex_stage|mux2:alumux                                                          ; work         ;
 ;          |fetch_stage:if_stage|                    ; 64 (0)            ; 16 (0)       ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|fetch_stage:if_stage                                                                        ; work         ;
 ;             |mux8:imem_rdata_mux|                  ; 48 (48)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|fetch_stage:if_stage|mux8:imem_rdata_mux                                                    ; work         ;
 ;             |plus2:pc_plus2|                       ; 15 (15)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|fetch_stage:if_stage|plus2:pc_plus2                                                         ; work         ;
 ;             |register:pc_regsiter|                 ; 1 (1)             ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|fetch_stage:if_stage|register:pc_regsiter                                                   ; work         ;
-;          |memory_stage:mem_stage|                  ; 50 (2)            ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|memory_stage:mem_stage                                                                      ; work         ;
-;             |mux4:newpcmux|                        ; 48 (48)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|memory_stage:mem_stage|mux4:newpcmux                                                        ; work         ;
-;          |register:ex_mem_alu|                     ; 4 (4)             ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:ex_mem_alu                                                                         ; work         ;
+;          |memory_stage:mem_stage|                  ; 99 (2)            ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|memory_stage:mem_stage                                                                      ; work         ;
+;             |mux4:newpcmux|                        ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|memory_stage:mem_stage|mux4:newpcmux                                                        ; work         ;
+;             |mux8:dmem_rdata_mux|                  ; 65 (65)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|memory_stage:mem_stage|mux8:dmem_rdata_mux                                                  ; work         ;
+;          |register:ex_mem_alu|                     ; 3 (3)             ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:ex_mem_alu                                                                         ; work         ;
 ;          |register:ex_mem_dest_reg|                ; 0 (0)             ; 3 (3)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:ex_mem_dest_reg                                                                    ; work         ;
 ;          |register:ex_mem_dest|                    ; 0 (0)             ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:ex_mem_dest                                                                        ; work         ;
 ;          |register:ex_mem_pc_br|                   ; 0 (0)             ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:ex_mem_pc_br                                                                       ; work         ;
@@ -367,7 +368,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |register:mem_wb_alu|                     ; 0 (0)             ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:mem_wb_alu                                                                         ; work         ;
 ;          |register:mem_wb_dest_reg|                ; 0 (0)             ; 3 (3)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:mem_wb_dest_reg                                                                    ; work         ;
 ;          |register:mem_wb_mem_wdata|               ; 0 (0)             ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:mem_wb_mem_wdata                                                                   ; work         ;
-;          |register:mem_wb_new_pc|                  ; 1 (1)             ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:mem_wb_new_pc                                                                      ; work         ;
+;          |register:mem_wb_new_pc|                  ; 0 (0)             ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:mem_wb_new_pc                                                                      ; work         ;
 ;          |register:mem_wb_pc_br|                   ; 0 (0)             ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:mem_wb_pc_br                                                                       ; work         ;
 ;          |register:mem_wb_pc|                      ; 0 (0)             ; 15 (15)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:mem_wb_pc                                                                          ; work         ;
 ;          |register_control_rom:ex_mem_ctrl|        ; 0 (0)             ; 11 (11)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register_control_rom:ex_mem_ctrl                                                            ; work         ;
@@ -541,19 +542,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 ALUTs      ; 20 ALUTs             ; 0 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:id_ex_sr2|data[14]                       ;
-; 8:1                ; 7 bits    ; 35 ALUTs      ; 35 ALUTs             ; 0 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:if_id_ir|data[4]                         ;
-; 4:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:id_ex_sr2|data[1]                        ;
-; 10:1               ; 16 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:mem_wb_new_pc|data[3]                    ;
+; 3:1                ; 16 bits   ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:mem_wb_new_pc|data[1]                    ;
+; 3:1                ; 10 bits   ; 20 ALUTs      ; 20 ALUTs             ; 0 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:id_ex_sr2|data[11]                       ;
+; 8:1                ; 7 bits    ; 35 ALUTs      ; 35 ALUTs             ; 0 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:if_id_ir|data[12]                        ;
+; 4:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:id_ex_sr2|data[3]                        ;
 ; 14:1               ; 2 bits    ; 18 ALUTs      ; 16 ALUTs             ; 2 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:ex_mem_alu|data[9]                       ;
-; 15:1               ; 2 bits    ; 20 ALUTs      ; 20 ALUTs             ; 0 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:ex_mem_alu|data[1]                       ;
-; 16:1               ; 2 bits    ; 20 ALUTs      ; 20 ALUTs             ; 0 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:ex_mem_alu|data[13]                      ;
-; 17:1               ; 2 bits    ; 22 ALUTs      ; 20 ALUTs             ; 2 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:ex_mem_alu|data[5]                       ;
+; 15:1               ; 2 bits    ; 20 ALUTs      ; 20 ALUTs             ; 0 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:ex_mem_alu|data[2]                       ;
+; 16:1               ; 2 bits    ; 20 ALUTs      ; 20 ALUTs             ; 0 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:ex_mem_alu|data[14]                      ;
+; 17:1               ; 2 bits    ; 22 ALUTs      ; 20 ALUTs             ; 2 ALUTs                ; Yes        ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|register:ex_mem_alu|data[6]                       ;
 ; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|execute_stage:ex_stage|alu:arith_unit|ShiftRight0 ;
 ; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|execute_stage:ex_stage|alu:arith_unit|ShiftLeft0  ;
-; 8:1                ; 9 bits    ; 45 ALUTs      ; 45 ALUTs             ; 0 ALUTs                ; No         ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|fetch_stage:if_stage|mux8:imem_rdata_mux|o[7]     ;
-; 5:1                ; 8 bits    ; 24 ALUTs      ; 24 ALUTs             ; 0 ALUTs                ; No         ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|write_back_stage:wb_stage|mux8:regfilemux|o[14]   ;
-; 6:1                ; 7 bits    ; 28 ALUTs      ; 21 ALUTs             ; 7 ALUTs                ; No         ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|write_back_stage:wb_stage|mux8:regfilemux|o[4]    ;
+; 8:1                ; 16 bits   ; 80 ALUTs      ; 80 ALUTs             ; 0 ALUTs                ; No         ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|memory_stage:mem_stage|mux8:dmem_rdata_mux|o[7]   ;
+; 8:1                ; 9 bits    ; 45 ALUTs      ; 45 ALUTs             ; 0 ALUTs                ; No         ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|fetch_stage:if_stage|mux8:imem_rdata_mux|o[6]     ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 24 ALUTs             ; 0 ALUTs                ; No         ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|write_back_stage:wb_stage|mux8:regfilemux|o[10]   ;
+; 6:1                ; 7 bits    ; 28 ALUTs      ; 21 ALUTs             ; 7 ALUTs                ; No         ; |mazeprocessor|cpu:c|cpu_datapath:cpu_d|write_back_stage:wb_stage|mux8:regfilemux|o[7]    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
 
 
@@ -1339,7 +1341,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Mar 10 18:12:34 2018
+    Info: Processing started: Sun Mar 11 00:02:57 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mazeprocessor -c mazeprocessor
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file write_back_stage.sv
@@ -1398,6 +1400,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file mazepro
     Info (12023): Found entity 1: mazeprocessor
 Info (12021): Found 1 design units, including 1 entities, in source file cpu.sv
     Info (12023): Found entity 1: cpu
+Info (12021): Found 1 design units, including 1 entities, in source file testbench.sv
+    Info (12023): Found entity 1: testbench
 Info (12127): Elaborating entity "mazeprocessor" for the top level hierarchy
 Info (12128): Elaborating entity "cpu" for hierarchy "cpu:c"
 Warning (10034): Output port "imem_wb.DAT_M" at cpu.sv(5) has no driver
@@ -1661,15 +1665,15 @@ Warning (21074): Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "dmem_wb.RTY"
     Warning (15610): No output dependent on input pin "dmem_wb.ACK"
     Warning (15610): No output dependent on input pin "dmem_wb.CLK"
-Info (21057): Implemented 1490 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1511 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 262 input pins
     Info (21059): Implemented 318 output pins
-    Info (21061): Implemented 862 logic cells
+    Info (21061): Implemented 883 logic cells
     Info (21064): Implemented 48 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 158 warnings
     Info: Peak virtual memory: 620 megabytes
-    Info: Processing ended: Sat Mar 10 18:12:37 2018
+    Info: Processing ended: Sun Mar 11 00:03:00 2018
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 

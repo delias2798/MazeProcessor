@@ -24,18 +24,75 @@ module cpu_datapath
 	output lc3b_mem_wmask dmem_byte_enable
 );
 
-/* Assign load signals for CP1 */
-assign load_if_id = clk;
-assign load_id_ex = clk;
-assign load_ex_mem = clk;
-assign load_mem_wb = clk;
-
 /* Internal Signals - Fetch*/
 logic load_if_id;
 lc3b_word pc_plus2_out;
 lc3b_word pc_if_id_out;
 lc3b_word imem_rdata_out;
 lc3b_word imem_rdata_if_id_out;
+
+/* Internal Signals - Decode*/
+logic load_id_ex;
+logic load_regfile;
+lc3b_control_word ctrl;
+
+lc3b_word sr1_out;
+lc3b_word sr2_out;
+lc3b_word dest_out;
+lc3b_reg dest_register;
+lc3b_offset8 offset8;
+lc3b_offset9 offset9;
+lc3b_offset11 offset11;
+
+lc3b_control_word ctrl_id_ex;
+lc3b_word pc_id_ex_out;
+lc3b_word sr1_id_ex_out;
+lc3b_word sr2_id_ex_out;
+lc3b_word dest_id_ex_out;
+lc3b_reg dest_id_ex_register;
+lc3b_offset8 offset8_id_ex_out;
+lc3b_offset9 offset9_id_ex_out;
+lc3b_offset11 offset11_id_ex_out;
+
+/* Internal Signals - Execute */
+logic load_ex_mem;
+
+lc3b_word pc_br;
+lc3b_word pc_j;
+lc3b_word alu_out;
+
+lc3b_control_word ctrl_ex_mem;
+lc3b_word pc_ex_mem_out;
+lc3b_word pc_br_ex_mem_out;
+lc3b_word pc_j_ex_mem_out;
+lc3b_word alu_ex_mem_out;
+lc3b_word dest_ex_mem_out;
+lc3b_reg dest_ex_mem_register;
+
+/* Internal Signals - Memory */
+logic load_mem_wb;
+lc3b_word new_pc;
+
+lc3b_control_word ctrl_mem_wb;
+lc3b_word pc_mem_wb_out;
+lc3b_word new_pc_mem_wb_out;
+lc3b_word pc_br_mem_wb_out;
+lc3b_word dmem_wdata_mem_wb;
+lc3b_word alu_mem_wb_out;
+lc3b_word dmem_address_mem_wb;
+lc3b_reg dest_mem_wb_register;
+lc3b_word dmem_rdata_out;
+
+/* Internal Signals - Write-Back */
+lc3b_reg write_register;
+lc3b_word write_data;
+logic branch_enable;
+
+/* Assign load signals for CP1 */
+assign load_if_id = clk;
+assign load_id_ex = clk;
+assign load_ex_mem = clk;
+assign load_mem_wb = clk;
 
 /* Fetch Stage (IF) */
 fetch_stage if_stage
@@ -68,28 +125,6 @@ register if_id_ir
 	.out(imem_rdata_if_id_out)
 );
 
-/* Internal Signals - Decode*/
-logic load_id_ex;
-logic load_regfile;
-lc3b_control_word ctrl;
-
-lc3b_word sr1_out;
-lc3b_word sr2_out;
-lc3b_word dest_out;
-lc3b_reg dest_register;
-lc3b_offset8 offset8;
-lc3b_offset9 offset9;
-lc3b_offset11 offset11;
-
-lc3b_control_word ctrl_id_ex;
-lc3b_word pc_id_ex_out;
-lc3b_word sr1_id_ex_out;
-lc3b_word sr2_id_ex_out;
-lc3b_word dest_id_ex_out;
-lc3b_reg dest_id_ex_register;
-lc3b_offset8 offset8_id_ex_out;
-lc3b_offset9 offset9_id_ex_out;
-lc3b_offset11 offset11_id_ex_out;
 
 /* Decode Stage (ID) */
 decode_stage id_stage
@@ -182,21 +217,6 @@ register #(.width(11)) id_ex_offset11
 	.out(offset11_id_ex_out)
 );
 
-/* Internal Signals - Execute */
-logic load_ex_mem;
-
-lc3b_word pc_br;
-lc3b_word pc_j;
-lc3b_word alu_out;
-
-lc3b_control_word ctrl_ex_mem;
-lc3b_word pc_ex_mem_out;
-lc3b_word pc_br_ex_mem_out;
-lc3b_word pc_j_ex_mem_out;
-lc3b_word alu_ex_mem_out;
-lc3b_word dest_ex_mem_out;
-lc3b_reg dest_ex_mem_register;
-
 /* Execute Stage (EX) */
 execute_stage ex_stage
 (
@@ -272,19 +292,6 @@ register #(.width(3)) ex_mem_dest_reg
 	.out(dest_ex_mem_register)
 );
 
-/* Internal Signals - Memory */
-logic load_mem_wb;
-lc3b_word new_pc;
-
-lc3b_control_word ctrl_mem_wb;
-lc3b_word pc_mem_wb_out;
-lc3b_word new_pc_mem_wb_out;
-lc3b_word pc_br_mem_wb_out;
-lc3b_word dmem_wdata_mem_wb;
-lc3b_word alu_mem_wb_out;
-lc3b_word dmem_address_mem_wb;
-lc3b_reg dest_mem_wb_register;
-
 /* Memory Stage (MEM) */
 memory_stage mem_stage
 (
@@ -304,6 +311,7 @@ memory_stage mem_stage
 	.dmem_action_stb(dmem_action_stb),
 	.dmem_action_cyc(dmem_action_cyc),
 	.dmem_write(dmem_write),
+	.dmem_rdata_out(dmem_rdata_out),
 	.dmem_byte_enable(dmem_byte_enable)
 );
 
@@ -352,7 +360,7 @@ register mem_wb_mem_wdata
 (
 	.clk(clk),
 	.load(load_mem_wb),
-	.in(dmem_wdata),
+	.in(dmem_rdata_out),
 	.out(dmem_wdata_mem_wb)
 );
 
@@ -371,11 +379,6 @@ register #(.width(3)) mem_wb_dest_reg
 	.in(dest_ex_mem_register),
 	.out(dest_mem_wb_register)
 );
-
-/* Internal Signals - Write-Back */
-lc3b_reg write_register;
-lc3b_word write_data;
-logic branch_enable;
 
 /* Write-Back Stage (WB) */
 write_back_stage wb_stage

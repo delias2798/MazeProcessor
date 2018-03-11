@@ -21,11 +21,12 @@ module memory_stage
 	output logic dmem_action_stb,
 	output logic dmem_action_cyc,
 	output logic dmem_write,
+	output lc3b_word dmem_rdata_out,
 	output lc3b_mem_wmask dmem_byte_enable
 );
 
 /* Internal Signals */
-lc3b_word dmem_rdata_out;
+
 
 /* Assign Values */
 always_comb
