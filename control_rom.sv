@@ -16,6 +16,7 @@ begin
 
 	ctrl.load_regfile = 0;
 	ctrl.sr2mux_sel = 2'b00;
+	ctrl.sr2mux2_sel = 0;
 	ctrl.writemux_sel = 0;
 	ctrl.destmux_sel = 0;
 
@@ -25,7 +26,9 @@ begin
 
 	ctrl.mem_addr_mux_sel = 0;
 	ctrl.newpcmux_sel = 2'b00;
+	
 	ctrl.regfilemux_sel = 3'b000;
+	ctrl.load_cc = 0;
 
 	/* Assign control signals based on opcode */
 	case(opcode)

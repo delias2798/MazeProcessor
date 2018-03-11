@@ -7,6 +7,7 @@ module cpu_datapath
 	/* Input and Output for Instruction Cache */
 	input lc3b_data imem_rdata,
 	input imem_resp,
+	input imem_retry,
 	output lc3b_word imem_address,
 	output logic imem_action_stb,
 	output logic imem_action_cyc,
@@ -24,10 +25,10 @@ module cpu_datapath
 );
 
 /* Assign load signals for CP1 */
-assign load_if_id = 1;
-assign load_id_ex = 1;
-assign load_ex_mem = 1;
-assign load_mem_wb = 1;
+assign load_if_id = clk;
+assign load_id_ex = clk;
+assign load_ex_mem = clk;
+assign load_mem_wb = clk;
 
 /* Internal Signals - Fetch*/
 logic load_if_id;
@@ -44,6 +45,8 @@ fetch_stage if_stage
 	.new_pc(new_pc_mem_wb_out),
 	.branch_enable(branch_enable),
 	.imem_address(imem_address),
+	.imem_action_stb(imem_action_stb),
+	.imem_action_cyc(imem_action_cyc),
 	.pc_plus2_out(pc_plus2_out),
 	.imem_rdata_out(imem_rdata_out)
 );
@@ -298,6 +301,8 @@ memory_stage mem_stage
 	.pc_out(new_pc),
 	.dmem_address(dmem_address),
 	.dmem_wdata(dmem_wdata),
+	.dmem_action_stb(dmem_action_stb),
+	.dmem_action_cyc(dmem_action_cyc),
 	.dmem_write(dmem_write),
 	.dmem_byte_enable(dmem_byte_enable)
 );

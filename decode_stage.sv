@@ -36,6 +36,7 @@ lc3b_offset6 offset6;
 
 lc3b_word sr2_out;
 lc3b_word dest_out;
+lc3b_word dest_lfsh_out;
 
 lc3b_word zext4_out;
 lc3b_word sext5_out;
@@ -63,7 +64,7 @@ control_rom ctrl_r
 	.opcode(opcode),
 	.ir4(instruction[4]),
 	.ir5(instruction[5]),
-	.ir11(instruction[11])
+	.ir11(instruction[11]),
 	.ctrl(ctrl)
 );
 

@@ -7,6 +7,8 @@ module fetch_stage
 	input lc3b_word new_pc,
 	input branch_enable,
 	output lc3b_word imem_address,
+	output logic imem_action_stb,
+	output logic imem_action_cyc,
 	output lc3b_word pc_plus2_out,
 	output lc3b_word imem_rdata_out
 );
@@ -15,6 +17,8 @@ module fetch_stage
 logic load_pc;
 
 assign load_pc = clk; // only for cp1
+assign imem_action_cyc = load_pc;
+assign imem_action_stb = load_pc;
 
 /* Internal Signals */
 lc3b_word pc_in;

@@ -18,6 +18,8 @@ module memory_stage
 	output lc3b_word pc_out,
 	output lc3b_word dmem_address,
 	output lc3b_word dmem_wdata,
+	output logic dmem_action_stb,
+	output logic dmem_action_cyc,
 	output logic dmem_write,
 	output lc3b_mem_wmask dmem_byte_enable
 );
@@ -27,20 +29,31 @@ lc3b_word dmem_rdata_out;
 
 /* Assign Values */
 always_comb
-begin:
+begin
+	dmem_action_cyc = 0;
+	dmem_action_stb = 0;
+	
+	if ((opcode == op_ldr) || (opcode == op_str) || (opcode == op_ldb) || (opcode == op_stb) || (opcode == op_trap))
+	begin
+		dmem_action_cyc = 1;
+		dmem_action_stb = 1;
+	end
+	
 	// Write Signal
-	if (opcode == op_stb) || (opcode == op_str)
+	if ((opcode == op_stb) || (opcode == op_str))
 		dmem_write = 1;
 	else
 		dmem_write = 0;
 
 	// Mem Byte Enable Signal
-	if (opcode == op_stb) && (dmem_address[0] == 1)
+	if ((opcode == op_stb) && (dmem_address[0] == 1))
 		dmem_byte_enable = 2'b10;
-	else if (opcode == op_stb) && (dmem_address[0] == 0)
+	else if ((opcode == op_stb) && (dmem_address[0] == 0))
 		dmem_byte_enable = 2'b01;
 	else
 		dmem_byte_enable = 2'b11;
+	
+	dmem_wdata = dest_out;
 end
 
 mux8 dmem_rdata_mux
@@ -74,7 +87,5 @@ mux2 mem_addr_mux
 	.b(dmem_rdata_out),
 	.f(dmem_address)
 );
-
-assign dmem_wdata = dest_out;
 
 endmodule: memory_stage
