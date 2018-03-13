@@ -24,6 +24,7 @@ begin
 	ctrl.aluop = alu_pass;
 	ctrl.alumux_sel = 0;
 
+	ctrl.mem_ack_counter = 2'b01;
 	ctrl.mem_addr_mux_sel = 0;
 	ctrl.newpcmux_sel = 2'b00;
 	
@@ -147,6 +148,23 @@ begin
 			/* PC = memWord[ZEXT(trapvect8) << 1]; */
 			ctrl.alumux_sel = 1;
 			ctrl.newpcmux_sel = 2'b10;
+		end
+
+		op_ldi: begin
+			/* DR = memWord[memWord[BaseR + (SEXT(offset6) << 1)]] */
+			ctrl.sr2mux2_sel = 1;
+			ctrl.aluop = alu_add;
+			ctrl.mem_ack_counter = 2'b10;
+			ctrl.regfilemux_sel = 3'b001;
+			ctrl.load_regfile = 1;
+			ctrl.load_cc = 1;
+		end
+
+		op_sti: begin
+			/* memWord[memWord[BaseR + (SEXT(offset6) << 1)]] = SR */
+			ctrl.sr2mux2_sel = 1;
+			ctrl.aluop = alu_add;
+			ctrl.mem_ack_counter = 2'b10;
 		end
 
 		default: begin

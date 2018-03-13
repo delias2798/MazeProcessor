@@ -27,21 +27,20 @@ module memory_stage
 
 /* Internal Signals */
 
-
 /* Assign Values */
 always_comb
 begin
 	dmem_action_cyc = 0;
 	dmem_action_stb = 0;
 	
-	if ((opcode == op_ldr) || (opcode == op_str) || (opcode == op_ldb) || (opcode == op_stb) || (opcode == op_trap))
+	if ((opcode == op_ldr) || (opcode == op_str) || (opcode == op_ldb) || (opcode == op_stb) || (opcode == op_ldi) || (opcode == op_sti) || (opcode == op_trap))
 	begin
 		dmem_action_cyc = 1;
 		dmem_action_stb = 1;
 	end
 	
 	// Write Signal
-	if ((opcode == op_stb) || (opcode == op_str))
+	if ((opcode == op_stb) || (opcode == op_str) || || (opcode == op_sti))
 		dmem_write = 1;
 	else
 		dmem_write = 0;
