@@ -1,42 +1,51 @@
 m255
-K3
+K4
+z2
 13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
 cModel Technology
-Z0 dD:\Spring2018\ECE411\mazeprocessor\simulation\modelsim
+Z0 d/home/bharuka2/ece411/mazeprocessor/simulation/modelsim
 vadj
-Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
-Z2 DXx4 work 10 lc3b_types 0 22 TGWfRg@Q>UoLc^07QXRMY2
-DXx4 work 11 adj_sv_unit 0 22 =AQO=e6;G33LD==ZEN9IV0
-VE;zLPZ?c`8[LaP1M[Ui<V1
+Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z2 DXx4 work 10 lc3b_types 0 22 H7BePaD9:WU=kP89JgjRB0
+DXx4 work 11 adj_sv_unit 0 22 ^<NkbaTd0HYz5hcF;:9T=2
+Z3 V`JN@9S9cnhjKRR_L]QIcM3
 r1
-31
-I61iz2=6:dDU<Z72mW]c`H3
-S1
-Z3 dD:\Spring2018\ECE411\mazeprocessor\simulation\modelsim
-Z4 w1520744948
-Z5 8D:/Spring2018/ECE411/mazeprocessor/adj.sv
-Z6 FD:/Spring2018/ECE411/mazeprocessor/adj.sv
-L0 6
-Z7 OV;L;10.1d;51
-Z8 !s108 1520748196.678000
-Z9 !s107 D:/Spring2018/ECE411/mazeprocessor/adj.sv|
-Z10 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/adj.sv|
-Z11 o-sv -work work -O0
-Z12 !s92 -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor -O0
 !s85 0
+31
 !i10b 1
-!s100 YoUWDL[?<T^FAFd0nZBk`2
+!s100 7lS6VT[53:Gk_?NA?>8Vc1
+Ia0QUJ8o7DkRkGA`=ZVB921
 !s105 adj_sv_unit
-!s101 -O0
+S1
+R0
+Z4 w1520663606
+Z5 8/home/bharuka2/ece411/mazeprocessor/adj.sv
+Z6 F/home/bharuka2/ece411/mazeprocessor/adj.sv
+L0 6
+Z7 OV;L;10.3d;59
+Z8 !s108 1520997650.647864
+Z9 !s107 /home/bharuka2/ece411/mazeprocessor/adj.sv|
+Z10 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/adj.sv|
+!i113 1
+Z11 o-sv -work work
+Z12 !s92 -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor
 Xadj_sv_unit
 R1
 R2
-V=AQO=e6;G33LD==ZEN9IV0
+V^<NkbaTd0HYz5hcF;:9T=2
 r1
+!s85 0
 31
-I=AQO=e6;G33LD==ZEN9IV0
+!i10b 1
+!s100 P<b5TlKE7Se0Hc;78mmZ13
+I^<NkbaTd0HYz5hcF;:9T=2
+!i103 1
 S1
-R3
+R0
 R4
 R5
 R6
@@ -45,538 +54,489 @@ R7
 R8
 R9
 R10
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 ]@bec_bU=P>4o`Y0aAdjI1
-!i103 1
-!s101 -O0
 valu
 R1
 R2
-DXx4 work 11 alu_sv_unit 0 22 Q84gFhb^9aRoM[M4jI_cS0
-V=ZN?TEUMd1Ge?6dcD7B5a3
-r1
-31
-IJaN=ec:;a<TYkB]nWdYan2
-S1
+DXx4 work 11 alu_sv_unit 0 22 ;1=S_Z>azz@eaFbB^h1?M3
 R3
-R4
-Z13 8D:/Spring2018/ECE411/mazeprocessor/alu.sv
-Z14 FD:/Spring2018/ECE411/mazeprocessor/alu.sv
+r1
+!s85 0
+31
+!i10b 1
+!s100 :_:b=zn[R6m2>Pl8@l79=1
+I5<m]n]J;N196K4?H<h4n[2
+!s105 alu_sv_unit
+S1
+R0
+Z13 w1520669999
+Z14 8/home/bharuka2/ece411/mazeprocessor/alu.sv
+Z15 F/home/bharuka2/ece411/mazeprocessor/alu.sv
 L0 3
 R7
-Z15 !s108 1520748198.172000
-Z16 !s107 D:/Spring2018/ECE411/mazeprocessor/alu.sv|
-Z17 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/alu.sv|
+Z16 !s108 1520997651.269224
+Z17 !s107 /home/bharuka2/ece411/mazeprocessor/alu.sv|
+Z18 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/alu.sv|
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 LG[gW5K6;j8mQ5@I^i`PS2
-!s105 alu_sv_unit
-!s101 -O0
 Xalu_sv_unit
 R1
 R2
-VQ84gFhb^9aRoM[M4jI_cS0
+V;1=S_Z>azz@eaFbB^h1?M3
 r1
+!s85 0
 31
-IQ84gFhb^9aRoM[M4jI_cS0
+!i10b 1
+!s100 UHj0j16K7_M?<WaQb=E<d2
+I;1=S_Z>azz@eaFbB^h1?M3
+!i103 1
 S1
-R3
-R4
+R0
 R13
 R14
+R15
 L0 1
 R7
-R15
 R16
 R17
+R18
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 7=Kjc`]<hNR;fAR=l;1O]1
-!i103 1
-!s101 -O0
 vbr_add
 R1
 R2
-DXx4 work 14 br_add_sv_unit 0 22 VS^glMh9S:AGnn=6ildVP2
-V=@EDF@2Lk8;aM]oHnn^391
-r1
-31
-I]HIK[F3RmIR@Y7dieX7>H1
-S1
+DXx4 work 14 br_add_sv_unit 0 22 >^@[>GUDKb6aX@GFzXYdB1
 R3
-R4
-Z18 8D:/Spring2018/ECE411/mazeprocessor/br_add.sv
-Z19 FD:/Spring2018/ECE411/mazeprocessor/br_add.sv
+r1
+!s85 0
+31
+!i10b 1
+!s100 I_TDPZ3To84EhI`i?We`X2
+IbF9DPDA4`<c2l]N[VHgFE1
+!s105 br_add_sv_unit
+S1
+R0
+Z19 w1520669713
+Z20 8/home/bharuka2/ece411/mazeprocessor/br_add.sv
+Z21 F/home/bharuka2/ece411/mazeprocessor/br_add.sv
 L0 3
 R7
-Z20 !s108 1520748197.854000
-Z21 !s107 D:/Spring2018/ECE411/mazeprocessor/br_add.sv|
-Z22 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/br_add.sv|
+Z22 !s108 1520997651.168593
+Z23 !s107 /home/bharuka2/ece411/mazeprocessor/br_add.sv|
+Z24 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/br_add.sv|
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 lkKXm;0mib;34jW6PVba50
-!s105 br_add_sv_unit
-!s101 -O0
 Xbr_add_sv_unit
 R1
 R2
-VVS^glMh9S:AGnn=6ildVP2
+V>^@[>GUDKb6aX@GFzXYdB1
 r1
+!s85 0
 31
-IVS^glMh9S:AGnn=6ildVP2
+!i10b 1
+!s100 II;z5KaMZFGB?mchIWAdl2
+I>^@[>GUDKb6aX@GFzXYdB1
+!i103 1
 S1
-R3
-R4
-R18
+R0
 R19
-L0 1
-R7
 R20
 R21
+L0 1
+R7
 R22
+R23
+R24
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 l_ndOaIE;i<BLEAE_zC3]3
-!i103 1
-!s101 -O0
 vcc_comp
 R1
 R2
-DXx4 work 15 cc_comp_sv_unit 0 22 =e9;^a=d;F?YLFFchXDjP3
-V<39hf]f@@3SEcV??[Fd^N0
-r1
-31
-IW>O]:4zW`DZfX5EdLgX[71
-S1
+DXx4 work 15 cc_comp_sv_unit 0 22 Y@e^j3RfO8SID9EQ:JSeJ1
 R3
-R4
-Z23 8D:/Spring2018/ECE411/mazeprocessor/cc_comp.sv
-Z24 FD:/Spring2018/ECE411/mazeprocessor/cc_comp.sv
+r1
+!s85 0
+31
+!i10b 1
+!s100 LjlFI8_OZCOA=ZgW;m_bc2
+I<kX??0:S_MR8959FJXN<;3
+!s105 cc_comp_sv_unit
+S1
+R0
+Z25 w1520677500
+Z26 8/home/bharuka2/ece411/mazeprocessor/cc_comp.sv
+Z27 F/home/bharuka2/ece411/mazeprocessor/cc_comp.sv
 L0 3
 R7
-Z25 !s108 1520748194.787000
-Z26 !s107 D:/Spring2018/ECE411/mazeprocessor/cc_comp.sv|
-Z27 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/cc_comp.sv|
+Z28 !s108 1520997650.011349
+Z29 !s107 /home/bharuka2/ece411/mazeprocessor/cc_comp.sv|
+Z30 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/cc_comp.sv|
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 4=M7k<<m?7E?Z?03E@Pzo0
-!s105 cc_comp_sv_unit
-!s101 -O0
 Xcc_comp_sv_unit
 R1
 R2
-V=e9;^a=d;F?YLFFchXDjP3
+VY@e^j3RfO8SID9EQ:JSeJ1
 r1
+!s85 0
 31
-I=e9;^a=d;F?YLFFchXDjP3
+!i10b 1
+!s100 aM1_f4mLCzGfM2HfD;AcM2
+IY@e^j3RfO8SID9EQ:JSeJ1
+!i103 1
 S1
-R3
-R4
-R23
-R24
-L0 1
-R7
+R0
 R25
 R26
 R27
-R11
-R12
-!s85 0
-!i10b 1
-!s100 QCbHUjn`UOk^[D?97KJVl2
-!i103 1
-!s101 -O0
-vcontrol_rom
-R1
-R2
-DXx4 work 19 control_rom_sv_unit 0 22 ARedVJ1:`FHShE>fCa3Yj1
-V9mBngOWBTR3=?gBlSBDUW0
-r1
-31
-IT?F3Y=<X4Td^Xd3P=i]Cb0
-S1
-R3
-Z28 w1520744028
-Z29 8D:/Spring2018/ECE411/mazeprocessor/control_rom.sv
-Z30 FD:/Spring2018/ECE411/mazeprocessor/control_rom.sv
-L0 3
+L0 1
 R7
-Z31 !s108 1520748195.462000
-Z32 !s107 D:/Spring2018/ECE411/mazeprocessor/control_rom.sv|
-Z33 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/control_rom.sv|
-R11
-R12
-!s85 0
-!i10b 1
-!s100 bOk8KAQP54YaHNB`6hBPb0
-!s105 control_rom_sv_unit
-!s101 -O0
-Xcontrol_rom_sv_unit
-R1
-R2
-VARedVJ1:`FHShE>fCa3Yj1
-r1
-31
-IARedVJ1:`FHShE>fCa3Yj1
-S1
-R3
 R28
 R29
 R30
-L0 1
+!i113 1
+R11
+R12
+vcontrol_rom
+R1
+R2
+DXx4 work 19 control_rom_sv_unit 0 22 <cD;BKn;U@Y_Ji]oEm_IX2
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 7]`mA:Hz`]6f>lDWGImCD3
+IO2G?g@ob3?9zUd>WIbhTd0
+!s105 control_rom_sv_unit
+S1
+R0
+Z31 w1520991250
+Z32 8/home/bharuka2/ece411/mazeprocessor/control_rom.sv
+Z33 F/home/bharuka2/ece411/mazeprocessor/control_rom.sv
+L0 3
 R7
+Z34 !s108 1520997650.241079
+Z35 !s107 /home/bharuka2/ece411/mazeprocessor/control_rom.sv|
+Z36 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/control_rom.sv|
+!i113 1
+R11
+R12
+Xcontrol_rom_sv_unit
+R1
+R2
+V<cD;BKn;U@Y_Ji]oEm_IX2
+r1
+!s85 0
+31
+!i10b 1
+!s100 ?DEOD::CcXoXHW_FT@HmS0
+I<cD;BKn;U@Y_Ji]oEm_IX2
+!i103 1
+S1
+R0
 R31
 R32
 R33
-R11
-R12
-!s85 0
-!i10b 1
-!s100 54OJJdLj?bi?X06790;XW3
-!i103 1
-!s101 -O0
-vcpu
-R1
-R2
-DXx4 work 11 cpu_sv_unit 0 22 DXU`;5G5:KFa[Cj4Vo[Y20
-Vh1g>PZF>:fH;@=22ObH[P3
-r1
-31
-IfAofLD_11f;i0<ma4cB]:0
-S1
-R3
-Z34 w1520726974
-Z35 8D:/Spring2018/ECE411/mazeprocessor/cpu.sv
-Z36 FD:/Spring2018/ECE411/mazeprocessor/cpu.sv
-L0 3
-R7
-Z37 !s108 1520748199.117000
-Z38 !s107 D:/Spring2018/ECE411/mazeprocessor/cpu.sv|
-Z39 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/cpu.sv|
-R11
-R12
-!s85 0
-!i10b 1
-!s100 Y=6RXVH1O_Q66MHIJFThc2
-!s105 cpu_sv_unit
-!s101 -O0
-vcpu_datapath
-R1
-R2
-DXx4 work 20 cpu_datapath_sv_unit 0 22 2jbnWV<DDfX2C=kP=n@Cc1
-VSSM6da^M<EhESJMn4^[J]2
-r1
-31
-IS?oE>B0D>hjciBLY7KC4Q0
-S1
-R3
-Z40 w1520748104
-Z41 8D:/Spring2018/ECE411/mazeprocessor/cpu_datapath.sv
-Z42 FD:/Spring2018/ECE411/mazeprocessor/cpu_datapath.sv
-L0 3
-R7
-Z43 !s108 1520748195.054000
-Z44 !s107 D:/Spring2018/ECE411/mazeprocessor/cpu_datapath.sv|
-Z45 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/cpu_datapath.sv|
-R11
-R12
-!s85 0
-!i10b 1
-!s100 `5`V6G?Y:_=mYkM6z:]fc3
-!s105 cpu_datapath_sv_unit
-!s101 -O0
-Xcpu_datapath_sv_unit
-R1
-R2
-V2jbnWV<DDfX2C=kP=n@Cc1
-r1
-31
-I2jbnWV<DDfX2C=kP=n@Cc1
-S1
-R3
-R40
-R41
-R42
 L0 1
 R7
-R43
-R44
-R45
-R11
-R12
-!s85 0
-!i10b 1
-!s100 U?9gRi6?KR0LG03_C47fW0
-!i103 1
-!s101 -O0
-Xcpu_sv_unit
-R1
-R2
-VDXU`;5G5:KFa[Cj4Vo[Y20
-r1
-31
-IDXU`;5G5:KFa[Cj4Vo[Y20
-S1
-R3
 R34
 R35
 R36
-L0 1
-R7
-R37
-R38
-R39
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 @EabgJaP_F5nDcD7X[h313
-!i103 1
-!s101 -O0
-vdecode_stage
+vcpu
 R1
 R2
-DXx4 work 20 decode_stage_sv_unit 0 22 [=[GD<7NNYe5X<=L?fA:M1
-V`5N3`ca84z@7n7RdfzA6^1
-r1
-31
-IJ_@m9@=hR`=M4m>EfOhd>2
-S1
+DXx4 work 11 cpu_sv_unit 0 22 FJanQZi8XoGLnFYHS<j0R1
 R3
-Z46 w1520726897
-Z47 8D:/Spring2018/ECE411/mazeprocessor/decode_stage.sv
-Z48 FD:/Spring2018/ECE411/mazeprocessor/decode_stage.sv
+r1
+!s85 0
+31
+!i10b 1
+!s100 7Te`NPenYW=MX>d?ZznD31
+IzB?<j>koS=IO1N5n2j:i=2
+!s105 cpu_sv_unit
+S1
+R0
+Z37 w1520978618
+Z38 8/home/bharuka2/ece411/mazeprocessor/cpu.sv
+Z39 F/home/bharuka2/ece411/mazeprocessor/cpu.sv
 L0 3
 R7
-Z49 !s108 1520748197.420000
-Z50 !s107 D:/Spring2018/ECE411/mazeprocessor/decode_stage.sv|
-Z51 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/decode_stage.sv|
+Z40 !s108 1520997651.689665
+Z41 !s107 /home/bharuka2/ece411/mazeprocessor/cpu.sv|
+Z42 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/cpu.sv|
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 YOGhkGS`Xzg??P6I^S6D00
-!s105 decode_stage_sv_unit
-!s101 -O0
-Xdecode_stage_sv_unit
+vcpu_datapath
 R1
 R2
-V[=[GD<7NNYe5X<=L?fA:M1
-r1
-31
-I[=[GD<7NNYe5X<=L?fA:M1
-S1
+DXx4 work 20 cpu_datapath_sv_unit 0 22 O[F8EOE@@nOaKE`224=C=1
 R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 7]5M_45kGAz8X?ZU^fS6O0
+IDkjPUW2SDb5IddB9M9kCb1
+!s105 cpu_datapath_sv_unit
+S1
+R0
+Z43 w1520995031
+Z44 8/home/bharuka2/ece411/mazeprocessor/cpu_datapath.sv
+Z45 F/home/bharuka2/ece411/mazeprocessor/cpu_datapath.sv
+L0 3
+R7
+Z46 !s108 1520997650.131299
+Z47 !s107 /home/bharuka2/ece411/mazeprocessor/cpu_datapath.sv|
+Z48 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/cpu_datapath.sv|
+!i113 1
+R11
+R12
+Xcpu_datapath_sv_unit
+R1
+R2
+VO[F8EOE@@nOaKE`224=C=1
+r1
+!s85 0
+31
+!i10b 1
+!s100 E1fiSoCCV`=I`dIZ3UmXZ3
+IO[F8EOE@@nOaKE`224=C=1
+!i103 1
+S1
+R0
+R43
+R44
+R45
+L0 1
+R7
 R46
 R47
 R48
+!i113 1
+R11
+R12
+Xcpu_sv_unit
+R1
+R2
+VFJanQZi8XoGLnFYHS<j0R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 Q9BcYRM;>fC=R8f:_BQcd2
+IFJanQZi8XoGLnFYHS<j0R1
+!i103 1
+S1
+R0
+R37
+R38
+R39
 L0 1
 R7
+R40
+R41
+R42
+!i113 1
+R11
+R12
+vdecode_stage
+R1
+R2
+DXx4 work 20 decode_stage_sv_unit 0 22 Co65[_MDd9_?XfKPizd:a1
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 4k=>4:[`GI:KzKV]le@OB3
+IzadoS8c6e3k=IkzUzMGQS3
+!s105 decode_stage_sv_unit
+S1
+R0
+Z49 w1520991806
+Z50 8/home/bharuka2/ece411/mazeprocessor/decode_stage.sv
+Z51 F/home/bharuka2/ece411/mazeprocessor/decode_stage.sv
+L0 3
+R7
+Z52 !s108 1520997650.947977
+Z53 !s107 /home/bharuka2/ece411/mazeprocessor/decode_stage.sv|
+Z54 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/decode_stage.sv|
+!i113 1
+R11
+R12
+Xdecode_stage_sv_unit
+R1
+R2
+VCo65[_MDd9_?XfKPizd:a1
+r1
+!s85 0
+31
+!i10b 1
+!s100 ;S0=CeHNHJGIOA=3`d3S_0
+ICo65[_MDd9_?XfKPizd:a1
+!i103 1
+S1
+R0
 R49
 R50
 R51
+L0 1
+R7
+R52
+R53
+R54
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 P8<]JGn64>W6n;HUoQfOm0
-!i103 1
-!s101 -O0
 vexecute_stage
 R1
 R2
-DXx4 work 21 execute_stage_sv_unit 0 22 lJczjomI0BjiOjXWolnDc2
-Vi:>?lEE90iCBjNI;>@2mF0
-r1
-31
-Ic]E3Y7L91^_e^UV>ER38@2
-S1
+DXx4 work 21 execute_stage_sv_unit 0 22 XefN1M5lnj^:eU=S8^FRB2
 R3
-R4
-Z52 8D:/Spring2018/ECE411/mazeprocessor/execute_stage.sv
-Z53 FD:/Spring2018/ECE411/mazeprocessor/execute_stage.sv
+r1
+!s85 0
+31
+!i10b 1
+!s100 KfNHU`;<IG4]^[QGQY@zC2
+IXHSj=PlWI:AXdK@=a[cCi2
+!s105 execute_stage_sv_unit
+S1
+R0
+Z55 w1520991794
+Z56 8/home/bharuka2/ece411/mazeprocessor/execute_stage.sv
+Z57 F/home/bharuka2/ece411/mazeprocessor/execute_stage.sv
 L0 3
 R7
-Z54 !s108 1520748197.607000
-Z55 !s107 D:/Spring2018/ECE411/mazeprocessor/execute_stage.sv|
-Z56 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/execute_stage.sv|
+Z58 !s108 1520997651.060596
+Z59 !s107 /home/bharuka2/ece411/mazeprocessor/execute_stage.sv|
+Z60 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/execute_stage.sv|
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 H@eC3W^gaR9WOXj9:bzzZ3
-!s105 execute_stage_sv_unit
-!s101 -O0
 Xexecute_stage_sv_unit
 R1
 R2
-VlJczjomI0BjiOjXWolnDc2
+VXefN1M5lnj^:eU=S8^FRB2
 r1
+!s85 0
 31
-IlJczjomI0BjiOjXWolnDc2
+!i10b 1
+!s100 n2R?^Y@SYA;XkacFz0Q]S3
+IXefN1M5lnj^:eU=S8^FRB2
+!i103 1
 S1
-R3
-R4
-R52
-R53
-L0 1
-R7
-R54
+R0
 R55
 R56
+R57
+L0 1
+R7
+R58
+R59
+R60
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 TGBIcL2jWA8Q[2Oa7<_SK2
-!i103 1
-!s101 -O0
 vfetch_stage
 R1
 R2
-DXx4 work 19 fetch_stage_sv_unit 0 22 ofI=9g2z@0KL=U4iX]A8J3
-VT6LbW7]QWaNaWYRUnNU_O1
-r1
-31
-In3he6PPhNPB4nEHB:Y?h=3
-S1
+DXx4 work 19 fetch_stage_sv_unit 0 22 W]=gOk=]`5?9nK:2NUQb72
 R3
-Z57 w1520726639
-Z58 8D:/Spring2018/ECE411/mazeprocessor/fetch_stage.sv
-Z59 FD:/Spring2018/ECE411/mazeprocessor/fetch_stage.sv
+r1
+!s85 0
+31
+!i10b 1
+!s100 LYGE2]4IK0QP8hSEl7b_[0
+I=]007M:<Ik7AiWh0UHE`^0
+!s105 fetch_stage_sv_unit
+S1
+R0
+Z61 w1520980093
+Z62 8/home/bharuka2/ece411/mazeprocessor/fetch_stage.sv
+Z63 F/home/bharuka2/ece411/mazeprocessor/fetch_stage.sv
 L0 3
 R7
-Z60 !s108 1520748197.236000
-Z61 !s107 D:/Spring2018/ECE411/mazeprocessor/fetch_stage.sv|
-Z62 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/fetch_stage.sv|
+Z64 !s108 1520997650.854066
+Z65 !s107 /home/bharuka2/ece411/mazeprocessor/fetch_stage.sv|
+Z66 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/fetch_stage.sv|
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 :=1LjBPT6];@F@K?RO1Sc3
-!s105 fetch_stage_sv_unit
-!s101 -O0
 Xfetch_stage_sv_unit
 R1
 R2
-VofI=9g2z@0KL=U4iX]A8J3
+VW]=gOk=]`5?9nK:2NUQb72
 r1
+!s85 0
 31
-IofI=9g2z@0KL=U4iX]A8J3
+!i10b 1
+!s100 _YaZAhA>llUIh@8Mk7;1O0
+IW]=gOk=]`5?9nK:2NUQb72
+!i103 1
 S1
-R3
-R57
-R58
-R59
-L0 1
-R7
-R60
+R0
 R61
 R62
+R63
+L0 1
+R7
+R64
+R65
+R66
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 AbEZ_CCQNclHJST2kA5e91
-!i103 1
-!s101 -O0
 vgencc
 R1
 R2
-DXx4 work 13 gencc_sv_unit 0 22 `CCjo8J42mCECT35z`K]e3
-VWC`9gVLYW_h075<FQmcHc2
-r1
-31
-IfSAJiOGL<RQmnGQ@=f2g[2
-S1
+DXx4 work 13 gencc_sv_unit 0 22 RzAPMT;zEP<^S:PX49XI]2
 R3
-R4
-Z63 8D:/Spring2018/ECE411/mazeprocessor/gencc.sv
-Z64 FD:/Spring2018/ECE411/mazeprocessor/gencc.sv
+r1
+!s85 0
+31
+!i10b 1
+!s100 z7Ve=Z7CQmb>d@[KDGi@f0
+I2>Qf5gjHB[WK79YIB=oVY2
+!s105 gencc_sv_unit
+S1
+R0
+Z67 w1520677549
+Z68 8/home/bharuka2/ece411/mazeprocessor/gencc.sv
+Z69 F/home/bharuka2/ece411/mazeprocessor/gencc.sv
 L0 3
 R7
-Z65 !s108 1520748194.510000
-Z66 !s107 D:/Spring2018/ECE411/mazeprocessor/gencc.sv|
-Z67 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/gencc.sv|
+Z70 !s108 1520997649.923557
+Z71 !s107 /home/bharuka2/ece411/mazeprocessor/gencc.sv|
+Z72 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/gencc.sv|
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 bW__]]Z`eWRHHf:Z5z[GQ3
-!s105 gencc_sv_unit
-!s101 -O0
 Xgencc_sv_unit
 R1
 R2
-V`CCjo8J42mCECT35z`K]e3
+VRzAPMT;zEP<^S:PX49XI]2
 r1
-31
-I`CCjo8J42mCECT35z`K]e3
-S1
-R3
-R4
-R63
-R64
-L0 1
-R7
-R65
-R66
-R67
-R11
-R12
 !s85 0
+31
 !i10b 1
-!s100 HjjRIR=`bAY]HVezTGS4Y0
+!s100 @24ig4`f75>iUU=5b2aM`0
+IRzAPMT;zEP<^S:PX49XI]2
 !i103 1
-!s101 -O0
-vir
-R1
-R2
-DXx4 work 10 ir_sv_unit 0 22 i;dbCz?B>mJ=JL>V5<lP?0
-V[TfC^JYi@Tb_<kkoh[^bz3
-r1
-31
-IBWBVY=d:W>aW=j=Wh9dNo3
 S1
-R3
-R4
-Z68 8D:/Spring2018/ECE411/mazeprocessor/ir.sv
-Z69 FD:/Spring2018/ECE411/mazeprocessor/ir.sv
-L0 3
-R7
-Z70 !s108 1520748196.974000
-Z71 !s107 D:/Spring2018/ECE411/mazeprocessor/ir.sv|
-Z72 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/ir.sv|
-R11
-R12
-!s85 0
-!i10b 1
-!s100 W`[@cNee9_118Md=XKN5c1
-!s105 ir_sv_unit
-!s101 -O0
-Xir_sv_unit
-R1
-R2
-Vi;dbCz?B>mJ=JL>V5<lP?0
-r1
-31
-Ii;dbCz?B>mJ=JL>V5<lP?0
-S1
-R3
-R4
+R0
+R67
 R68
 R69
 L0 1
@@ -584,92 +544,47 @@ R7
 R70
 R71
 R72
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 ;anj3:IaIIm96U_BChh`61
-!i103 1
-!s101 -O0
-Xlc3b_types
-R1
-ITGWfRg@Q>UoLc^07QXRMY2
-VTGWfRg@Q>UoLc^07QXRMY2
-S1
-R3
-R4
-8D:/Spring2018/ECE411/mazeprocessor/lc3b_types.sv
-FD:/Spring2018/ECE411/mazeprocessor/lc3b_types.sv
-L0 1
-R7
-r1
-31
-R11
-R12
-!i10b 1
-!s100 ^9_X6:0[E`bM3RGmIWRf40
-!s85 0
-!s108 1520748192.726000
-!s107 D:/Spring2018/ECE411/mazeprocessor/lc3b_types.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/lc3b_types.sv|
-!s101 -O0
-vmagic_memory
-R1
-!i10b 1
-!s100 9UocLmoifVPOYV:9dfXXE1
-I<QBU8CZzkoiE=YGlIEWbg0
-VFVD<m905E]77I77nc2bUb3
-!s105 magic_memory_dual_port_sv_unit
-S1
-R3
-R4
-8D:/Spring2018/ECE411/mazeprocessor/magic_memory_dual_port.sv
-FD:/Spring2018/ECE411/mazeprocessor/magic_memory_dual_port.sv
-L0 1
-R7
-r1
-!s85 0
-31
-!s108 1520748199.984000
-!s107 D:/Spring2018/ECE411/mazeprocessor/magic_memory_dual_port.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/magic_memory_dual_port.sv|
-!s101 -O0
-R11
-R12
-vmazeprocessor
+vir
 R1
 R2
-DXx4 work 21 mazeprocessor_sv_unit 0 22 d@C6@W6<oVIfV1dM85<Dm3
-VB`2fZF`Cm@z>4h?=bUd920
-r1
-31
-IobA_eO]aiNAT=T6W9:fMl0
-S1
+DXx4 work 10 ir_sv_unit 0 22 iFj6T5hEQ7h;8eL^h76dM3
 R3
-Z73 w1520725369
-Z74 8D:/Spring2018/ECE411/mazeprocessor/mazeprocessor.sv
-Z75 FD:/Spring2018/ECE411/mazeprocessor/mazeprocessor.sv
+r1
+!s85 0
+31
+!i10b 1
+!s100 Q5;Ef^c1Rf;<458Bkm:2Z1
+I2WAGJ@PTf5h``XlB25=L40
+!s105 ir_sv_unit
+S1
+R0
+Z73 w1520978619
+Z74 8/home/bharuka2/ece411/mazeprocessor/ir.sv
+Z75 F/home/bharuka2/ece411/mazeprocessor/ir.sv
 L0 3
 R7
-Z76 !s108 1520748199.496000
-Z77 !s107 D:/Spring2018/ECE411/mazeprocessor/mazeprocessor.sv|
-Z78 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/mazeprocessor.sv|
+Z76 !s108 1520997650.758611
+Z77 !s107 /home/bharuka2/ece411/mazeprocessor/ir.sv|
+Z78 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/ir.sv|
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 m`;AfS=>`JO9`a]fVJ2c41
-!s105 mazeprocessor_sv_unit
-!s101 -O0
-Xmazeprocessor_sv_unit
+Xir_sv_unit
 R1
 R2
-Vd@C6@W6<oVIfV1dM85<Dm3
+ViFj6T5hEQ7h;8eL^h76dM3
 r1
+!s85 0
 31
-Id@C6@W6<oVIfV1dM85<Dm3
+!i10b 1
+!s100 Z^nRT^kMoLck@<`8U7jI>2
+IiFj6T5hEQ7h;8eL^h76dM3
+!i103 1
 S1
-R3
+R0
 R73
 R74
 R75
@@ -678,479 +593,460 @@ R7
 R76
 R77
 R78
+!i113 1
 R11
 R12
-!s85 0
+Xlc3b_types
+R1
+Z79 !s110 1520997649
 !i10b 1
-!s100 mg?5kdMNez_m28mML^7G92
+!s100 >[X?FYHmLNhjASoDX`dP70
+IH7BePaD9:WU=kP89JgjRB0
+VH7BePaD9:WU=kP89JgjRB0
+S1
+R0
+w1520991236
+8/home/bharuka2/ece411/mazeprocessor/lc3b_types.sv
+F/home/bharuka2/ece411/mazeprocessor/lc3b_types.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1520997648.922910
+!s107 /home/bharuka2/ece411/mazeprocessor/lc3b_types.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/lc3b_types.sv|
+!i113 1
+R11
+R12
+vmagic_memory
+R1
+Z80 !s110 1520997651
+!i10b 1
+!s100 YnK3SIahKm9=5RX704B333
+I`4HMNA^[BNbP_]X47d2zT2
+R3
+!s105 magic_memory_dual_port_sv_unit
+S1
+R0
+w1520660031
+8/home/bharuka2/ece411/mazeprocessor/magic_memory_dual_port.sv
+F/home/bharuka2/ece411/mazeprocessor/magic_memory_dual_port.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1520997651.893508
+!s107 /home/bharuka2/ece411/mazeprocessor/magic_memory_dual_port.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/magic_memory_dual_port.sv|
+!i113 1
+R11
+R12
+vmazeprocessor
+R1
+R2
+DXx4 work 21 mazeprocessor_sv_unit 0 22 :mT5@gGDoa1<ZB3IRDdlW0
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 A8c3GhXH]:cZ3`<ea6f<d0
+IW[OA=PNdI`4L2:JFd8^^82
+!s105 mazeprocessor_sv_unit
+S1
+R0
+Z81 w1520978620
+Z82 8/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv
+Z83 F/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv
+L0 3
+R7
+Z84 !s108 1520997651.588084
+Z85 !s107 /home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv|
+Z86 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv|
+!i113 1
+R11
+R12
+Xmazeprocessor_sv_unit
+R1
+R2
+V:mT5@gGDoa1<ZB3IRDdlW0
+r1
+!s85 0
+31
+!i10b 1
+!s100 U@RmLIY8h6BChFl6];f4B3
+I:mT5@gGDoa1<ZB3IRDdlW0
 !i103 1
-!s101 -O0
+S1
+R0
+R81
+R82
+R83
+L0 1
+R7
+R84
+R85
+R86
+!i113 1
+R11
+R12
 vmemory_stage
 R1
 R2
-DXx4 work 20 memory_stage_sv_unit 0 22 dEf=b0oRD[=ajWU@dd_K^2
-V>^hbR<3e1ZKC;Of?IeGTi0
-r1
-31
-IiY[c>SCRf[A><?iaaT2nP1
-S1
+DXx4 work 20 memory_stage_sv_unit 0 22 EFl5mk==M`J[PZe8XMhO?2
 R3
-Z79 w1520748038
-Z80 8D:/Spring2018/ECE411/mazeprocessor/memory_stage.sv
-Z81 FD:/Spring2018/ECE411/mazeprocessor/memory_stage.sv
+r1
+!s85 0
+31
+!i10b 1
+!s100 ZLLOTzLE`VC;CX]TBP0Y30
+I42j<f7`H<kh;=C]VbFdVh3
+!s105 memory_stage_sv_unit
+S1
+R0
+Z87 w1520986469
+Z88 8/home/bharuka2/ece411/mazeprocessor/memory_stage.sv
+Z89 F/home/bharuka2/ece411/mazeprocessor/memory_stage.sv
 L0 3
 R7
-Z82 !s108 1520748198.794000
-Z83 !s107 D:/Spring2018/ECE411/mazeprocessor/memory_stage.sv|
-Z84 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/memory_stage.sv|
+Z90 !s108 1520997651.481579
+Z91 !s107 /home/bharuka2/ece411/mazeprocessor/memory_stage.sv|
+Z92 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/memory_stage.sv|
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 JC9gEo`FzD`_MggG4FRaK1
-!s105 memory_stage_sv_unit
-!s101 -O0
 Xmemory_stage_sv_unit
 R1
 R2
-VdEf=b0oRD[=ajWU@dd_K^2
+VEFl5mk==M`J[PZe8XMhO?2
 r1
-31
-IdEf=b0oRD[=ajWU@dd_K^2
-S1
-R3
-R79
-R80
-R81
-L0 1
-R7
-R82
-R83
-R84
-R11
-R12
 !s85 0
+31
 !i10b 1
-!s100 CA?XD;=DZ7D_igT6gONG`3
+!s100 1oMldZHB>NhcB<DU[I7QF0
+IEFl5mk==M`J[PZe8XMhO?2
 !i103 1
-!s101 -O0
-vmux2
-R1
-InXAoMhU6?OFD@k?=NlVmP3
-V8m]l]_QnJ>bC;o8UdVIPk2
 S1
-R3
-R4
-8D:/Spring2018/ECE411/mazeprocessor/mux2.sv
-FD:/Spring2018/ECE411/mazeprocessor/mux2.sv
-L0 1
-R7
-r1
-31
-R11
-R12
-!i10b 1
-!s100 Bf^de9b<egjOF4zKiUK4T0
-!s105 mux2_sv_unit
-!s85 0
-!s108 1520748193.489000
-!s107 D:/Spring2018/ECE411/mazeprocessor/mux2.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/mux2.sv|
-!s101 -O0
-vmux4
-R1
-Ij8JI`TbHKS3_hk512;J3J2
-VYCkK`QGYSnR6BP^DhRdne0
-S1
-R3
-R4
-8D:/Spring2018/ECE411/mazeprocessor/mux4.sv
-FD:/Spring2018/ECE411/mazeprocessor/mux4.sv
-L0 1
-R7
-r1
-31
-R11
-R12
-!i10b 1
-!s100 6nU^UGlAVMdnK_=NTOW150
-!s105 mux4_sv_unit
-!s85 0
-!s108 1520748193.607000
-!s107 D:/Spring2018/ECE411/mazeprocessor/mux4.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/mux4.sv|
-!s101 -O0
-vmux8
-R1
-Il[OXb<6MS_HNm2KPlTAZ71
-VW=6Je8Th<NbH>0:W^=lkS1
-S1
-R3
-R4
-8D:/Spring2018/ECE411/mazeprocessor/mux8.sv
-FD:/Spring2018/ECE411/mazeprocessor/mux8.sv
-L0 1
-R7
-r1
-31
-R11
-R12
-!i10b 1
-!s100 JZ^SG2WMFV9YD9FhmjhhV1
-!s105 mux8_sv_unit
-!s85 0
-!s108 1520748193.276000
-!s107 D:/Spring2018/ECE411/mazeprocessor/mux8.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/mux8.sv|
-!s101 -O0
-vplus2
-R1
-IiYPU6G<mb6nn4N_bMd3T^0
-V8Yjd6>kf[QVaNB:l@BLiW1
-S1
-R3
-R4
-8D:/Spring2018/ECE411/mazeprocessor/plus2.sv
-FD:/Spring2018/ECE411/mazeprocessor/plus2.sv
-L0 1
-R7
-r1
-31
-R11
-R12
-!i10b 1
-!s100 lJ?OF[W=k]fL=6PVXZkzb3
-!s105 plus2_sv_unit
-!s85 0
-!s108 1520748193.765000
-!s107 D:/Spring2018/ECE411/mazeprocessor/plus2.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/plus2.sv|
-!s101 -O0
-vregfile
-R1
-R2
-DXx4 work 15 regfile_sv_unit 0 22 5?Z8WVhNBfEb0HNDRiFY<1
-V9JTZc`ZX06EN4UTz`z`H43
-r1
-31
-ID`i5^W8GVZQ2A1h1GkX_?0
-S1
-R3
-R4
-Z85 8D:/Spring2018/ECE411/mazeprocessor/regfile.sv
-Z86 FD:/Spring2018/ECE411/mazeprocessor/regfile.sv
-L0 3
-R7
-Z87 !s108 1520748195.750000
-Z88 !s107 D:/Spring2018/ECE411/mazeprocessor/regfile.sv|
-Z89 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/regfile.sv|
-R11
-R12
-!s85 0
-!i10b 1
-!s100 =KUYDJ5iz?HQzPOON_P^_0
-!s105 regfile_sv_unit
-!s101 -O0
-Xregfile_sv_unit
-R1
-R2
-V5?Z8WVhNBfEb0HNDRiFY<1
-r1
-31
-I5?Z8WVhNBfEb0HNDRiFY<1
-S1
-R3
-R4
-R85
-R86
-L0 1
-R7
+R0
 R87
 R88
 R89
-R11
-R12
-!s85 0
-!i10b 1
-!s100 jGCI<8kied=Sa9KWc<3G51
-!i103 1
-!s101 -O0
-vregister
-R1
-In5@k9DB`<hf;D_MURI;;P3
-VVWH2GIcWRQ29K?3;26c491
-S1
-R3
-R4
-8D:/Spring2018/ECE411/mazeprocessor/register.sv
-FD:/Spring2018/ECE411/mazeprocessor/register.sv
 L0 1
 R7
-r1
-31
-R11
-R12
-!i10b 1
-!s100 ZOK@@b`SbzGNJnEG<h_9b3
-!s105 register_sv_unit
-!s85 0
-!s108 1520748192.929000
-!s107 D:/Spring2018/ECE411/mazeprocessor/register.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/register.sv|
-!s101 -O0
-vregister_control_rom
-R1
-R2
-DXx4 work 28 register_control_rom_sv_unit 0 22 AkIm@;O7<@k;?Yo2Of8RZ1
-Vj<e;ZV`VKlF6HS>JJMTF:3
-r1
-31
-I2l0e3AmLgOiUgbU6Vn:Hz2
-S1
-R3
-Z90 w1520744087
-Z91 8D:/Spring2018/ECE411/mazeprocessor/register_control_rom.sv
-Z92 FD:/Spring2018/ECE411/mazeprocessor/register_control_rom.sv
-L0 3
-R7
-Z93 !s108 1520748194.189000
-Z94 !s107 D:/Spring2018/ECE411/mazeprocessor/register_control_rom.sv|
-Z95 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/register_control_rom.sv|
-R11
-R12
-!s85 0
-!i10b 1
-!s100 45ob6dCUE>oz1JH6f`1fL3
-!s105 register_control_rom_sv_unit
-!s101 -O0
-Xregister_control_rom_sv_unit
-R1
-R2
-VAkIm@;O7<@k;?Yo2Of8RZ1
-r1
-31
-IAkIm@;O7<@k;?Yo2Of8RZ1
-S1
-R3
 R90
 R91
 R92
-L0 1
+!i113 1
+R11
+R12
+vmemory_stall
+R1
+R2
+DXx4 work 20 memory_stall_sv_unit 0 22 OVE?U9z^2jMFTAzhG@f5c2
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 IeYYzgD>>cCA`;QTEVQdJ3
+I7H]U24G53aL@Y>[W4n96E2
+!s105 memory_stall_sv_unit
+S1
+R0
+Z93 w1520997050
+Z94 8/home/bharuka2/ece411/mazeprocessor/memory_stall.sv
+Z95 F/home/bharuka2/ece411/mazeprocessor/memory_stall.sv
+L0 3
 R7
+Z96 !s108 1520997649.632846
+Z97 !s107 /home/bharuka2/ece411/mazeprocessor/memory_stall.sv|
+Z98 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/memory_stall.sv|
+!i113 1
+R11
+R12
+Xmemory_stall_sv_unit
+R1
+R2
+VOVE?U9z^2jMFTAzhG@f5c2
+r1
+!s85 0
+31
+!i10b 1
+!s100 GM0:5R?3G3`InF=Q[91kg1
+IOVE?U9z^2jMFTAzhG@f5c2
+!i103 1
+S1
+R0
 R93
 R94
 R95
+L0 1
+R7
+R96
+R97
+R98
+!i113 1
 R11
 R12
-!s85 0
+vmux2
+R1
+R79
 !i10b 1
-!s100 BAgX;??f]d^FIjH`J>o6b0
+!s100 _W1<M@g8478cHn3b:_cH32
+IPKTnf5;5]HO5>I@DoGYF73
+R3
+!s105 mux2_sv_unit
+S1
+R0
+w1520660931
+8/home/bharuka2/ece411/mazeprocessor/mux2.sv
+F/home/bharuka2/ece411/mazeprocessor/mux2.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1520997649.358683
+!s107 /home/bharuka2/ece411/mazeprocessor/mux2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/mux2.sv|
+!i113 1
+R11
+R12
+vmux4
+R1
+R79
+!i10b 1
+!s100 HAKHgF4ShSRHlY=MYAo_^3
+IP3IATDWz0C?NI3D423]jO0
+R3
+!s105 mux4_sv_unit
+S1
+R0
+w1520660963
+8/home/bharuka2/ece411/mazeprocessor/mux4.sv
+F/home/bharuka2/ece411/mazeprocessor/mux4.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1520997649.449829
+!s107 /home/bharuka2/ece411/mazeprocessor/mux4.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/mux4.sv|
+!i113 1
+R11
+R12
+vmux8
+R1
+R79
+!i10b 1
+!s100 nSa`T2n3jIG<4O2`nGTBN1
+ITbeMOHaYfkYUfD62eBcY<1
+R3
+!s105 mux8_sv_unit
+S1
+R0
+w1520660259
+8/home/bharuka2/ece411/mazeprocessor/mux8.sv
+F/home/bharuka2/ece411/mazeprocessor/mux8.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1520997649.267669
+!s107 /home/bharuka2/ece411/mazeprocessor/mux8.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/mux8.sv|
+!i113 1
+R11
+R12
+vplus2
+R1
+R79
+!i10b 1
+!s100 k?FJgXc3l7B=Nk0]iVGm[2
+IoF[6A6c[Tjbi8QER=B>eA1
+R3
+!s105 plus2_sv_unit
+S1
+R0
+w1520661419
+8/home/bharuka2/ece411/mazeprocessor/plus2.sv
+F/home/bharuka2/ece411/mazeprocessor/plus2.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1520997649.538590
+!s107 /home/bharuka2/ece411/mazeprocessor/plus2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/plus2.sv|
+!i113 1
+R11
+R12
+vregfile
+R1
+R2
+DXx4 work 15 regfile_sv_unit 0 22 9TfC_8Io@XF=JbX<aIDA]2
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 jF1JQJU0DT[G]GeaQ:j8G0
+I]l>Z9>N]DG@<536d=FH@X2
+!s105 regfile_sv_unit
+S1
+R0
+Z99 w1520662767
+Z100 8/home/bharuka2/ece411/mazeprocessor/regfile.sv
+Z101 F/home/bharuka2/ece411/mazeprocessor/regfile.sv
+L0 3
+R7
+Z102 !s108 1520997650.351219
+Z103 !s107 /home/bharuka2/ece411/mazeprocessor/regfile.sv|
+Z104 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/regfile.sv|
+!i113 1
+R11
+R12
+Xregfile_sv_unit
+R1
+R2
+V9TfC_8Io@XF=JbX<aIDA]2
+r1
+!s85 0
+31
+!i10b 1
+!s100 ]6conDZ0mHe92?7>DR>9l2
+I9TfC_8Io@XF=JbX<aIDA]2
 !i103 1
-!s101 -O0
+S1
+R0
+R99
+R100
+R101
+L0 1
+R7
+R102
+R103
+R104
+!i113 1
+R11
+R12
+vregister
+R1
+R79
+!i10b 1
+!s100 =zmh@?Zh;O4M^1P`K;E9m2
+IDdWNF_6IeDK`lD:XjZK?b0
+R3
+!s105 register_sv_unit
+S1
+R0
+w1520658502
+8/home/bharuka2/ece411/mazeprocessor/register.sv
+F/home/bharuka2/ece411/mazeprocessor/register.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1520997649.075898
+!s107 /home/bharuka2/ece411/mazeprocessor/register.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/register.sv|
+!i113 1
+R11
+R12
+vregister_control_rom
+R1
+R2
+DXx4 work 28 register_control_rom_sv_unit 0 22 6B]VPG8c=L5SG6N;RYj=;0
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 TH_;0]FAUWON@ZgCSn^eX0
+ImL8=?]GX6=e=nez8hX^Z21
+!s105 register_control_rom_sv_unit
+S1
+R0
+R81
+Z105 8/home/bharuka2/ece411/mazeprocessor/register_control_rom.sv
+Z106 F/home/bharuka2/ece411/mazeprocessor/register_control_rom.sv
+L0 3
+R7
+Z107 !s108 1520997649.830100
+Z108 !s107 /home/bharuka2/ece411/mazeprocessor/register_control_rom.sv|
+Z109 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/register_control_rom.sv|
+!i113 1
+R11
+R12
+Xregister_control_rom_sv_unit
+R1
+R2
+V6B]VPG8c=L5SG6N;RYj=;0
+r1
+!s85 0
+31
+!i10b 1
+!s100 6>3FHXWTfEPlBIN^;<fEo0
+I6B]VPG8c=L5SG6N;RYj=;0
+!i103 1
+S1
+R0
+R81
+R105
+R106
+L0 1
+R7
+R107
+R108
+R109
+!i113 1
+R11
+R12
 vsext
 R1
 R2
-DXx4 work 12 sext_sv_unit 0 22 gD<I>`jJ47kjVF?_LG8;j3
-VlViJ]MWnKmm67DC4jAYD_2
-r1
-31
-I0@?8dAim14ibRKnMkGWZ63
-S1
+DXx4 work 12 sext_sv_unit 0 22 b9cIZYI[Fk`DXX50zNa@@1
 R3
-R4
-Z96 8D:/Spring2018/ECE411/mazeprocessor/sext.sv
-Z97 FD:/Spring2018/ECE411/mazeprocessor/sext.sv
+r1
+!s85 0
+31
+!i10b 1
+!s100 Pa^H?6i2@[I4X]3KlN5TJ3
+I;BfDZQ3A?EF?=;cAe107K2
+!s105 sext_sv_unit
+S1
+R0
+Z110 w1520663585
+Z111 8/home/bharuka2/ece411/mazeprocessor/sext.sv
+Z112 F/home/bharuka2/ece411/mazeprocessor/sext.sv
 L0 6
 R7
-Z98 !s108 1520748196.375000
-Z99 !s107 D:/Spring2018/ECE411/mazeprocessor/sext.sv|
-Z100 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/sext.sv|
+Z113 !s108 1520997650.555839
+Z114 !s107 /home/bharuka2/ece411/mazeprocessor/sext.sv|
+Z115 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/sext.sv|
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 g>bH2DbNQKQTeL0N:Q@5K1
-!s105 sext_sv_unit
-!s101 -O0
 Xsext_sv_unit
 R1
 R2
-VgD<I>`jJ47kjVF?_LG8;j3
+Vb9cIZYI[Fk`DXX50zNa@@1
 r1
-31
-IgD<I>`jJ47kjVF?_LG8;j3
-S1
-R3
-R4
-R96
-R97
-L0 1
-R7
-R98
-R99
-R100
-R11
-R12
 !s85 0
+31
 !i10b 1
-!s100 eoFD=F^:?KiFD7dd>A7a33
+!s100 H3QS0MWhaS05]Ym^Vi58O3
+Ib9cIZYI[Fk`DXX50zNa@@1
 !i103 1
-!s101 -O0
-vtestbench
-R1
-I:^Efb[0lf^ajo7@aN?8IP3
-VhGfW:390DM[oDMzegDH9`2
 S1
-R3
-w1520744554
-8D:/Spring2018/ECE411/mazeprocessor/testbench.sv
-FD:/Spring2018/ECE411/mazeprocessor/testbench.sv
-L0 1
-R7
-r1
-31
-R11
-R12
-!i10b 1
-!s100 YNm@lQh9<lLLlORO1Df?63
-!s105 testbench_sv_unit
-!s85 0
-!s108 1520748199.803000
-!s107 D:/Spring2018/ECE411/mazeprocessor/testbench.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/testbench.sv|
-!s101 -O0
-Ywishbone
-R1
-ICWn6C8[?6Dk3^QYRkoQ1W2
-VPb?@ZGYY13KOKQz0;6;n91
-S1
-R3
-R4
-8D:/Spring2018/ECE411/mazeprocessor/wishbone.sv
-FD:/Spring2018/ECE411/mazeprocessor/wishbone.sv
-L0 1
-R7
-r1
-31
-R11
-R12
-!i10b 1
-!s100 1lGl1d<MQDaFK8jV1jh6l0
-!s105 wishbone_sv_unit
-!s85 0
-!s108 1520748193.094000
-!s107 D:/Spring2018/ECE411/mazeprocessor/wishbone.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/wishbone.sv|
-!s101 -O0
-vwrite_back_stage
-R1
-R2
-DXx4 work 24 write_back_stage_sv_unit 0 22 3<KAf3Q`DN?=SzHXb062:1
-VPKAlM[CCcJ7`?Ca>z7K6T3
-r1
-31
-IER>V;bdonzNWBeGjfhR]40
-S1
-R3
-R4
-Z101 8D:/Spring2018/ECE411/mazeprocessor/write_back_stage.sv
-Z102 FD:/Spring2018/ECE411/mazeprocessor/write_back_stage.sv
-L0 3
-R7
-Z103 !s108 1520748193.904000
-Z104 !s107 D:/Spring2018/ECE411/mazeprocessor/write_back_stage.sv|
-Z105 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/write_back_stage.sv|
-R11
-R12
-!s85 0
-!i10b 1
-!s100 DbWQ5[FBbP`zSEJzB>]1Y0
-!s105 write_back_stage_sv_unit
-!s101 -O0
-Xwrite_back_stage_sv_unit
-R1
-R2
-V3<KAf3Q`DN?=SzHXb062:1
-r1
-31
-I3<KAf3Q`DN?=SzHXb062:1
-S1
-R3
-R4
-R101
-R102
-L0 1
-R7
-R103
-R104
-R105
-R11
-R12
-!s85 0
-!i10b 1
-!s100 i6`KcSK9J8T?aS^Z:<WTW0
-!i103 1
-!s101 -O0
-vzext
-R1
-R2
-DXx4 work 12 zext_sv_unit 0 22 246;P_oHkdUcJn7h1g[:V0
-VBN63hg]7XG]MT<oJ=W;L92
-r1
-31
-IXD?VomCBk[jn9[2c[dY]e0
-S1
-R3
-R4
-Z106 8D:/Spring2018/ECE411/mazeprocessor/zext.sv
-Z107 FD:/Spring2018/ECE411/mazeprocessor/zext.sv
-L0 6
-R7
-Z108 !s108 1520748196.062000
-Z109 !s107 D:/Spring2018/ECE411/mazeprocessor/zext.sv|
-Z110 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/zext.sv|
-R11
-R12
-!s85 0
-!i10b 1
-!s100 l]K<P5VZU7fJef?bEoA2W2
-!s105 zext_sv_unit
-!s101 -O0
-vzext_s
-R1
-R2
-DXx4 work 14 zext_s_sv_unit 0 22 :9jYmo5=78OP5U:[DI4K61
-VSCGbX1dCIZGZY`PgOnC[T2
-r1
-31
-IFzd6bQ=bQ_JOW5GnER58M2
-S1
-R3
-R4
-Z111 8D:/Spring2018/ECE411/mazeprocessor/zext_s.sv
-Z112 FD:/Spring2018/ECE411/mazeprocessor/zext_s.sv
-L0 6
-R7
-Z113 !s108 1520748198.509000
-Z114 !s107 D:/Spring2018/ECE411/mazeprocessor/zext_s.sv|
-Z115 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Spring2018/ECE411/mazeprocessor|D:/Spring2018/ECE411/mazeprocessor/zext_s.sv|
-R11
-R12
-!s85 0
-!i10b 1
-!s100 GB1[7U6:W`P>GzXh=bEgG0
-!s105 zext_s_sv_unit
-!s101 -O0
-Xzext_s_sv_unit
-R1
-R2
-V:9jYmo5=78OP5U:[DI4K61
-r1
-31
-I:9jYmo5=78OP5U:[DI4K61
-S1
-R3
-R4
+R0
+R110
 R111
 R112
 L0 1
@@ -1158,34 +1054,201 @@ R7
 R113
 R114
 R115
+!i113 1
 R11
 R12
-!s85 0
+vtestbench
+R1
+R80
 !i10b 1
-!s100 1a]i435EbJPLA3angKEhO0
+!s100 SC>]E]D>IOD2N>WNd`RP;2
+IJLOVMg8]jMZn]d4c23HDh3
+R3
+!s105 testbench_sv_unit
+S1
+R0
+w1520978622
+8/home/bharuka2/ece411/mazeprocessor/testbench.sv
+F/home/bharuka2/ece411/mazeprocessor/testbench.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1520997651.800185
+!s107 /home/bharuka2/ece411/mazeprocessor/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/testbench.sv|
+!i113 1
+R11
+R12
+Ywishbone
+R1
+R79
+!i10b 1
+!s100 5leA@<aEK9M]F:K;=KVRM3
+Ii7:1RGCFkTdVRKOGC1hMA2
+R3
+!s105 wishbone_sv_unit
+S1
+R0
+w1520660059
+8/home/bharuka2/ece411/mazeprocessor/wishbone.sv
+F/home/bharuka2/ece411/mazeprocessor/wishbone.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1520997649.190144
+!s107 /home/bharuka2/ece411/mazeprocessor/wishbone.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/wishbone.sv|
+!i113 1
+R11
+R12
+vwrite_back_stage
+R1
+R2
+DXx4 work 24 write_back_stage_sv_unit 0 22 ;4C153P_ceePf?9gjo0LF1
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 VInHl6aIj4=o0gZOPLjaY1
+IPMch7hU_j:3Y]fCzYCm>=2
+!s105 write_back_stage_sv_unit
+S1
+R0
+Z116 w1520978623
+Z117 8/home/bharuka2/ece411/mazeprocessor/write_back_stage.sv
+Z118 F/home/bharuka2/ece411/mazeprocessor/write_back_stage.sv
+L0 3
+R7
+Z119 !s108 1520997649.735686
+Z120 !s107 /home/bharuka2/ece411/mazeprocessor/write_back_stage.sv|
+Z121 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/write_back_stage.sv|
+!i113 1
+R11
+R12
+Xwrite_back_stage_sv_unit
+R1
+R2
+V;4C153P_ceePf?9gjo0LF1
+r1
+!s85 0
+31
+!i10b 1
+!s100 >`F>@U79EClelQV5RhXQi2
+I;4C153P_ceePf?9gjo0LF1
 !i103 1
-!s101 -O0
+S1
+R0
+R116
+R117
+R118
+L0 1
+R7
+R119
+R120
+R121
+!i113 1
+R11
+R12
+vzext
+R1
+R2
+DXx4 work 12 zext_sv_unit 0 22 Ng`ogIJijE5^KLbk`?RcU3
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 h>GNIHc@mk[KK5F88Z7E;0
+IThd_dT9Q1N^XP41cO>eJ=1
+!s105 zext_sv_unit
+S1
+R0
+Z122 w1520663548
+Z123 8/home/bharuka2/ece411/mazeprocessor/zext.sv
+Z124 F/home/bharuka2/ece411/mazeprocessor/zext.sv
+L0 6
+R7
+Z125 !s108 1520997650.460119
+Z126 !s107 /home/bharuka2/ece411/mazeprocessor/zext.sv|
+Z127 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/zext.sv|
+!i113 1
+R11
+R12
+vzext_s
+R1
+R2
+DXx4 work 14 zext_s_sv_unit 0 22 Wkn6^:b<c>3h01CFVJ]G^0
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 3hd_<j3o[Ud_AD`J15ASJ1
+I<no0XEADET3XM5m<Vf=kH3
+!s105 zext_s_sv_unit
+S1
+R0
+Z128 w1520670199
+Z129 8/home/bharuka2/ece411/mazeprocessor/zext_s.sv
+Z130 F/home/bharuka2/ece411/mazeprocessor/zext_s.sv
+L0 6
+R7
+Z131 !s108 1520997651.369721
+Z132 !s107 /home/bharuka2/ece411/mazeprocessor/zext_s.sv|
+Z133 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/zext_s.sv|
+!i113 1
+R11
+R12
+Xzext_s_sv_unit
+R1
+R2
+VWkn6^:b<c>3h01CFVJ]G^0
+r1
+!s85 0
+31
+!i10b 1
+!s100 H?jjYgUTjHe9UgZ]P=6SS3
+IWkn6^:b<c>3h01CFVJ]G^0
+!i103 1
+S1
+R0
+R128
+R129
+R130
+L0 1
+R7
+R131
+R132
+R133
+!i113 1
+R11
+R12
 Xzext_sv_unit
 R1
 R2
-V246;P_oHkdUcJn7h1g[:V0
+VNg`ogIJijE5^KLbk`?RcU3
 r1
+!s85 0
 31
-I246;P_oHkdUcJn7h1g[:V0
+!i10b 1
+!s100 jS:aF4;_RlSXNC:o`T]iY3
+INg`ogIJijE5^KLbk`?RcU3
+!i103 1
 S1
-R3
-R4
-R106
-R107
+R0
+R122
+R123
+R124
 L0 1
 R7
-R108
-R109
-R110
+R125
+R126
+R127
+!i113 1
 R11
 R12
-!s85 0
-!i10b 1
-!s100 ^a>dlBJNzTzUE?fofWL`A3
-!i103 1
-!s101 -O0

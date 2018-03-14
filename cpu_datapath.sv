@@ -60,6 +60,7 @@ logic load_ex_mem;
 lc3b_word pc_br;
 lc3b_word pc_j;
 lc3b_word alu_out;
+lc3b_word destmux_out;
 
 lc3b_control_word ctrl_ex_mem;
 lc3b_word pc_ex_mem_out;
@@ -71,6 +72,7 @@ lc3b_reg dest_ex_mem_register;
 
 /* Internal Signals - Memory */
 logic load_mem_wb;
+logic mem_stall;
 lc3b_word new_pc;
 
 lc3b_control_word ctrl_mem_wb;
@@ -89,10 +91,10 @@ lc3b_word write_data;
 logic branch_enable;
 
 /* Assign load signals for CP1 */
-assign load_if_id = clk;
-assign load_id_ex = clk;
-assign load_ex_mem = clk;
-assign load_mem_wb = clk;
+assign load_if_id = !mem_stall;
+assign load_id_ex = !mem_stall;
+assign load_ex_mem = !mem_stall;
+assign load_mem_wb = !mem_stall;
 
 /* Fetch Stage (IF) */
 fetch_stage if_stage
@@ -101,6 +103,7 @@ fetch_stage if_stage
 	.imem_rdata(imem_rdata),
 	.new_pc(new_pc_mem_wb_out),
 	.branch_enable(branch_enable),
+	.mem_stall(mem_stall),
 	.imem_address(imem_address),
 	.imem_action_stb(imem_action_stb),
 	.imem_action_cyc(imem_action_cyc),
@@ -140,7 +143,7 @@ decode_stage id_stage
 	.ctrl(ctrl),
 	.sr1_out(sr1_out),
 	.sr2mux2_out(sr2_out),
-	.destmux_out(dest_out),
+	.dest_out(dest_out),
 	.dest_register(dest_register)
 );
 
@@ -227,12 +230,14 @@ execute_stage ex_stage
 	.sr1(sr1_id_ex_out),
 	.sr2(sr2_id_ex_out),
 	.offset8(offset8_id_ex_out),
+	.dest_out(dest_id_ex_out),
 	.bradd2mux_sel(ctrl_id_ex.bradd2mux_sel),
 	.aluop(ctrl_id_ex.aluop),
 	.alumux_sel(ctrl_id_ex.alumux_sel),
 	.br_add_out(pc_br),
 	.bradd2mux_out(pc_j),
-	.alumux_out(alu_out)
+	.alumux_out(alu_out),
+	.destmux_out(destmux_out)
 );
 
 /* Execute - Memory Registers (EX/MEM) */
@@ -280,7 +285,7 @@ register ex_mem_dest
 (
 	.clk(clk),
 	.load(load_ex_mem),
-	.in(dest_id_ex_out),
+	.in(destmux_out),
 	.out(dest_ex_mem_out)
 );
 
@@ -296,15 +301,16 @@ register #(.width(3)) ex_mem_dest_reg
 memory_stage mem_stage
 (
 	.clk(clk),
+	.load_ex_mem(load_ex_mem),
 	.alu_out(alu_ex_mem_out),
 	.pc_br_out(pc_br_ex_mem_out),
 	.pc_j_out(pc_j_ex_mem_out),
 	.dmem_rdata(dmem_rdata),
 	.dest_out(dest_ex_mem_out),
 	.dmem_resp(dmem_resp),
-	.mem_addr_mux_sel(ctrl_ex_mem.mem_addr_mux_sel),
 	.newpcmux_sel(ctrl_ex_mem.newpcmux_sel),
 	.opcode(ctrl_ex_mem.opcode),
+	.mem_ack_counter(ctrl_ex_mem.mem_ack_counter),
 	.pc_out(new_pc),
 	.dmem_address(dmem_address),
 	.dmem_wdata(dmem_wdata),
@@ -312,7 +318,8 @@ memory_stage mem_stage
 	.dmem_action_cyc(dmem_action_cyc),
 	.dmem_write(dmem_write),
 	.dmem_rdata_out(dmem_rdata_out),
-	.dmem_byte_enable(dmem_byte_enable)
+	.dmem_byte_enable(dmem_byte_enable),
+	.mem_stall(mem_stall)
 );
 
 /* Memory - Write-Back Registers (MEM/WB) */

@@ -55,7 +55,6 @@ typedef struct packed {
 	logic [1:0] sr2mux_sel;
 	logic sr2mux2_sel;
 	logic writemux_sel;
-	logic destmux_sel;
 
 	/* Execute Stage */
 	logic bradd2mux_sel;
@@ -64,7 +63,6 @@ typedef struct packed {
 
 	/* Memory Stage */
     logic [1:0] mem_ack_counter;
-	logic mem_addr_mux_sel;
 	logic [1:0] newpcmux_sel;
 
 	/* Write-Back Stage */

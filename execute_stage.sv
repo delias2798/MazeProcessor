@@ -9,6 +9,7 @@ module execute_stage
 	input lc3b_word sr1,
 	input lc3b_word sr2,
 	input lc3b_offset8 offset8,
+	input lc3b_word dest_out,
 	
 	/* Input Control Signals */
 	input bradd2mux_sel,
@@ -17,7 +18,8 @@ module execute_stage
 
 	output lc3b_word br_add_out,
 	output lc3b_word bradd2mux_out,
-	output lc3b_word alumux_out
+	output lc3b_word alumux_out,
+	output lc3b_word destmux_out
 );
 
 /* Internal Signals */
@@ -26,6 +28,7 @@ lc3b_word adj11_out;
 lc3b_word br_add2_out;
 lc3b_word alu_out;
 lc3b_word zext_s8_out;
+lc3b_word dest_lfsh_out;
 
 adj #(.width(9)) adj9
 (
@@ -81,6 +84,16 @@ mux2 alumux
 	.a(alu_out),
 	.b(zext_s8_out),
 	.f(alumux_out)
+);
+
+assign dest_lfsh_out = dest_out << 8;
+
+mux2 destmux
+(
+	.sel(alumux_out[0]),
+	.a(dest_out),
+	.b(dest_lfsh_out),
+	.f(destmux_out)
 );
 
 endmodule: execute_stage

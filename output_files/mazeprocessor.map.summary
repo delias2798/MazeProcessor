@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sun Mar 11 00:03:00 2018
-Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Analysis & Synthesis Status : Successful - Tue Mar 13 22:20:37 2018
+Quartus II 64-Bit Version : 15.0.2 Build 153 07/15/2015 SJ Full Version
 Revision Name : mazeprocessor
 Top-level Entity Name : mazeprocessor
 Family : Arria II GX
 Logic utilization : N/A
-    Combinational ALUTs : 607
+    Combinational ALUTs : 637
     Memory ALUTs : 0
-    Dedicated logic registers : 397
-Total registers : 397
+    Dedicated logic registers : 326
+Total registers : 326
 Total pins : 580
 Total virtual pins : 0
 Total block memory bits : 384

@@ -14,7 +14,7 @@ module decode_stage
 	output lc3b_control_word ctrl,
 	output lc3b_word sr1_out,
 	output lc3b_word sr2mux2_out,
-	output lc3b_word destmux_out,
+	output lc3b_word dest_out,
 	output lc3b_reg dest_register
 );
 
@@ -35,8 +35,6 @@ lc3b_offset5 offset5;
 lc3b_offset6 offset6;
 
 lc3b_word sr2_out;
-lc3b_word dest_out;
-lc3b_word dest_lfsh_out;
 
 lc3b_word zext4_out;
 lc3b_word sext5_out;
@@ -71,7 +69,6 @@ control_rom ctrl_r
 assign sr2mux_sel = ctrl.sr2mux_sel;
 assign sr2mux2_sel = ctrl.sr2mux2_sel;
 assign writemux_sel = ctrl.writemux_sel;
-assign destmux_sel = ctrl.destmux_sel;
 
 regfile reg_file
 (
@@ -135,16 +132,6 @@ mux2 #(.width(3)) writemux
 	.a(dest),
 	.b(3'b111),
 	.f(dest_register)
-);
-
-assign dest_lfsh_out = dest_out << 8;
-
-mux2 destmux
-(
-	.sel(destmux_sel),
-	.a(dest_out),
-	.b(dest_lfsh_out),
-	.f(destmux_out)
 );
 
 endmodule: decode_stage
