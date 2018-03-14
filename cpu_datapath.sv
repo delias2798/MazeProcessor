@@ -104,6 +104,7 @@ fetch_stage if_stage
 	.new_pc(new_pc_mem_wb_out),
 	.branch_enable(branch_enable),
 	.mem_stall(mem_stall),
+	.imem_resp(imem_resp),
 	.imem_address(imem_address),
 	.imem_action_stb(imem_action_stb),
 	.imem_action_cyc(imem_action_cyc),
