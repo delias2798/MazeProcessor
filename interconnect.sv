@@ -8,7 +8,8 @@ module interconnect (
 enum int unsigned {
     /* List of states */
     instruction_connect,
-	data_connect
+	 data_connect
+	 
 } state, next_state;
 
 logic switch;
@@ -16,14 +17,14 @@ logic switch;
 always_comb
 begin : state_actions
   	
-  	dram.DAT_S = icache.DAT_M;
+  	dram.DAT_M = icache.DAT_M;
 	dram.CYC = icache.CYC;
 	dram.STB = icache.STB;
 	dram.WE = icache.WE;
 	dram.SEL = icache.SEL;
 	dram.ADR = icache.ADR;
 	icache.ACK = dram.ACK;
-	icache.DAT_S = dram.DAT_M;
+	icache.DAT_S = dram.DAT_S;
 	icache.RTY = dram.RTY;
 	dcache.ACK = 0;
 	dcache.DAT_S = 128'bX;
@@ -35,14 +36,14 @@ begin : state_actions
         end
 
         data_connect: begin
-        	dram.DAT_M = dcache.DAT_S;
+        	dram.DAT_M = dcache.DAT_M;
         	dram.CYC = dcache.CYC;
         	dram.STB = dcache.STB;
         	dram.WE = dcache.WE;
         	dram.SEL = dcache.SEL;
         	dram.ADR = dcache.ADR;
         	dcache.ACK = dram.ACK;
-			dcache.DAT_S = dram.DAT_M;
+			dcache.DAT_S = dram.DAT_S;
 			dcache.RTY = dram.RTY;
 			icache.ACK = 0;
 			icache.DAT_S = 128'bX;
@@ -65,15 +66,15 @@ begin : next_state_logic
         			next_state = data_connect;		
         	end
         	else begin
-        		if(icache.CYC == 0 && cache.CYC == 1 && dcache.STB == 1)
+        		if(icache.CYC == 0 && dcache.CYC == 1 && dcache.STB == 1)
         			next_state = data_connect;
         	end
         end
 
         data_connect: begin
          	if(dram.ACK) begin
-        		next_state = instruction_connect;
-        	end
+					next_state = instruction_connect;
+				end
         end
     endcase
 end : next_state_logic
