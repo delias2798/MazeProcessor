@@ -27,7 +27,7 @@ Z5 8/home/bharuka2/ece411/mazeprocessor/adj.sv
 Z6 F/home/bharuka2/ece411/mazeprocessor/adj.sv
 L0 6
 Z7 OV;L;10.3d;59
-Z8 !s108 1520997650.647864
+Z8 !s108 1520998707.424813
 Z9 !s107 /home/bharuka2/ece411/mazeprocessor/adj.sv|
 Z10 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/adj.sv|
 !i113 1
@@ -76,7 +76,7 @@ Z14 8/home/bharuka2/ece411/mazeprocessor/alu.sv
 Z15 F/home/bharuka2/ece411/mazeprocessor/alu.sv
 L0 3
 R7
-Z16 !s108 1520997651.269224
+Z16 !s108 1520998708.293510
 Z17 !s107 /home/bharuka2/ece411/mazeprocessor/alu.sv|
 Z18 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/alu.sv|
 !i113 1
@@ -125,7 +125,7 @@ Z20 8/home/bharuka2/ece411/mazeprocessor/br_add.sv
 Z21 F/home/bharuka2/ece411/mazeprocessor/br_add.sv
 L0 3
 R7
-Z22 !s108 1520997651.168593
+Z22 !s108 1520998708.134471
 Z23 !s107 /home/bharuka2/ece411/mazeprocessor/br_add.sv|
 Z24 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/br_add.sv|
 !i113 1
@@ -174,7 +174,7 @@ Z26 8/home/bharuka2/ece411/mazeprocessor/cc_comp.sv
 Z27 F/home/bharuka2/ece411/mazeprocessor/cc_comp.sv
 L0 3
 R7
-Z28 !s108 1520997650.011349
+Z28 !s108 1520998706.768124
 Z29 !s107 /home/bharuka2/ece411/mazeprocessor/cc_comp.sv|
 Z30 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/cc_comp.sv|
 !i113 1
@@ -213,17 +213,17 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 7]`mA:Hz`]6f>lDWGImCD3
-IO2G?g@ob3?9zUd>WIbhTd0
+!s100 kPhz;:2bXA[eDFe?:4BAK3
+IYCUf[42hE_ePm@?Oh;Ic:0
 !s105 control_rom_sv_unit
 S1
 R0
-Z31 w1520991250
+Z31 w1520998669
 Z32 8/home/bharuka2/ece411/mazeprocessor/control_rom.sv
 Z33 F/home/bharuka2/ece411/mazeprocessor/control_rom.sv
 L0 3
 R7
-Z34 !s108 1520997650.241079
+Z34 !s108 1520998706.996605
 Z35 !s107 /home/bharuka2/ece411/mazeprocessor/control_rom.sv|
 Z36 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/control_rom.sv|
 !i113 1
@@ -272,7 +272,7 @@ Z38 8/home/bharuka2/ece411/mazeprocessor/cpu.sv
 Z39 F/home/bharuka2/ece411/mazeprocessor/cpu.sv
 L0 3
 R7
-Z40 !s108 1520997651.689665
+Z40 !s108 1520998708.780228
 Z41 !s107 /home/bharuka2/ece411/mazeprocessor/cpu.sv|
 Z42 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/cpu.sv|
 !i113 1
@@ -297,7 +297,7 @@ Z44 8/home/bharuka2/ece411/mazeprocessor/cpu_datapath.sv
 Z45 F/home/bharuka2/ece411/mazeprocessor/cpu_datapath.sv
 L0 3
 R7
-Z46 !s108 1520997650.131299
+Z46 !s108 1520998706.886884
 Z47 !s107 /home/bharuka2/ece411/mazeprocessor/cpu_datapath.sv|
 Z48 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/cpu_datapath.sv|
 !i113 1
@@ -370,7 +370,7 @@ Z50 8/home/bharuka2/ece411/mazeprocessor/decode_stage.sv
 Z51 F/home/bharuka2/ece411/mazeprocessor/decode_stage.sv
 L0 3
 R7
-Z52 !s108 1520997650.947977
+Z52 !s108 1520998707.922692
 Z53 !s107 /home/bharuka2/ece411/mazeprocessor/decode_stage.sv|
 Z54 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/decode_stage.sv|
 !i113 1
@@ -419,7 +419,7 @@ Z56 8/home/bharuka2/ece411/mazeprocessor/execute_stage.sv
 Z57 F/home/bharuka2/ece411/mazeprocessor/execute_stage.sv
 L0 3
 R7
-Z58 !s108 1520997651.060596
+Z58 !s108 1520998708.025640
 Z59 !s107 /home/bharuka2/ece411/mazeprocessor/execute_stage.sv|
 Z60 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/execute_stage.sv|
 !i113 1
@@ -468,7 +468,7 @@ Z62 8/home/bharuka2/ece411/mazeprocessor/fetch_stage.sv
 Z63 F/home/bharuka2/ece411/mazeprocessor/fetch_stage.sv
 L0 3
 R7
-Z64 !s108 1520997650.854066
+Z64 !s108 1520998707.792944
 Z65 !s107 /home/bharuka2/ece411/mazeprocessor/fetch_stage.sv|
 Z66 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/fetch_stage.sv|
 !i113 1
@@ -517,7 +517,7 @@ Z68 8/home/bharuka2/ece411/mazeprocessor/gencc.sv
 Z69 F/home/bharuka2/ece411/mazeprocessor/gencc.sv
 L0 3
 R7
-Z70 !s108 1520997649.923557
+Z70 !s108 1520998706.654828
 Z71 !s107 /home/bharuka2/ece411/mazeprocessor/gencc.sv|
 Z72 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/gencc.sv|
 !i113 1
@@ -566,7 +566,7 @@ Z74 8/home/bharuka2/ece411/mazeprocessor/ir.sv
 Z75 F/home/bharuka2/ece411/mazeprocessor/ir.sv
 L0 3
 R7
-Z76 !s108 1520997650.758611
+Z76 !s108 1520998707.687498
 Z77 !s107 /home/bharuka2/ece411/mazeprocessor/ir.sv|
 Z78 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/ir.sv|
 !i113 1
@@ -598,7 +598,7 @@ R11
 R12
 Xlc3b_types
 R1
-Z79 !s110 1520997649
+Z79 !s110 1520998705
 !i10b 1
 !s100 >[X?FYHmLNhjASoDX`dP70
 IH7BePaD9:WU=kP89JgjRB0
@@ -613,7 +613,7 @@ R7
 r1
 !s85 0
 31
-!s108 1520997648.922910
+!s108 1520998705.595819
 !s107 /home/bharuka2/ece411/mazeprocessor/lc3b_types.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/lc3b_types.sv|
 !i113 1
@@ -621,7 +621,7 @@ R11
 R12
 vmagic_memory
 R1
-Z80 !s110 1520997651
+!s110 1520998709
 !i10b 1
 !s100 YnK3SIahKm9=5RX704B333
 I`4HMNA^[BNbP_]X47d2zT2
@@ -637,7 +637,7 @@ R7
 r1
 !s85 0
 31
-!s108 1520997651.893508
+!s108 1520998708.978337
 !s107 /home/bharuka2/ece411/mazeprocessor/magic_memory_dual_port.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/magic_memory_dual_port.sv|
 !i113 1
@@ -657,14 +657,14 @@ IW[OA=PNdI`4L2:JFd8^^82
 !s105 mazeprocessor_sv_unit
 S1
 R0
-Z81 w1520978620
-Z82 8/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv
-Z83 F/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv
+Z80 w1520978620
+Z81 8/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv
+Z82 F/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv
 L0 3
 R7
-Z84 !s108 1520997651.588084
-Z85 !s107 /home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv|
-Z86 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv|
+Z83 !s108 1520998708.679142
+Z84 !s107 /home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv|
+Z85 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv|
 !i113 1
 R11
 R12
@@ -681,14 +681,14 @@ I:mT5@gGDoa1<ZB3IRDdlW0
 !i103 1
 S1
 R0
+R80
 R81
 R82
-R83
 L0 1
 R7
+R83
 R84
 R85
-R86
 !i113 1
 R11
 R12
@@ -706,14 +706,14 @@ I42j<f7`H<kh;=C]VbFdVh3
 !s105 memory_stage_sv_unit
 S1
 R0
-Z87 w1520986469
-Z88 8/home/bharuka2/ece411/mazeprocessor/memory_stage.sv
-Z89 F/home/bharuka2/ece411/mazeprocessor/memory_stage.sv
+Z86 w1520986469
+Z87 8/home/bharuka2/ece411/mazeprocessor/memory_stage.sv
+Z88 F/home/bharuka2/ece411/mazeprocessor/memory_stage.sv
 L0 3
 R7
-Z90 !s108 1520997651.481579
-Z91 !s107 /home/bharuka2/ece411/mazeprocessor/memory_stage.sv|
-Z92 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/memory_stage.sv|
+Z89 !s108 1520998708.575017
+Z90 !s107 /home/bharuka2/ece411/mazeprocessor/memory_stage.sv|
+Z91 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/memory_stage.sv|
 !i113 1
 R11
 R12
@@ -730,14 +730,14 @@ IEFl5mk==M`J[PZe8XMhO?2
 !i103 1
 S1
 R0
+R86
 R87
 R88
-R89
 L0 1
 R7
+R89
 R90
 R91
-R92
 !i113 1
 R11
 R12
@@ -750,19 +750,19 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 IeYYzgD>>cCA`;QTEVQdJ3
-I7H]U24G53aL@Y>[W4n96E2
+!s100 ;IeSl1K;BTV]9BgVzfCA:1
+I0AU`cZC0:7]U:Jg_1d7zo1
 !s105 memory_stall_sv_unit
 S1
 R0
-Z93 w1520997050
-Z94 8/home/bharuka2/ece411/mazeprocessor/memory_stall.sv
-Z95 F/home/bharuka2/ece411/mazeprocessor/memory_stall.sv
+Z92 w1520998653
+Z93 8/home/bharuka2/ece411/mazeprocessor/memory_stall.sv
+Z94 F/home/bharuka2/ece411/mazeprocessor/memory_stall.sv
 L0 3
 R7
-Z96 !s108 1520997649.632846
-Z97 !s107 /home/bharuka2/ece411/mazeprocessor/memory_stall.sv|
-Z98 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/memory_stall.sv|
+Z95 !s108 1520998706.337198
+Z96 !s107 /home/bharuka2/ece411/mazeprocessor/memory_stall.sv|
+Z97 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/memory_stall.sv|
 !i113 1
 R11
 R12
@@ -779,20 +779,20 @@ IOVE?U9z^2jMFTAzhG@f5c2
 !i103 1
 S1
 R0
+R92
 R93
 R94
-R95
 L0 1
 R7
+R95
 R96
 R97
-R98
 !i113 1
 R11
 R12
 vmux2
 R1
-R79
+Z98 !s110 1520998706
 !i10b 1
 !s100 _W1<M@g8478cHn3b:_cH32
 IPKTnf5;5]HO5>I@DoGYF73
@@ -808,7 +808,7 @@ R7
 r1
 !s85 0
 31
-!s108 1520997649.358683
+!s108 1520998706.049016
 !s107 /home/bharuka2/ece411/mazeprocessor/mux2.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/mux2.sv|
 !i113 1
@@ -816,7 +816,7 @@ R11
 R12
 vmux4
 R1
-R79
+R98
 !i10b 1
 !s100 HAKHgF4ShSRHlY=MYAo_^3
 IP3IATDWz0C?NI3D423]jO0
@@ -832,7 +832,7 @@ R7
 r1
 !s85 0
 31
-!s108 1520997649.449829
+!s108 1520998706.144142
 !s107 /home/bharuka2/ece411/mazeprocessor/mux4.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/mux4.sv|
 !i113 1
@@ -856,7 +856,7 @@ R7
 r1
 !s85 0
 31
-!s108 1520997649.267669
+!s108 1520998705.955303
 !s107 /home/bharuka2/ece411/mazeprocessor/mux8.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/mux8.sv|
 !i113 1
@@ -864,7 +864,7 @@ R11
 R12
 vplus2
 R1
-R79
+R98
 !i10b 1
 !s100 k?FJgXc3l7B=Nk0]iVGm[2
 IoF[6A6c[Tjbi8QER=B>eA1
@@ -880,7 +880,7 @@ R7
 r1
 !s85 0
 31
-!s108 1520997649.538590
+!s108 1520998706.245845
 !s107 /home/bharuka2/ece411/mazeprocessor/plus2.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/plus2.sv|
 !i113 1
@@ -905,7 +905,7 @@ Z100 8/home/bharuka2/ece411/mazeprocessor/regfile.sv
 Z101 F/home/bharuka2/ece411/mazeprocessor/regfile.sv
 L0 3
 R7
-Z102 !s108 1520997650.351219
+Z102 !s108 1520998707.093476
 Z103 !s107 /home/bharuka2/ece411/mazeprocessor/regfile.sv|
 Z104 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/regfile.sv|
 !i113 1
@@ -953,7 +953,7 @@ R7
 r1
 !s85 0
 31
-!s108 1520997649.075898
+!s108 1520998705.771670
 !s107 /home/bharuka2/ece411/mazeprocessor/register.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/register.sv|
 !i113 1
@@ -973,12 +973,12 @@ ImL8=?]GX6=e=nez8hX^Z21
 !s105 register_control_rom_sv_unit
 S1
 R0
-R81
+R80
 Z105 8/home/bharuka2/ece411/mazeprocessor/register_control_rom.sv
 Z106 F/home/bharuka2/ece411/mazeprocessor/register_control_rom.sv
 L0 3
 R7
-Z107 !s108 1520997649.830100
+Z107 !s108 1520998706.555866
 Z108 !s107 /home/bharuka2/ece411/mazeprocessor/register_control_rom.sv|
 Z109 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/register_control_rom.sv|
 !i113 1
@@ -997,7 +997,7 @@ I6B]VPG8c=L5SG6N;RYj=;0
 !i103 1
 S1
 R0
-R81
+R80
 R105
 R106
 L0 1
@@ -1027,7 +1027,7 @@ Z111 8/home/bharuka2/ece411/mazeprocessor/sext.sv
 Z112 F/home/bharuka2/ece411/mazeprocessor/sext.sv
 L0 6
 R7
-Z113 !s108 1520997650.555839
+Z113 !s108 1520998707.317952
 Z114 !s107 /home/bharuka2/ece411/mazeprocessor/sext.sv|
 Z115 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/sext.sv|
 !i113 1
@@ -1059,7 +1059,7 @@ R11
 R12
 vtestbench
 R1
-R80
+!s110 1520998708
 !i10b 1
 !s100 SC>]E]D>IOD2N>WNd`RP;2
 IJLOVMg8]jMZn]d4c23HDh3
@@ -1075,7 +1075,7 @@ R7
 r1
 !s85 0
 31
-!s108 1520997651.800185
+!s108 1520998708.886692
 !s107 /home/bharuka2/ece411/mazeprocessor/testbench.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/testbench.sv|
 !i113 1
@@ -1099,7 +1099,7 @@ R7
 r1
 !s85 0
 31
-!s108 1520997649.190144
+!s108 1520998705.862860
 !s107 /home/bharuka2/ece411/mazeprocessor/wishbone.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/wishbone.sv|
 !i113 1
@@ -1124,7 +1124,7 @@ Z117 8/home/bharuka2/ece411/mazeprocessor/write_back_stage.sv
 Z118 F/home/bharuka2/ece411/mazeprocessor/write_back_stage.sv
 L0 3
 R7
-Z119 !s108 1520997649.735686
+Z119 !s108 1520998706.446563
 Z120 !s107 /home/bharuka2/ece411/mazeprocessor/write_back_stage.sv|
 Z121 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/write_back_stage.sv|
 !i113 1
@@ -1173,7 +1173,7 @@ Z123 8/home/bharuka2/ece411/mazeprocessor/zext.sv
 Z124 F/home/bharuka2/ece411/mazeprocessor/zext.sv
 L0 6
 R7
-Z125 !s108 1520997650.460119
+Z125 !s108 1520998707.219953
 Z126 !s107 /home/bharuka2/ece411/mazeprocessor/zext.sv|
 Z127 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/zext.sv|
 !i113 1
@@ -1198,7 +1198,7 @@ Z129 8/home/bharuka2/ece411/mazeprocessor/zext_s.sv
 Z130 F/home/bharuka2/ece411/mazeprocessor/zext_s.sv
 L0 6
 R7
-Z131 !s108 1520997651.369721
+Z131 !s108 1520998708.417769
 Z132 !s107 /home/bharuka2/ece411/mazeprocessor/zext_s.sv|
 Z133 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/bharuka2/ece411/mazeprocessor|/home/bharuka2/ece411/mazeprocessor/zext_s.sv|
 !i113 1

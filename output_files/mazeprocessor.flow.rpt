@@ -1,5 +1,5 @@
 Flow report for mazeprocessor
-Tue Mar 13 22:20:37 2018
+Tue Mar 13 22:38:11 2018
 Quartus II 64-Bit Version 15.0.2 Build 153 07/15/2015 SJ Full Version
 
 
@@ -41,13 +41,13 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +-----------------------------------+---------------------------------------------+
-; Flow Status                       ; Successful - Tue Mar 13 22:20:37 2018       ;
+; Flow Status                       ; Successful - Tue Mar 13 22:38:11 2018       ;
 ; Quartus II 64-Bit Version         ; 15.0.2 Build 153 07/15/2015 SJ Full Version ;
 ; Revision Name                     ; mazeprocessor                               ;
 ; Top-level Entity Name             ; mazeprocessor                               ;
 ; Family                            ; Arria II GX                                 ;
 ; Logic utilization                 ; N/A                                         ;
-;     Combinational ALUTs           ; 637                                         ;
+;     Combinational ALUTs           ; 638                                         ;
 ;     Memory ALUTs                  ; 0                                           ;
 ;     Dedicated logic registers     ; 326                                         ;
 ; Total registers                   ; 326                                         ;
@@ -69,7 +69,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/13/2018 22:20:19 ;
+; Start date & time ; 03/13/2018 22:37:55 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mazeprocessor       ;
 +-------------------+---------------------+
@@ -80,7 +80,7 @@ agreement for further details.
 +--------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 26830023663861.152099761901866 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 26830023663861.152099867504561 ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                             ; --            ; --          ; testbench      ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; testbench                      ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                    ; --            ; --          ; eda_simulation ;
@@ -104,8 +104,8 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:17     ; 1.0                     ; 1196 MB             ; 00:00:21                           ;
-; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:21                           ;
+; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 1196 MB             ; 00:00:20                           ;
+; Total                ; 00:00:16     ; --                      ; --                  ; 00:00:20                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
