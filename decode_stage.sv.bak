@@ -1,5 +1,0 @@
-module decode_stage
-(
-);
-
-endmodule: decode_stage

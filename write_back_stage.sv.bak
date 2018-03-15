@@ -1,7 +1,0 @@
-import lc3b_types::*;
-
-module write_back_stage
-(
-);
-
-endmodule: write_back_stage

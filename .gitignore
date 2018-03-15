@@ -2,4 +2,6 @@ db/*
 simulation/modelsim/rtl_work/*
 output_files/*
 incremental_db/*
+rtl_work/*
+qdb/*
 *.sv.bak

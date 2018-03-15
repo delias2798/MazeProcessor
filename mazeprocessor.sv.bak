@@ -1,7 +1,0 @@
-import lc3b_types::*;
-
-module mazeprocessor
-(
-);
-
-endmodule: mazeprocessor
