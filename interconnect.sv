@@ -80,26 +80,41 @@ begin : next_state_logic
         instruction_connect: begin
         	if(dram.ACK) begin
         		if(dcache.CYC == 1 && dcache.STB == 1)
-        			next_state = instruction_stall;		
+        			next_state = instruction_stall;
+				else if (icache.CYC == 1 && icache.STB == 1)
+					next_state = instruction_stall;
         	end
         	else begin
         		if(icache.CYC == 0 && dcache.CYC == 1 && dcache.STB == 1)
-        			next_state = instruction_stall;
+        			next_state = data_connect;
         	end
         end
 
         data_connect: begin
          	if(dram.ACK) begin
-					next_state = data_stall;
+					if(icache.CYC == 1 && icache.STB == 1)
+						next_state = data_stall;
+					else if (dcache.CYC == 1 && dcache.STB == 1)
+						next_state = data_stall;
+				end
+				else begin
+					if(dcache.CYC == 0 && icache.CYC == 1 && icache.STB == 1)
+						next_state = instruction_connect;
 				end
         end
 		  
 		  data_stall: begin
-				next_state = instruction_connect;
+				if(icache.CYC == 1 && icache.STB == 1)
+					next_state = instruction_connect;
+				else
+					next_state = data_connect;
 		  end
 		  
 		  instruction_stall: begin
-				next_state = data_connect;
+				if(dcache.CYC == 1 && dcache.STB == 1)
+					next_state = data_connect;
+				else
+					next_state = instruction_connect;
 		  end
     endcase
 end : next_state_logic

@@ -23,7 +23,6 @@ begin
 	ctrl.aluop = alu_pass;
 	ctrl.alumux_sel = 0;
 
-	ctrl.mem_ack_counter = 2'b00;
 	ctrl.newpcmux_sel = 2'b00;
 	
 	ctrl.regfilemux_sel = 3'b000;
@@ -72,7 +71,6 @@ begin
 			/* DR = memWord[BaseR + (SEXT(offset6) << 1)] */
 			ctrl.sr2mux2_sel = 1;
 			ctrl.aluop = alu_add;
-			ctrl.mem_ack_counter = 2'b01;
 			ctrl.regfilemux_sel = 3'b001;
 			ctrl.load_regfile = 1;
 			ctrl.load_cc = 1;
@@ -82,7 +80,6 @@ begin
 			/* memWord[BaseR + (SEXT(offset6) << 1)] = SR */
 			ctrl.sr2mux2_sel = 1;
 			ctrl.aluop = alu_add;
-			ctrl.mem_ack_counter = 2'b01;
 		end
 
 		op_jmp: begin
@@ -104,7 +101,6 @@ begin
 			ctrl.sr2mux_sel = 2'b01;
 			ctrl.sr2mux2_sel = 1;
 			ctrl.aluop = alu_add;
-			ctrl.mem_ack_counter = 2'b01;
 			ctrl.regfilemux_sel = 3'b100;
 			ctrl.load_regfile = 1;
 			ctrl.load_cc = 1;
@@ -139,7 +135,6 @@ begin
 			ctrl.sr2mux_sel = 2'b01;
 			ctrl.sr2mux2_sel = 1;
 			ctrl.aluop = alu_add;
-			ctrl.mem_ack_counter = 2'b01;
 		end
 
 		op_trap: begin
@@ -156,7 +151,6 @@ begin
 			/* DR = memWord[memWord[BaseR + (SEXT(offset6) << 1)]] */
 			ctrl.sr2mux2_sel = 1;
 			ctrl.aluop = alu_add;
-			ctrl.mem_ack_counter = 2'b10;
 			ctrl.regfilemux_sel = 3'b001;
 			ctrl.load_regfile = 1;
 			ctrl.load_cc = 1;
@@ -166,7 +160,6 @@ begin
 			/* memWord[memWord[BaseR + (SEXT(offset6) << 1)]] = SR */
 			ctrl.sr2mux2_sel = 1;
 			ctrl.aluop = alu_add;
-			ctrl.mem_ack_counter = 2'b10;
 		end
 
 		default: begin

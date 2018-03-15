@@ -5,6 +5,7 @@ add wave -noupdate /testbench/clk
 add wave -noupdate /testbench/clk
 add wave -noupdate /testbench/clk
 add wave -noupdate /testbench/clk
+add wave -noupdate /testbench/clk
 add wave -noupdate -radix hexadecimal /testbench/clk
 add wave -noupdate -radix hexadecimal -childformat {{{/testbench/processor/c/cpu_d/id_stage/reg_file/data[7]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[6]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[5]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[4]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[3]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[2]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[1]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[0]} -radix hexadecimal}} -expand -subitemconfig {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[7]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[6]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[5]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[4]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[3]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[2]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[1]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[0]} {-height 16 -radix hexadecimal}} /testbench/processor/c/cpu_d/id_stage/reg_file/data
 add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/imem_rdata
@@ -35,8 +36,19 @@ add wave -noupdate -radix hexadecimal /testbench/pmem/WE
 add wave -noupdate -radix hexadecimal /testbench/pmem/ADR
 add wave -noupdate -radix hexadecimal /testbench/pmem/SEL
 add wave -noupdate /testbench/processor/wishbone_interconnect/state
+add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/mem_stall
+add wave -noupdate /testbench/processor/c/cpu_d/mem_stage/m_stall/dmem_resp
+add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/dmem_write
+add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/dmem_action_cyc
+add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/dmem_action_stb
+add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/mem_ack_in
+add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/mem_ack_out
+add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/mem_addr_mux_sel
+add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/dmem_address
+add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/alu_out
+add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/dmem_data_out
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {532942 ps} 0}
+WaveRestoreCursors {{Cursor 1} {608879 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 494
 configure wave -valuecolwidth 233
@@ -52,4 +64,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {309110 ps} {639661 ps}
+WaveRestoreZoom {0 ps} {1322200 ps}

@@ -311,7 +311,6 @@ memory_stage mem_stage
 	.dmem_resp(dmem_resp),
 	.newpcmux_sel(ctrl_ex_mem.newpcmux_sel),
 	.opcode(ctrl_ex_mem.opcode),
-	.mem_ack_counter(ctrl_ex_mem.mem_ack_counter),
 	.pc_out(new_pc),
 	.dmem_address(dmem_address),
 	.dmem_wdata(dmem_wdata),

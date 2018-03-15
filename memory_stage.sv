@@ -14,7 +14,6 @@ module memory_stage
 	/* Control Signals */
 	input [1:0] newpcmux_sel,
 	input lc3b_opcode opcode,
-	input [1:0] mem_ack_counter,
 
 	output lc3b_word pc_out,
 	output lc3b_word dmem_address,
@@ -34,7 +33,6 @@ memory_stall m_stall
 (
 	.clk(clk),
 	.load_ex_mem(load_ex_mem),
-	.mem_ack_counter(mem_ack_counter),
 	.dmem_resp(dmem_resp),
 	.opcode(opcode),
 	.dest_out(dest_out),

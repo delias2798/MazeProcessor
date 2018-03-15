@@ -62,7 +62,6 @@ typedef struct packed {
 	logic alumux_sel;
 
 	/* Memory Stage */
-    logic [1:0] mem_ack_counter;
 	logic [1:0] newpcmux_sel;
 
 	/* Write-Back Stage */
