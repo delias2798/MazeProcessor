@@ -28,6 +28,7 @@ module memory_stage
 );
 
 /* Internal Signals */
+lc3b_word dmem_data_out;
 
 memory_stall m_stall
 (
@@ -38,7 +39,7 @@ memory_stall m_stall
 	.opcode(opcode),
 	.dest_out(dest_out),
 	.alu_out(alu_out),
-	.dmem_rdata_out(dmem_rdata_out),
+	.dmem_data_out(dmem_data_out),
 	.dmem_action_stb(dmem_action_stb),
 	.dmem_action_cyc(dmem_action_cyc),
 	.dmem_write(dmem_write),
@@ -60,6 +61,14 @@ mux8 dmem_rdata_mux
 	.g(dmem_rdata[111:96]),
 	.h(dmem_rdata[127:112]),
 	.o(dmem_rdata_out)
+);
+
+register dmem_data
+(
+	.clk(clk),
+	.load(dmem_resp),
+	.in(dmem_rdata_out),
+	.out(dmem_data_out)
 );
 
 mux4 newpcmux

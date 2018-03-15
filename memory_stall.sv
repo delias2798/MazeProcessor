@@ -9,7 +9,7 @@ module memory_stall
 	input lc3b_opcode opcode,
 	input lc3b_word dest_out,
 	input lc3b_word alu_out,
-	input lc3b_word dmem_rdata_out,
+	input lc3b_word dmem_data_out,
 
 	output logic dmem_action_stb,
 	output logic dmem_action_cyc,
@@ -24,9 +24,8 @@ logic mem_ack_load;
 logic [1:0] mem_ack_in;
 logic [1:0] mem_ack_out;
 logic mem_addr_mux_sel;
-lc3b_word dmem_data_out;
 
-/* Assign values */
+/* Assign values 
 always_comb
 begin
 	dmem_action_cyc = 0;
@@ -83,6 +82,44 @@ begin
 		dmem_byte_enable = 2'b11;
 		
 	dmem_wdata = dest_out;
+end */
+
+always_comb
+begin
+	dmem_action_cyc = 0;
+	dmem_action_stb = 0;
+	mem_stall = 0;
+	mem_addr_mux_sel = 0;
+	mem_ack_load = 0;
+	
+	if ((opcode == op_ldr) || (opcode == op_str) || (opcode == op_ldb) || (opcode == op_stb))
+	begin
+		dmem_action_cyc = 1;
+		dmem_action_stb = 1;
+		mem_stall = 1;
+	end
+	
+	// Write Signal
+	if ((opcode == op_stb) || (opcode == op_str))
+		dmem_write = 1;
+	else
+		dmem_write = 0;
+		
+	// Mem Byte Enable Signal
+	if ((opcode == op_stb) && (dmem_address[0] == 1))
+		dmem_byte_enable = 2'b10;
+	else if ((opcode == op_stb) && (dmem_address[0] == 0))
+		dmem_byte_enable = 2'b01;
+	else
+		dmem_byte_enable = 2'b11;
+		
+	dmem_wdata = dest_out;
+	
+	if (dmem_resp)
+	begin
+		mem_stall = 0;
+	end
+		
 end
 
 register #(.width(2)) mem_curr_ack_counter
@@ -91,14 +128,6 @@ register #(.width(2)) mem_curr_ack_counter
 	.load(mem_ack_load),
 	.in(mem_ack_in),
 	.out(mem_ack_out)
-);
-
-register dmem_data
-(
-	.clk(clk),
-	.load(dmem_resp),
-	.in(dmem_rdata_out),
-	.out(dmem_data_out)
 );
 
 mux2 mem_addr_mux

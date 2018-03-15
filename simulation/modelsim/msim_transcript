@@ -357,7 +357,7 @@
 # .main_pane.objects.interior.cs.body.tree
 # run 200 ns
 do wave.do
-restart -f; run 1000ns
+restart -f; run 20000ns
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.wishbone
@@ -421,5 +421,3 @@ restart -f; run 1000ns
 # Loading work.gencc
 # Loading work.cc_comp_sv_unit
 # Loading work.cc_comp
-# ** Error: (vsim-3601) Iteration limit reached at time 525 ns.
-# 
