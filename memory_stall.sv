@@ -36,7 +36,7 @@ begin
 	if (load_ex_mem)
 		mem_ack_load = 1;
 		
-	if ((opcode == op_ldr) || (opcode == op_str) || (opcode == op_ldb) || (opcode == op_stb) || (opcode == op_ldi || opcode == op_sti))
+	if ((opcode == op_ldr) || (opcode == op_str) || (opcode == op_ldb) || (opcode == op_stb) || (opcode == op_trap))
 	begin
 		dmem_action_cyc = 1;
 		dmem_action_stb = 1;
@@ -58,6 +58,13 @@ begin
 		dmem_byte_enable = 2'b11;
 		
 	dmem_wdata = dest_out;
+	
+	if ((opcode == op_ldi || opcode == op_sti))
+	begin
+		dmem_action_cyc = 1;
+		dmem_action_stb = 1;
+		mem_stall = 1;
+	end
 	
 	if (mem_ack_out == 2'b01 && (opcode == op_ldi || opcode == op_sti))
 	begin

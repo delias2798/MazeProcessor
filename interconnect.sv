@@ -1,4 +1,4 @@
-module interconnect (
+module wishbone_interconnect (
     input clk,
     wishbone.slave icache,
     wishbone.slave dcache,
@@ -127,4 +127,4 @@ begin: next_state_assignment
 end : next_state_assignment
 
 
-endmodule : interconnect
+endmodule : wishbone_interconnect
