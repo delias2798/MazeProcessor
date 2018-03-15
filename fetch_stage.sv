@@ -17,11 +17,10 @@ module fetch_stage
 
 /* Control Signals */
 logic load_pc;
-logic imem_stall;
 
 assign load_pc = !mem_stall & imem_resp;
-assign imem_action_cyc = load_pc;
-assign imem_action_stb = load_pc;
+assign imem_action_cyc = 1;
+assign imem_action_stb = 1;
 
 /* Internal Signals */
 lc3b_word pc_in;

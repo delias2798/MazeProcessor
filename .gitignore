@@ -1,0 +1,5 @@
+db/*
+simulation/modelsim/rtl_work/*
+output_files/*
+incremental_db/*
+*.sv.bak

@@ -8,7 +8,8 @@ module memory_stall
 	input dmem_resp,
 	input lc3b_opcode opcode,
 	input lc3b_word dest_out,
-	input lc3b_word dmem_address,
+	input lc3b_word alu_out,
+	input lc3b_word dmem_rdata_out,
 
 	output logic dmem_action_stb,
 	output logic dmem_action_cyc,
@@ -16,20 +17,14 @@ module memory_stall
 	output lc3b_mem_wmask dmem_byte_enable,
 	output lc3b_word dmem_wdata,
 	output logic mem_stall,
-	output logic mem_addr_mux_sel
+	output lc3b_word dmem_address
 );
 
 logic mem_ack_load;
 logic [1:0] mem_ack_in;
 logic [1:0] mem_ack_out;
-
-register #(.width(2)) mem_curr_ack_counter
-(
-	.clk(clk),
-	.load(mem_ack_load),
-	.in(mem_ack_in),
-	.out(mem_ack_out)
-);
+logic mem_addr_mux_sel;
+lc3b_word dmem_data_out;
 
 /* Assign values */
 always_comb
@@ -52,8 +47,14 @@ begin
 	else
 		mem_stall = 0;
 	
+	// Write Signal
+	if ((opcode == op_stb) || (opcode == op_str))
+		dmem_write = 1;
+	else
+		dmem_write = 0;
+		
 	// Ack message
-	if (dmem_resp & mem_stall)
+	if (dmem_resp)
 	begin
 		mem_ack_in = mem_ack_out + 2'b01;
 		mem_ack_load = 1;
@@ -61,9 +62,6 @@ begin
 			mem_stall = 0;
 		else
 		begin
-			dmem_action_cyc = 1;
-			dmem_action_stb = 1;
-			mem_stall = 1;
 			if ((opcode == op_ldi || opcode == op_sti) && (mem_ack_in == 2'b01))
 			begin
 				mem_addr_mux_sel = 1;
@@ -74,13 +72,8 @@ begin
 			end
 		end
 	end
-	
-	// Write Signal
-	if ((opcode == op_stb) || (opcode == op_str))
-		dmem_write = 1;
-	else
-		dmem_write = 0;
-	
+	 
+	 
 	// Mem Byte Enable Signal
 	if ((opcode == op_stb) && (dmem_address[0] == 1))
 		dmem_byte_enable = 2'b10;
@@ -91,5 +84,29 @@ begin
 		
 	dmem_wdata = dest_out;
 end
+
+register #(.width(2)) mem_curr_ack_counter
+(
+	.clk(clk),
+	.load(mem_ack_load),
+	.in(mem_ack_in),
+	.out(mem_ack_out)
+);
+
+register dmem_data
+(
+	.clk(clk),
+	.load(dmem_resp),
+	.in(dmem_rdata_out),
+	.out(dmem_data_out)
+);
+
+mux2 mem_addr_mux
+(
+	.sel(mem_addr_mux_sel),
+	.a(alu_out),
+	.b(dmem_data_out),
+	.f(dmem_address)
+);
 
 endmodule: memory_stall

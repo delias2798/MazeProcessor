@@ -1,386 +1,316 @@
-# do mazeprocessor_run_msim_rtl_verilog.do
+# Reading D:/Programs/altera/modelsim_ase/tcl/vsim/pref.tcl 
+# do mazeprocessor_run_msim_rtl_verilog.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
 # vlib rtl_work
 # vmap work rtl_work
-# Model Technology ModelSim LE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
-# vmap -modelsim_quiet work rtl_work 
-# Copying /software/quartus-15.0/modelsim_ae/linuxaloem/../modelsim.ini to modelsim.ini
+# Copying D:\Programs\altera\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# ** Warning: Copied /software/quartus-15.0/modelsim_ae/linuxaloem/../modelsim.ini to modelsim.ini.
+# ** Warning: Copied D:\Programs\altera\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/lc3b_types.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:25 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/lc3b_types.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/comparator.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module comparator
+# 
+# Top level modules:
+# 	comparator
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/cache_control.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module cache_control
+# 
+# Top level modules:
+# 	cache_control
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/lc3b_types.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package lc3b_types
 # 
 # Top level modules:
 # 	--none--
-# End time: 22:38:25 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/register.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:25 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/register.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/register.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module register
 # 
 # Top level modules:
 # 	register
-# End time: 22:38:25 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/wishbone.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:25 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/wishbone.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/wishbone.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling interface wishbone
 # 
 # Top level modules:
 # 	--none--
-# End time: 22:38:25 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mux8.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:25 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/mux8.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/mux8.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module mux8
 # 
 # Top level modules:
 # 	mux8
-# End time: 22:38:26 on Mar 13,2018, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mux2.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:26 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/mux2.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/mux2.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module mux2
 # 
 # Top level modules:
 # 	mux2
-# End time: 22:38:26 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mux4.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:26 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/mux4.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/mux4.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module mux4
 # 
 # Top level modules:
 # 	mux4
-# End time: 22:38:26 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/plus2.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:26 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/plus2.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/plus2.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module plus2
 # 
 # Top level modules:
 # 	plus2
-# End time: 22:38:26 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/memory_stall.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:26 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/memory_stall.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/interconnect.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module interconnect
+# 
+# Top level modules:
+# 	interconnect
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/cpudata.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package cpudata_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module cpudata
+# 
+# Top level modules:
+# 	cpudata
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/cache_datapath.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package cache_datapath_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module cache_datapath
+# 
+# Top level modules:
+# 	cache_datapath
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/cache.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package cache_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module cache
+# 
+# Top level modules:
+# 	cache
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/array.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package array_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module array
+# 
+# Top level modules:
+# 	array
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/memory_stall.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package memory_stall_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module memory_stall
 # 
 # Top level modules:
 # 	memory_stall
-# End time: 22:38:26 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/write_back_stage.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:26 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/write_back_stage.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/write_back_stage.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package write_back_stage_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module write_back_stage
 # 
 # Top level modules:
 # 	write_back_stage
-# End time: 22:38:26 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/register_control_rom.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:26 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/register_control_rom.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/register_control_rom.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package register_control_rom_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module register_control_rom
 # 
 # Top level modules:
 # 	register_control_rom
-# End time: 22:38:26 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/gencc.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:26 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/gencc.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/gencc.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package gencc_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module gencc
 # 
 # Top level modules:
 # 	gencc
-# End time: 22:38:26 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/cc_comp.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:26 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/cc_comp.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/cc_comp.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package cc_comp_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module cc_comp
 # 
 # Top level modules:
 # 	cc_comp
-# End time: 22:38:26 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/cpu_datapath.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:26 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/cpu_datapath.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/cpu_datapath.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package cpu_datapath_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module cpu_datapath
 # 
 # Top level modules:
 # 	cpu_datapath
-# End time: 22:38:26 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/control_rom.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:26 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/control_rom.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/control_rom.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package control_rom_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module control_rom
 # 
 # Top level modules:
 # 	control_rom
-# End time: 22:38:27 on Mar 13,2018, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/regfile.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:27 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/regfile.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/regfile.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package regfile_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 22:38:27 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/zext.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:27 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/zext.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/zext.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package zext_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module zext
 # 
 # Top level modules:
 # 	zext
-# End time: 22:38:27 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/sext.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:27 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/sext.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/sext.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package sext_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module sext
 # 
 # Top level modules:
 # 	sext
-# End time: 22:38:27 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/adj.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:27 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/adj.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/adj.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package adj_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module adj
 # 
 # Top level modules:
 # 	adj
-# End time: 22:38:27 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/ir.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:27 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/ir.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/ir.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package ir_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module ir
 # 
 # Top level modules:
 # 	ir
-# End time: 22:38:27 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/fetch_stage.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:27 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/fetch_stage.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/fetch_stage.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package fetch_stage_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module fetch_stage
 # 
 # Top level modules:
 # 	fetch_stage
-# End time: 22:38:27 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/decode_stage.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:27 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/decode_stage.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/decode_stage.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package decode_stage_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module decode_stage
 # 
 # Top level modules:
 # 	decode_stage
-# End time: 22:38:27 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/execute_stage.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:27 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/execute_stage.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/execute_stage.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package execute_stage_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module execute_stage
 # 
 # Top level modules:
 # 	execute_stage
-# End time: 22:38:28 on Mar 13,2018, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/br_add.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:28 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/br_add.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/br_add.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package br_add_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module br_add
 # 
 # Top level modules:
 # 	br_add
-# End time: 22:38:28 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/alu.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:28 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/alu.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/alu.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package alu_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 22:38:28 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/zext_s.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:28 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/zext_s.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/zext_s.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package zext_s_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module zext_s
 # 
 # Top level modules:
 # 	zext_s
-# End time: 22:38:28 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/memory_stage.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:28 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/memory_stage.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/memory_stage.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package memory_stage_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module memory_stage
 # 
 # Top level modules:
 # 	memory_stage
-# End time: 22:38:28 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:28 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv 
-# -- Compiling package mazeprocessor_sv_unit
-# -- Importing package lc3b_types
-# -- Compiling module mazeprocessor
-# 
-# Top level modules:
-# 	mazeprocessor
-# End time: 22:38:28 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/cpu.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:28 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/cpu.sv 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/cpu.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package cpu_sv_unit
 # -- Importing package lc3b_types
 # -- Compiling module cpu
 # 
 # Top level modules:
 # 	cpu
-# End time: 22:38:28 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/mazeprocessor.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package mazeprocessor_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module mazeprocessor
 # 
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/testbench.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:28 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/testbench.sv 
+# Top level modules:
+# 	mazeprocessor
+# 
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/testbench.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 22:38:28 on Mar 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/magic_memory_dual_port.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:38:28 on Mar 13,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/bharuka2/ece411/mazeprocessor" /home/bharuka2/ece411/mazeprocessor/magic_memory_dual_port.sv 
-# -- Compiling module magic_memory
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/physical_memory.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module physical_memory
 # 
 # Top level modules:
-# 	magic_memory
-# End time: 22:38:29 on Mar 13,2018, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# 	physical_memory
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L arriaii_hssi_ver -L arriaii_pcie_hip_ver -L arriaii_ver -L rtl_work -L work -voptargs="+acc"  testbench
-# vsim -i -l msim_transcript -do "mazeprocessor_run_msim_rtl_verilog.do" 
-# Start time: 22:38:29 on Mar 13,2018
-# //  ModelSim ALTERA 10.3d Oct  7 2014 Linux 3.10.0-693.21.1.el7.x86_64
-# //
-# //  Copyright 1991-2014 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
-# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
-# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
-# //
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L arriaii_hssi_ver -L arriaii_pcie_hip_ver -L arriaii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps testbench 
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.wishbone
-# Loading work.magic_memory
+# Loading work.physical_memory
 # Loading work.lc3b_types
 # Loading work.mazeprocessor_sv_unit
 # Loading work.mazeprocessor
+# Loading work.interconnect
+# Loading work.cache_sv_unit
+# Loading work.cache
+# Loading work.cache_datapath_sv_unit
+# Loading work.cache_datapath
+# Loading work.array_sv_unit
+# Loading work.array
+# Loading work.mux2
+# Loading work.comparator
+# Loading work.cpudata_sv_unit
+# Loading work.cpudata
+# Loading work.cache_control
 # Loading work.cpu_sv_unit
 # Loading work.cpu
 # Loading work.cpu_datapath_sv_unit
 # Loading work.cpu_datapath
 # Loading work.fetch_stage_sv_unit
 # Loading work.fetch_stage
-# Loading work.mux2
 # Loading work.plus2
 # Loading work.register
 # Loading work.mux8
@@ -427,21 +357,32 @@
 # .main_pane.objects.interior.cs.body.tree
 # run 200 ns
 do wave.do
-restart -f; run 40000ns
+restart -f; run 1000ns
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.wishbone
-# Loading work.magic_memory
+# Loading work.physical_memory
 # Loading work.lc3b_types
 # Loading work.mazeprocessor_sv_unit
 # Loading work.mazeprocessor
+# Loading work.interconnect
+# Loading work.cache_sv_unit
+# Loading work.cache
+# Loading work.cache_datapath_sv_unit
+# Loading work.cache_datapath
+# Loading work.array_sv_unit
+# Loading work.array
+# Loading work.mux2
+# Loading work.comparator
+# Loading work.cpudata_sv_unit
+# Loading work.cpudata
+# Loading work.cache_control
 # Loading work.cpu_sv_unit
 # Loading work.cpu
 # Loading work.cpu_datapath_sv_unit
 # Loading work.cpu_datapath
 # Loading work.fetch_stage_sv_unit
 # Loading work.fetch_stage
-# Loading work.mux2
 # Loading work.plus2
 # Loading work.register
 # Loading work.mux8
@@ -480,5 +421,5 @@ restart -f; run 40000ns
 # Loading work.gencc
 # Loading work.cc_comp_sv_unit
 # Loading work.cc_comp
-# End time: 22:40:02 on Mar 13,2018, Elapsed time: 0:01:33
-# Errors: 0, Warnings: 0
+# ** Error: (vsim-3601) Iteration limit reached at time 525 ns.
+# 

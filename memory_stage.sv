@@ -28,7 +28,6 @@ module memory_stage
 );
 
 /* Internal Signals */
-logic mem_addr_mux_sel;
 
 memory_stall m_stall
 (
@@ -38,14 +37,15 @@ memory_stall m_stall
 	.dmem_resp(dmem_resp),
 	.opcode(opcode),
 	.dest_out(dest_out),
-	.dmem_address(dmem_address),
+	.alu_out(alu_out),
+	.dmem_rdata_out(dmem_rdata_out),
 	.dmem_action_stb(dmem_action_stb),
 	.dmem_action_cyc(dmem_action_cyc),
 	.dmem_write(dmem_write),
 	.dmem_byte_enable(dmem_byte_enable),
 	.dmem_wdata(dmem_wdata),
 	.mem_stall(mem_stall),
-	.mem_addr_mux_sel(mem_addr_mux_sel)
+	.dmem_address(dmem_address)
 );
 
 mux8 dmem_rdata_mux
@@ -70,14 +70,6 @@ mux4 newpcmux
 	.c(dmem_rdata_out),
 	.d(dmem_rdata_out),
 	.f(pc_out)
-);
-
-mux2 mem_addr_mux
-(
-	.sel(mem_addr_mux_sel),
-	.a(alu_out),
-	.b(dmem_rdata_out),
-	.f(dmem_address)
 );
 
 endmodule: memory_stage

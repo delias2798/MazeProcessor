@@ -170,9 +170,9 @@ begin : next_state_logic
 			idle: begin
 				if (hit)
 					next_state = idle;
-				else if (!hit && !dirty_out)
+				else if (!hit && !dirty_out && cpu_action_stb && cpu_action_cyc)
 					next_state = read_mem;
-				else if (!hit && dirty_out)
+				else if (!hit && dirty_out && cpu_action_stb && cpu_action_cyc)
 					next_state = write_back;
 			end
 			

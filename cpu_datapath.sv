@@ -91,10 +91,10 @@ lc3b_word write_data;
 logic branch_enable;
 
 /* Assign load signals for CP1 */
-assign load_if_id = !mem_stall;
-assign load_id_ex = !mem_stall;
-assign load_ex_mem = !mem_stall;
-assign load_mem_wb = !mem_stall;
+assign load_if_id = !mem_stall & imem_resp;
+assign load_id_ex = !mem_stall & imem_resp;
+assign load_ex_mem = !mem_stall & imem_resp;
+assign load_mem_wb = !mem_stall & imem_resp;
 
 /* Fetch Stage (IF) */
 fetch_stage if_stage

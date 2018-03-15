@@ -15,7 +15,7 @@ wishbone dmem_wb(pmem_wb.CLK);
 
 interconnect wishbone_interconnect
 (
-	.clk(clk),
+	.clk(pmem_wb.CLK),
 	.icache(imem_interconnect),
 	.dcache(dmem_interconnect),
 	.dram(pmem_wb)

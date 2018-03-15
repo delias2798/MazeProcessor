@@ -8,7 +8,9 @@ module interconnect (
 enum int unsigned {
     /* List of states */
     instruction_connect,
-	 data_connect
+	 data_connect,
+	 instruction_stall,
+	 data_stall
 	 
 } state, next_state;
 
@@ -33,7 +35,15 @@ begin : state_actions
 	case(state)
         instruction_connect: begin
         	/* Do nothing */
+			
         end
+		  
+		  instruction_stall: begin
+			dram.DAT_M = 128'bX;
+			dram.CYC = 0;
+			dram.STB = 0;
+			dram.WE = 0;
+		  end
 
         data_connect: begin
         	dram.DAT_M = dcache.DAT_M;
@@ -50,6 +60,13 @@ begin : state_actions
 			icache.RTY = 0;
 
         end
+		  
+		  data_stall: begin
+			dram.DAT_M = 128'bX;
+			dram.CYC = 0;
+			dram.STB = 0;
+			dram.WE = 0;
+		  end
    	 endcase
 end : state_actions
 
@@ -63,19 +80,27 @@ begin : next_state_logic
         instruction_connect: begin
         	if(dram.ACK) begin
         		if(dcache.CYC == 1 && dcache.STB == 1)
-        			next_state = data_connect;		
+        			next_state = instruction_stall;		
         	end
         	else begin
         		if(icache.CYC == 0 && dcache.CYC == 1 && dcache.STB == 1)
-        			next_state = data_connect;
+        			next_state = instruction_stall;
         	end
         end
 
         data_connect: begin
          	if(dram.ACK) begin
-					next_state = instruction_connect;
+					next_state = data_stall;
 				end
         end
+		  
+		  data_stall: begin
+				next_state = instruction_connect;
+		  end
+		  
+		  instruction_stall: begin
+				next_state = data_connect;
+		  end
     endcase
 end : next_state_logic
 
