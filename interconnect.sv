@@ -106,14 +106,14 @@ begin : next_state_logic
 		  data_stall: begin
 				if(icache.CYC == 1 && icache.STB == 1)
 					next_state = instruction_connect;
-				else
+				else if(dcache.CYC == 1 && dcache.STB == 1)
 					next_state = data_connect;
 		  end
 		  
 		  instruction_stall: begin
 				if(dcache.CYC == 1 && dcache.STB == 1)
 					next_state = data_connect;
-				else
+				else if(icache.CYC == 1 && icache.STB == 1)
 					next_state = instruction_connect;
 		  end
     endcase
