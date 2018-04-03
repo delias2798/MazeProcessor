@@ -145,7 +145,6 @@ register if_id_ir
 	.out(imem_rdata_if_id_out)
 );
 
-
 /* Decode Stage (ID) */
 decode_stage id_stage
 (

@@ -22,6 +22,7 @@ always_comb
 begin
 	hazard_stall = 0;
 	
+	/* Data Hazard */
 	if (ctrl_id_ex_load && (dest_id_ex_register == sr1_in)) begin
 		if ((opcode != op_br) && (opcode != op_lea) && (opcode != op_trap) && (opcode != op_jsr))
 			hazard_stall = 1;
