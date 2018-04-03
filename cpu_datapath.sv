@@ -36,8 +36,11 @@ logic load_id_ex;
 logic load_regfile;
 lc3b_control_word ctrl;
 
+lc3b_reg sr1_in;
+lc3b_reg sr2_in;
 lc3b_word sr1_out;
 lc3b_word sr2_out;
+lc3b_word sr2mux_out;
 lc3b_word dest_out;
 lc3b_reg dest_register;
 lc3b_offset8 offset8;
@@ -46,8 +49,11 @@ lc3b_offset11 offset11;
 
 lc3b_control_word ctrl_id_ex;
 lc3b_word pc_id_ex_out;
+lc3b_reg sr1_id_ex_in;
+lc3b_reg sr2_id_ex_in;
 lc3b_word sr1_id_ex_out;
 lc3b_word sr2_id_ex_out;
+lc3b_word sr2mux_id_ex_out;
 lc3b_word dest_id_ex_out;
 lc3b_reg dest_id_ex_register;
 lc3b_offset8 offset8_id_ex_out;
@@ -69,6 +75,9 @@ lc3b_word pc_j_ex_mem_out;
 lc3b_word alu_ex_mem_out;
 lc3b_word dest_ex_mem_out;
 lc3b_reg dest_ex_mem_register;
+
+logic [1:0] sr1_forward_sel;
+logic [1:0] sr2_forward_sel;
 
 /* Internal Signals - Memory */
 logic load_mem_wb;
@@ -142,8 +151,11 @@ decode_stage id_stage
 	.offset9(offset9),
 	.offset11(offset11),
 	.ctrl(ctrl),
+	.sr1_in(sr1_in),
+	.sr2_in(sr2_in),
 	.sr1_out(sr1_out),
-	.sr2mux2_out(sr2_out),
+	.sr2_out(sr2_out),
+	.sr2mux_out(sr2mux_out),
 	.dest_out(dest_out),
 	.dest_register(dest_register)
 );
@@ -165,6 +177,22 @@ register id_ex_pc
 	.out(pc_id_ex_out)
 );
 
+register #(.width(3)) id_ex_sr1_in
+(
+	.clk(clk),
+	.load(load_id_ex),
+	.in(sr1_in),
+	.out(sr1_id_ex_in)
+);
+
+register #(.width(3)) id_ex_sr2_in
+(
+	.clk(clk),
+	.load(load_id_ex),
+	.in(sr2_in),
+	.out(sr2_id_ex_in)
+);
+
 register id_ex_sr1
 (
 	.clk(clk),
@@ -179,6 +207,14 @@ register id_ex_sr2
 	.load(load_id_ex),
 	.in(sr2_out),
 	.out(sr2_id_ex_out)
+);
+
+register id_ex_sr2mux
+(
+	.clk(clk),
+	.load(load_id_ex),
+	.in(sr2mux_out),
+	.out(sr2mux_id_ex_out)
 );
 
 register id_ex_dest
@@ -228,17 +264,36 @@ execute_stage ex_stage
 	.offset9(offset9_id_ex_out),
 	.offset11(offset11_id_ex_out),
 	.pc(pc_id_ex_out),
+	.alu_ex_mem_out(alu_ex_mem_out),
+	.write_data(write_data),
 	.sr1(sr1_id_ex_out),
 	.sr2(sr2_id_ex_out),
+	.sr2mux_out(sr2mux_id_ex_out),
 	.offset8(offset8_id_ex_out),
 	.dest_out(dest_id_ex_out),
+	.sr1_forward_sel(sr1_forward_sel),
+	.sr2_forward_sel(sr2_forward_sel),
 	.bradd2mux_sel(ctrl_id_ex.bradd2mux_sel),
 	.aluop(ctrl_id_ex.aluop),
+	.sr2mux_sel(ctrl_id_ex.sr2mux2_sel),
 	.alumux_sel(ctrl_id_ex.alumux_sel),
 	.br_add_out(pc_br),
 	.bradd2mux_out(pc_j),
 	.alumux_out(alu_out),
 	.destmux_out(destmux_out)
+);
+
+execute_forward ex_forward
+(
+	.clk(clk),
+	.sr1_in(sr1_id_ex_in),
+	.sr2_in(sr2_id_ex_in),
+	.dest_ex_mem_register(dest_ex_mem_register),
+	.dest_mem_wb_register(dest_mem_wb_register),
+	.ctrl_ex_mem_write(ctrl_ex_mem.alu_forward),
+	.ctrl_mem_wb_write(ctrl_mem_wb.load_regfile),
+	.sr1_forward_sel(sr1_forward_sel),
+	.sr2_forward_sel(sr2_forward_sel)
 );
 
 /* Execute - Memory Registers (EX/MEM) */

@@ -23,6 +23,7 @@ begin
 	ctrl.aluop = alu_pass;
 	ctrl.alumux_sel = 0;
 
+	ctrl.alu_forward = 0;
 	ctrl.newpcmux_sel = 2'b00;
 	
 	ctrl.regfilemux_sel = 3'b000;
@@ -39,6 +40,7 @@ begin
 			end
 			/* DR <= SRA + SRB */
 			ctrl.aluop = alu_add;
+			ctrl.alu_forward = 1;
 			ctrl.load_regfile = 1;
 			ctrl.load_cc = 1;
 		end
@@ -52,6 +54,7 @@ begin
 			end
 			/* DR <= SRA & SRB */
 			ctrl.aluop = alu_and;
+			ctrl.alu_forward = 1;
 			ctrl.load_regfile = 1;
 			ctrl.load_cc = 1;
 		end
@@ -59,6 +62,7 @@ begin
 		op_not: begin
 			/* DR <= NOT(SRA) */
 			ctrl.aluop = alu_not;
+			ctrl.alu_forward = 1;
 			ctrl.load_regfile = 1;
 			ctrl.load_cc = 1;
 		end
@@ -126,6 +130,7 @@ begin
 				else
 					ctrl.aluop = alu_sra;
 			end
+			ctrl.alu_forward = 1;
 			ctrl.load_regfile = 1;
 			ctrl.load_cc = 1;
 		end

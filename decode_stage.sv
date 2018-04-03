@@ -12,8 +12,11 @@ module decode_stage
 	output lc3b_offset9 offset9,
 	output lc3b_offset11 offset11,
 	output lc3b_control_word ctrl,
+	output lc3b_reg sr1_in,
+	output lc3b_reg sr2_in,
 	output lc3b_word sr1_out,
-	output lc3b_word sr2mux2_out,
+	output lc3b_word sr2_out,
+	output lc3b_word sr2mux_out,
 	output lc3b_word dest_out,
 	output lc3b_reg dest_register
 );
@@ -27,20 +30,15 @@ logic destmux_sel;
 /* Internal Signals*/
 lc3b_opcode opcode;
 lc3b_reg dest;
-lc3b_reg sr1_in;
-lc3b_reg sr2_in;
 
 lc3b_offset4 offset4;
 lc3b_offset5 offset5;
 lc3b_offset6 offset6;
 
-lc3b_word sr2_out;
-
 lc3b_word zext4_out;
 lc3b_word sext5_out;
 lc3b_word sext6_out;
 lc3b_word adj6_out;
-lc3b_word sr2mux_out;
 
 ir inst_reg
 (
@@ -67,7 +65,6 @@ control_rom ctrl_r
 );
 
 assign sr2mux_sel = ctrl.sr2mux_sel;
-assign sr2mux2_sel = ctrl.sr2mux2_sel;
 assign writemux_sel = ctrl.writemux_sel;
 
 regfile reg_file
@@ -116,14 +113,6 @@ mux4 sr2mux
 	.c(sext5_out),
 	.d(zext4_out),
 	.f(sr2mux_out)
-);
-
-mux2 sr2mux2
-(
-	.sel(sr2mux2_sel),
-	.a(sr2_out),
-	.b(sr2mux_out),
-	.f(sr2mux2_out)
 );
 
 mux2 #(.width(3)) writemux
