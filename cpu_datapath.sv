@@ -71,6 +71,7 @@ lc3b_word alu_out;
 lc3b_word destmux_out;
 
 lc3b_control_word ctrl_ex_mem;
+lc3b_word dest_ex_mem_in;
 lc3b_word pc_ex_mem_out;
 lc3b_word pc_br_ex_mem_out;
 lc3b_word pc_j_ex_mem_out;
@@ -85,6 +86,7 @@ logic dest_forward_sel;
 /* Internal Signals - Memory */
 logic load_mem_wb;
 logic mem_stall;
+logic dest_mem_forward_sel;
 lc3b_word new_pc;
 
 lc3b_control_word ctrl_mem_wb;
@@ -320,6 +322,14 @@ register_control_rom ex_mem_ctrl
 	.out(ctrl_ex_mem)
 );
 
+register #(.width(3)) ex_mem_dest_in
+(
+	.clk(clk),
+	.load(load_ex_mem),
+	.in(dest_id_ex_in),
+	.out(dest_ex_mem_in)
+);
+
 register ex_mem_pc
 (
 	.clk(clk),
@@ -379,8 +389,10 @@ memory_stage mem_stage
 	.dmem_rdata(dmem_rdata),
 	.dest_out(dest_ex_mem_out),
 	.dmem_resp(dmem_resp),
+	.write_data(write_data),
 	.newpcmux_sel(ctrl_ex_mem.newpcmux_sel),
 	.opcode(ctrl_ex_mem.opcode),
+	.dest_mem_forward_sel(dest_mem_forward_sel),
 	.pc_out(new_pc),
 	.dmem_address(dmem_address),
 	.dmem_wdata(dmem_wdata),
@@ -390,6 +402,15 @@ memory_stage mem_stage
 	.dmem_rdata_out(dmem_rdata_out),
 	.dmem_byte_enable(dmem_byte_enable),
 	.mem_stall(mem_stall)
+);
+
+memory_forward mem_forward
+(
+	.clk(clk),
+	.dest_in(dest_ex_mem_in),
+	.dest_mem_wb_register(dest_mem_wb_register),
+	.ctrl_mem_wb_write(ctrl_mem_wb.load_regfile),
+	.dest_mem_forward_sel(dest_mem_forward_sel)
 );
 
 /* Memory - Write-Back Registers (MEM/WB) */

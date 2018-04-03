@@ -37,9 +37,7 @@ lc3b_word adj11_out;
 lc3b_word br_add2_out;
 lc3b_word alu_out;
 lc3b_word zext_s8_out;
-lc3b_word dest_lfsh_out;
 lc3b_word sr2mux2_out;
-lc3b_word dest_forward_out;
 
 mux4 sr1_forward
 (
@@ -130,16 +128,6 @@ mux2 dest_forwardmux
 	.sel(dest_forward_sel),
 	.a(dest_out),
 	.b(write_data),
-	.f(dest_forward_out)
-);
-
-assign dest_lfsh_out = dest_forward_out << 8;
-
-mux2 destmux
-(
-	.sel(alumux_out[0]),
-	.a(dest_forward_out),
-	.b(dest_lfsh_out),
 	.f(destmux_out)
 );
 

@@ -10,10 +10,12 @@ module memory_stage
 	input lc3b_data dmem_rdata,
 	input lc3b_word dest_out,
 	input dmem_resp,
-
+	input lc3b_word write_data,
+	
 	/* Control Signals */
 	input [1:0] newpcmux_sel,
 	input lc3b_opcode opcode,
+	input dest_mem_forward_sel,
 
 	output lc3b_word pc_out,
 	output lc3b_word dmem_address,
@@ -28,6 +30,27 @@ module memory_stage
 
 /* Internal Signals */
 lc3b_word dmem_data_out;
+lc3b_word dest_forward_mux_out;
+lc3b_word dest_lfsh_out;
+lc3b_word destmux_out;
+
+mux2 dest_forwardmux
+(
+	.sel(dest_mem_forward_sel),
+	.a(dest_out),
+	.b(write_data),
+	.f(dest_forward_mux_out)
+);
+
+assign dest_lfsh_out = dest_forward_mux_out << 8;
+
+mux2 destmux
+(
+	.sel(alu_out[0]),
+	.a(dest_forward_mux_out),
+	.b(dest_lfsh_out),
+	.f(destmux_out)
+);
 
 memory_stall m_stall
 (
@@ -35,7 +58,7 @@ memory_stall m_stall
 	.load_ex_mem(load_ex_mem),
 	.dmem_resp(dmem_resp),
 	.opcode(opcode),
-	.dest_out(dest_out),
+	.dest_out(destmux_out),
 	.alu_out(alu_out),
 	.dmem_data_out(dmem_data_out),
 	.dmem_action_stb(dmem_action_stb),
