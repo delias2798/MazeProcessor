@@ -7,6 +7,7 @@ module execute_stage
 	input lc3b_offset11 offset11,
 	input lc3b_word pc,
 	input lc3b_word alu_ex_mem_out,
+	input lc3b_word pc_br_ex_mem_out,
 	input lc3b_word write_data,
 	input lc3b_word sr1,
 	input lc3b_word sr2,
@@ -45,7 +46,7 @@ mux4 sr1_forward
 	.a(sr1),
 	.b(write_data),
 	.c(alu_ex_mem_out),
-	.d(alu_ex_mem_out),
+	.d(pc_br_ex_mem_out),
 	.f(sr1_forward_mux_out)
 );
 
@@ -55,7 +56,7 @@ mux4 sr2_forward
 	.a(sr2),
 	.b(write_data),
 	.c(alu_ex_mem_out),
-	.d(alu_ex_mem_out),
+	.d(pc_br_ex_mem_out),
 	.f(sr2_forward_mux_out)
 );
 

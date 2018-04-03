@@ -279,6 +279,7 @@ execute_stage ex_stage
 	.offset11(offset11_id_ex_out),
 	.pc(pc_id_ex_out),
 	.alu_ex_mem_out(alu_ex_mem_out),
+	.pc_br_ex_mem_out(pc_br_ex_mem_out),
 	.write_data(write_data),
 	.sr1(sr1_id_ex_out),
 	.sr2(sr2_id_ex_out),
@@ -308,6 +309,7 @@ execute_forward ex_forward
 	.dest_mem_wb_register(dest_mem_wb_register),
 	.ctrl_ex_mem_write(ctrl_ex_mem.alu_forward),
 	.ctrl_mem_wb_write(ctrl_mem_wb.load_regfile),
+	.opcode(ctrl_ex_mem.opcode),
 	.sr1_forward_sel(sr1_forward_sel),
 	.sr2_forward_sel(sr2_forward_sel),
 	.dest_forward_sel(dest_forward_sel)

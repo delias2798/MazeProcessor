@@ -113,6 +113,7 @@ begin
 		op_lea: begin
 			/* DR = PC + (SEXT(PCoffset9) << 1) */
 			ctrl.regfilemux_sel = 3'b011;
+			ctrl.alu_forward = 1;
 			ctrl.load_regfile = 1;
 			ctrl.load_cc = 1;
 		end
