@@ -1,6 +1,6 @@
 import lc3b_types::*;
 
-module cache_datapath
+module l1_cache_datapath
 (
 	input clk,
 	input lc3b_word mem_address,
@@ -223,4 +223,4 @@ mux2 #(.width(16)) pmem_addr_mux
 	.f(pmem_address)
 );
 
-endmodule: cache_datapath
+endmodule: l1_cache_datapath

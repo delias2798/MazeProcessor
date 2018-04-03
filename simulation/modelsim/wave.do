@@ -22,12 +22,12 @@ add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/alu
 add wave -noupdate -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/dmem_data_out
 add wave -noupdate /testbench/processor/wb_interconnect/state
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {595036 ps} 0}
+WaveRestoreCursors {{Cursor 1} {485169 ps} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 494
+configure wave -namecolwidth 177
 configure wave -valuecolwidth 233
 configure wave -justifyvalue left
-configure wave -signalnamewidth 0
+configure wave -signalnamewidth 1
 configure wave -snapdistance 10
 configure wave -datasetprefix 0
 configure wave -rowmargin 4
@@ -38,4 +38,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {1602540 ps}
+WaveRestoreZoom {316205 ps} {1669661 ps}

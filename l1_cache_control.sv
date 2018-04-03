@@ -1,4 +1,4 @@
-module cache_control
+module l1_cache_control
 (
 	input clk,
 	
@@ -202,4 +202,4 @@ begin: next_state_assignment
 	 state <= next_state;
 end
 
-endmodule: cache_control
+endmodule: l1_cache_control

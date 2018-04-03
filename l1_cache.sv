@@ -1,6 +1,6 @@
 import lc3b_types::*;
 
-module cache
+module l1_cache
 (
 	wishbone.master wb,
 	wishbone.slave cpu_wb
@@ -33,7 +33,7 @@ assign mem_address = {cpu_wb.ADR, 4'b0000};
 assign wb.ADR = pmem_address[15:4];
 assign wb.SEL = 16'hFFFF;
 
-cache_datapath cache_d
+l1_cache_datapath cache_d
 (
 	.clk(wb.CLK),
 	.mem_address(mem_address),
@@ -64,7 +64,7 @@ cache_datapath cache_d
 	.pmem_address(pmem_address)
 );
 
-cache_control cache_c
+l1_cache_control cache_c
 (
 	.clk(wb.CLK),
 	.valid0_write(valid0_write),
@@ -98,4 +98,4 @@ cache_control cache_c
 	.mem_retry(wb.RTY)
 );
 
-endmodule: cache
+endmodule: l1_cache

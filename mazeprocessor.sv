@@ -5,6 +5,9 @@ module mazeprocessor
 	wishbone.master pmem_wb
 );
 
+/* Wishbone from L2 Cache to Interconnect */
+wishbone l2_interconnect(pmem_wb.CLK);
+
 /* Wishbone from L1 Cache to Interconnect */
 wishbone imem_interconnect(pmem_wb.CLK);
 wishbone dmem_interconnect(pmem_wb.CLK);
@@ -13,21 +16,27 @@ wishbone dmem_interconnect(pmem_wb.CLK);
 wishbone imem_wb(pmem_wb.CLK);
 wishbone dmem_wb(pmem_wb.CLK);
 
-wishbone_interconnect wb_interconnect
+l2_cache l2_cache
+(
+	.wb(pmem_wb),
+	.cpu_wb(l2_interconnect)
+);
+
+wb_interconnect wb_interconnect
 (
 	.clk(pmem_wb.CLK),
 	.icache(imem_interconnect),
 	.dcache(dmem_interconnect),
-	.dram(pmem_wb)
+	.l2(l2_interconnect)
 );
 
-cache l1_lcache
+l1_cache l1_lcache
 (
 	.wb(imem_interconnect),
 	.cpu_wb(imem_wb)
 );
 
-cache l1_dcache
+l1_cache l1_dcache
 (
 	.wb(dmem_interconnect),
 	.cpu_wb(dmem_wb)

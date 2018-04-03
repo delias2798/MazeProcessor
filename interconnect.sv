@@ -1,71 +1,76 @@
-module wishbone_interconnect (
+module wb_interconnect (
     input clk,
     wishbone.slave icache,
     wishbone.slave dcache,
-    wishbone.master dram
+    wishbone.master l2
 );
 
 enum int unsigned {
     /* List of states */
-    instruction_connect,
-	 data_connect,
+	 idle,
 	 instruction_stall,
-	 data_stall
-	 
+    instruction_connect,
+	 data_stall,
+	 data_connect
 } state, next_state;
-
-logic switch;
 
 always_comb
 begin : state_actions
-  	
-  	dram.DAT_M = icache.DAT_M;
-	dram.CYC = icache.CYC;
-	dram.STB = icache.STB;
-	dram.WE = icache.WE;
-	dram.SEL = icache.SEL;
-	dram.ADR = icache.ADR;
-	icache.ACK = dram.ACK;
-	icache.DAT_S = dram.DAT_S;
-	icache.RTY = dram.RTY;
+  	/* Default values */
+	l2.DAT_M = 128'bX;
+	l2.CYC = 0;
+	l2.STB = 0;
+	l2.WE = 0;
+	l2.SEL = 16'bX;
+	l2.ADR = 12'bX;
+	icache.ACK = 0;
+	icache.DAT_S = 128'bX;
+	icache.RTY = 0;
 	dcache.ACK = 0;
 	dcache.DAT_S = 128'bX;
 	dcache.RTY = 0;
 
 	case(state)
-        instruction_connect: begin
-        	/* Do nothing */
+			idle: begin
+			/* DO NOTHING */
+			end
 			
+        instruction_connect: begin
+        	l2.DAT_M = icache.DAT_M;
+        	l2.CYC = icache.CYC;
+        	l2.STB = icache.STB;
+        	l2.WE = icache.WE;
+        	l2.SEL = icache.SEL;
+        	l2.ADR = icache.ADR;
+        	icache.ACK = l2.ACK;
+			icache.DAT_S = l2.DAT_S;
+			icache.RTY = l2.RTY;
+			dcache.ACK = 0;
+			dcache.DAT_S = 128'bX;
+			dcache.RTY = 0;
         end
 		  
 		  instruction_stall: begin
-			dram.DAT_M = 128'bX;
-			dram.CYC = 0;
-			dram.STB = 0;
-			dram.WE = 0;
+			/* DO NOTHING */
 		  end
 
         data_connect: begin
-        	dram.DAT_M = dcache.DAT_M;
-        	dram.CYC = dcache.CYC;
-        	dram.STB = dcache.STB;
-        	dram.WE = dcache.WE;
-        	dram.SEL = dcache.SEL;
-        	dram.ADR = dcache.ADR;
-        	dcache.ACK = dram.ACK;
-			dcache.DAT_S = dram.DAT_S;
-			dcache.RTY = dram.RTY;
+        	l2.DAT_M = dcache.DAT_M;
+        	l2.CYC = dcache.CYC;
+        	l2.STB = dcache.STB;
+        	l2.WE = dcache.WE;
+        	l2.SEL = dcache.SEL;
+        	l2.ADR = dcache.ADR;
+        	dcache.ACK = l2.ACK;
+			dcache.DAT_S = l2.DAT_S;
+			dcache.RTY = l2.RTY;
 			icache.ACK = 0;
 			icache.DAT_S = 128'bX;
 			icache.RTY = 0;
-
         end
 		  
 		  data_stall: begin
-			dram.DAT_M = 128'bX;
-			dram.CYC = 0;
-			dram.STB = 0;
-			dram.WE = 0;
+			/* DO NOTHING */
 		  end
    	 endcase
 end : state_actions
@@ -77,45 +82,35 @@ begin : next_state_logic
     next_state = state;
       
     case(state)
-        instruction_connect: begin
-        	if(dram.ACK) begin
-        		if(dcache.CYC == 1 && dcache.STB == 1)
-        			next_state = instruction_stall;
-				else if (icache.CYC == 1 && icache.STB == 1)
-					next_state = instruction_stall;
-        	end
-        	else begin
-        		if(icache.CYC == 0 && dcache.CYC == 1 && dcache.STB == 1)
-        			next_state = data_connect;
-        	end
-        end
-
-        data_connect: begin
-         	if(dram.ACK) begin
-					if(icache.CYC == 1 && icache.STB == 1)
-						next_state = data_stall;
-					else if (dcache.CYC == 1 && dcache.STB == 1)
-						next_state = data_stall;
-				end
-				else begin
-					if(dcache.CYC == 0 && icache.CYC == 1 && icache.STB == 1)
-						next_state = instruction_connect;
-				end
-        end
-		  
-		  data_stall: begin
+			idle: begin
 				if(icache.CYC == 1 && icache.STB == 1)
-					next_state = instruction_connect;
+					next_state = instruction_stall;
 				else if(dcache.CYC == 1 && dcache.STB == 1)
-					next_state = data_connect;
-		  end
+					next_state = data_stall;
+			end
+			
+			instruction_stall: next_state = instruction_connect;
 		  
-		  instruction_stall: begin
-				if(dcache.CYC == 1 && dcache.STB == 1)
-					next_state = data_connect;
-				else if(icache.CYC == 1 && icache.STB == 1)
-					next_state = instruction_connect;
-		  end
+			instruction_connect: begin
+				if(l2.ACK) begin
+					if(dcache.CYC == 1 && dcache.STB == 1)
+						next_state = data_stall;
+					else
+						next_state = idle;
+				end
+			end
+		  
+			data_stall: next_state = data_connect;
+		  
+			data_connect: begin
+				if(l2.ACK) begin
+					if(icache.CYC == 1 && icache.STB == 1)
+						next_state = instruction_stall;
+					else
+						next_state = idle;
+				end
+			end
+		  
     endcase
 end : next_state_logic
 
@@ -127,4 +122,4 @@ begin: next_state_assignment
 end : next_state_assignment
 
 
-endmodule : wishbone_interconnect
+endmodule : wb_interconnect
