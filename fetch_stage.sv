@@ -7,6 +7,7 @@ module fetch_stage
 	input lc3b_word new_pc,
 	input branch_enable,
 	input mem_stall,
+	input hazard_stall,
 	input imem_resp,
 	output lc3b_word imem_address,
 	output logic imem_action_stb,
@@ -18,7 +19,7 @@ module fetch_stage
 /* Control Signals */
 logic load_pc;
 
-assign load_pc = !mem_stall & imem_resp;
+assign load_pc = !mem_stall & imem_resp & !hazard_stall;
 assign imem_action_cyc = 1;
 assign imem_action_stb = 1;
 

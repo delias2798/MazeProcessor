@@ -18,6 +18,7 @@ begin
 	ctrl.sr2mux_sel = 2'b00;
 	ctrl.sr2mux2_sel = 0;
 	ctrl.writemux_sel = 0;
+	ctrl.load_hazard = 0;
 
 	ctrl.bradd2mux_sel = 0;
 	ctrl.aluop = alu_pass;
@@ -76,6 +77,7 @@ begin
 			ctrl.sr2mux2_sel = 1;
 			ctrl.aluop = alu_add;
 			ctrl.regfilemux_sel = 3'b001;
+			ctrl.load_hazard = 1;
 			ctrl.load_regfile = 1;
 			ctrl.load_cc = 1;
 		end
@@ -106,6 +108,7 @@ begin
 			ctrl.sr2mux2_sel = 1;
 			ctrl.aluop = alu_add;
 			ctrl.regfilemux_sel = 3'b100;
+			ctrl.load_hazard = 1;
 			ctrl.load_regfile = 1;
 			ctrl.load_cc = 1;
 		end
@@ -158,6 +161,7 @@ begin
 			ctrl.sr2mux2_sel = 1;
 			ctrl.aluop = alu_add;
 			ctrl.regfilemux_sel = 3'b001;
+			ctrl.load_hazard = 1;
 			ctrl.load_regfile = 1;
 			ctrl.load_cc = 1;
 		end

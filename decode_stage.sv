@@ -8,6 +8,8 @@ module decode_stage
 	input lc3b_word write_data,
 	input load_regfile,
 	
+	input hazard_stall,
+	
 	output lc3b_offset8 offset8,
 	output lc3b_offset9 offset9,
 	output lc3b_offset11 offset11,
@@ -40,6 +42,10 @@ lc3b_word sext5_out;
 lc3b_word sext6_out;
 lc3b_word adj6_out;
 
+/* Insert a NOP */
+lc3b_control_word ctrl_out;
+lc3b_reg dest_register_out;
+
 ir inst_reg
 (
 	.in(instruction),
@@ -61,8 +67,10 @@ control_rom ctrl_r
 	.ir4(instruction[4]),
 	.ir5(instruction[5]),
 	.ir11(instruction[11]),
-	.ctrl(ctrl)
+	.ctrl(ctrl_out)
 );
+
+assign ctrl = hazard_stall ? 1'b0 : ctrl_out;
 
 assign sr2mux_sel = ctrl.sr2mux_sel;
 assign writemux_sel = ctrl.writemux_sel;
@@ -120,7 +128,9 @@ mux2 #(.width(3)) writemux
 	.sel(writemux_sel),
 	.a(dest),
 	.b(3'b111),
-	.f(dest_register)
+	.f(dest_register_out)
 );
+
+assign dest_register = hazard_stall ? 3'b000 : dest_register_out;
 
 endmodule: decode_stage

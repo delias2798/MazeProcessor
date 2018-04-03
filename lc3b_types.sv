@@ -54,6 +54,7 @@ typedef struct packed {
 	logic load_regfile;
 	logic [1:0] sr2mux_sel;
 	logic writemux_sel;
+	logic load_hazard;
 
 	/* Execute Stage */
 	logic sr2mux2_sel;

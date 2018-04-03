@@ -34,6 +34,7 @@ lc3b_word imem_rdata_if_id_out;
 /* Internal Signals - Decode*/
 logic load_id_ex;
 logic load_regfile;
+logic hazard_stall;
 lc3b_control_word ctrl;
 
 lc3b_reg sr1_in;
@@ -71,7 +72,7 @@ lc3b_word alu_out;
 lc3b_word destmux_out;
 
 lc3b_control_word ctrl_ex_mem;
-lc3b_word dest_ex_mem_in;
+lc3b_reg dest_ex_mem_in;
 lc3b_word pc_ex_mem_out;
 lc3b_word pc_br_ex_mem_out;
 lc3b_word pc_j_ex_mem_out;
@@ -105,7 +106,7 @@ lc3b_word write_data;
 logic branch_enable;
 
 /* Assign load signals for CP1 */
-assign load_if_id = !mem_stall & imem_resp;
+assign load_if_id = !mem_stall & imem_resp & !hazard_stall;
 assign load_id_ex = !mem_stall & imem_resp;
 assign load_ex_mem = !mem_stall & imem_resp;
 assign load_mem_wb = !mem_stall & imem_resp;
@@ -118,6 +119,7 @@ fetch_stage if_stage
 	.new_pc(new_pc_mem_wb_out),
 	.branch_enable(branch_enable),
 	.mem_stall(mem_stall),
+	.hazard_stall(hazard_stall),
 	.imem_resp(imem_resp),
 	.imem_address(imem_address),
 	.imem_action_stb(imem_action_stb),
@@ -152,6 +154,7 @@ decode_stage id_stage
 	.write_register(write_register),
 	.write_data(write_data),
 	.load_regfile(load_regfile),
+	.hazard_stall(hazard_stall),
 	.offset8(offset8),
 	.offset9(offset9),
 	.offset11(offset11),
@@ -164,6 +167,16 @@ decode_stage id_stage
 	.sr2mux_out(sr2mux_out),
 	.dest_out(dest_out),
 	.dest_register(dest_register)
+);
+
+hazard_detection hazard_detection_unit
+(
+	.clk(clk),
+	.sr1_in(sr1_in),
+	.sr2_in(sr2_in),
+	.ctrl_id_ex_load(ctrl_id_ex.load_hazard),
+	.dest_id_ex_register(dest_id_ex_register),
+	.hazard_stall(hazard_stall)
 );
 
 /* Decode - Execute Registers (ID/EX) */
