@@ -172,8 +172,7 @@ decode_stage id_stage
 hazard_detection hazard_detection_unit
 (
 	.clk(clk),
-	.sr1_in(sr1_in),
-	.sr2_in(sr2_in),
+	.instruction(imem_rdata_if_id_out),
 	.ctrl_id_ex_load(ctrl_id_ex.load_hazard),
 	.dest_id_ex_register(dest_id_ex_register),
 	.hazard_stall(hazard_stall)
