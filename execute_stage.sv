@@ -8,6 +8,7 @@ module execute_stage
 	input lc3b_word pc,
 	input lc3b_word alu_ex_mem_out,
 	input lc3b_word pc_br_ex_mem_out,
+	input lc3b_word pc_ex_mem_out,
 	input lc3b_word write_data,
 	input lc3b_word sr1,
 	input lc3b_word sr2,
@@ -18,6 +19,7 @@ module execute_stage
 	/* Input Control Signals */
 	input [1:0] sr1_forward_sel,
 	input [1:0] sr2_forward_sel,
+	input pc_forward_sel,
 	input dest_forward_sel,
 	input bradd2mux_sel,
 	input lc3b_aluop aluop,
@@ -31,6 +33,7 @@ module execute_stage
 );
 
 /* Internal Signals */
+lc3b_word pc_forward_mux_out;
 lc3b_word sr1_forward_mux_out;
 lc3b_word sr2_forward_mux_out;
 lc3b_word adj9_out;
@@ -40,13 +43,21 @@ lc3b_word alu_out;
 lc3b_word zext_s8_out;
 lc3b_word sr2mux2_out;
 
+mux2 pc_forwardmux
+(
+	.sel(pc_forward_sel),
+	.a(pc_br_ex_mem_out),
+	.b(pc_ex_mem_out),
+	.f(pc_forward_mux_out)
+);
+
 mux4 sr1_forward
 (
 	.sel(sr1_forward_sel),
 	.a(sr1),
 	.b(write_data),
 	.c(alu_ex_mem_out),
-	.d(pc_br_ex_mem_out),
+	.d(pc_forward_mux_out),
 	.f(sr1_forward_mux_out)
 );
 
@@ -56,7 +67,7 @@ mux4 sr2_forward
 	.a(sr2),
 	.b(write_data),
 	.c(alu_ex_mem_out),
-	.d(pc_br_ex_mem_out),
+	.d(pc_forward_mux_out),
 	.f(sr2_forward_mux_out)
 );
 

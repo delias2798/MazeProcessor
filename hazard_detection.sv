@@ -29,7 +29,7 @@ begin
 		if ((opcode == op_jsr) && (instruction[11] == 0))
 			hazard_stall = 1;
 	end
-		
+
 	if (ctrl_id_ex_load && (dest_id_ex_register == sr2_in)) begin
 		if (instruction[5] == 0 && ((opcode == op_add) || (opcode == op_and)))
 			hazard_stall = 1;

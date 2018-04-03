@@ -82,6 +82,7 @@ lc3b_reg dest_ex_mem_register;
 
 logic [1:0] sr1_forward_sel;
 logic [1:0] sr2_forward_sel;
+logic pc_forward_sel;
 logic dest_forward_sel;
 
 /* Internal Signals - Memory */
@@ -291,6 +292,7 @@ execute_stage ex_stage
 	.pc(pc_id_ex_out),
 	.alu_ex_mem_out(alu_ex_mem_out),
 	.pc_br_ex_mem_out(pc_br_ex_mem_out),
+	.pc_ex_mem_out(pc_ex_mem_out),
 	.write_data(write_data),
 	.sr1(sr1_id_ex_out),
 	.sr2(sr2_id_ex_out),
@@ -299,6 +301,7 @@ execute_stage ex_stage
 	.dest_out(dest_id_ex_out),
 	.sr1_forward_sel(sr1_forward_sel),
 	.sr2_forward_sel(sr2_forward_sel),
+	.pc_forward_sel(pc_forward_sel),
 	.dest_forward_sel(dest_forward_sel),
 	.bradd2mux_sel(ctrl_id_ex.bradd2mux_sel),
 	.aluop(ctrl_id_ex.aluop),
@@ -323,6 +326,7 @@ execute_forward ex_forward
 	.opcode(ctrl_ex_mem.opcode),
 	.sr1_forward_sel(sr1_forward_sel),
 	.sr2_forward_sel(sr2_forward_sel),
+	.pc_forward_sel(pc_forward_sel),
 	.dest_forward_sel(dest_forward_sel)
 );
 
