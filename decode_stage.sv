@@ -14,6 +14,7 @@ module decode_stage
 	output lc3b_control_word ctrl,
 	output lc3b_reg sr1_in,
 	output lc3b_reg sr2_in,
+	output lc3b_reg dest,
 	output lc3b_word sr1_out,
 	output lc3b_word sr2_out,
 	output lc3b_word sr2mux_out,
@@ -29,7 +30,6 @@ logic destmux_sel;
 
 /* Internal Signals*/
 lc3b_opcode opcode;
-lc3b_reg dest;
 
 lc3b_offset4 offset4;
 lc3b_offset5 offset5;

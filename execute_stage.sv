@@ -17,6 +17,7 @@ module execute_stage
 	/* Input Control Signals */
 	input [1:0] sr1_forward_sel,
 	input [1:0] sr2_forward_sel,
+	input dest_forward_sel,
 	input bradd2mux_sel,
 	input lc3b_aluop aluop,
 	input sr2mux_sel,
@@ -38,6 +39,7 @@ lc3b_word alu_out;
 lc3b_word zext_s8_out;
 lc3b_word dest_lfsh_out;
 lc3b_word sr2mux2_out;
+lc3b_word dest_forward_out;
 
 mux4 sr1_forward
 (
@@ -123,12 +125,20 @@ mux2 alumux
 	.f(alumux_out)
 );
 
-assign dest_lfsh_out = dest_out << 8;
+mux2 dest_forwardmux
+(
+	.sel(dest_forward_sel),
+	.a(dest_out),
+	.b(write_data),
+	.f(dest_forward_out)
+);
+
+assign dest_lfsh_out = dest_forward_out << 8;
 
 mux2 destmux
 (
 	.sel(alumux_out[0]),
-	.a(dest_out),
+	.a(dest_forward_out),
 	.b(dest_lfsh_out),
 	.f(destmux_out)
 );
