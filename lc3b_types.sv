@@ -4,7 +4,7 @@ typedef logic [127:0] lc3b_data;
 typedef logic [8:0] lc3b_tag;
 typedef logic [15:0] lc3b_word;
 typedef logic [7:0] lc3b_byte;
-typedef logic [2:0] lc3b_index;
+typedef logic [3:0] lc3b_index;
 typedef logic [2:0] lc3b_offset;
 
 typedef logic [10:0] lc3b_offset11;
