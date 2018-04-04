@@ -16,6 +16,7 @@ module memory_stage
 	input [1:0] newpcmux_sel,
 	input lc3b_opcode opcode,
 	input dest_mem_forward_sel,
+	input control_flush,
 
 	output lc3b_word pc_out,
 	output lc3b_word dmem_address,
@@ -61,6 +62,7 @@ memory_stall m_stall
 	.dest_out(destmux_out),
 	.alu_out(alu_out),
 	.dmem_data_out(dmem_data_out),
+	.control_flush(control_flush),
 	.dmem_action_stb(dmem_action_stb),
 	.dmem_action_cyc(dmem_action_cyc),
 	.dmem_write(dmem_write),

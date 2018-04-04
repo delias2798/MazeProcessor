@@ -9,7 +9,8 @@ module memory_stall
 	input lc3b_word dest_out,
 	input lc3b_word alu_out,
 	input lc3b_word dmem_data_out,
-
+	input control_flush,
+	
 	output logic dmem_action_stb,
 	output logic dmem_action_cyc,
 	output logic dmem_write,
@@ -104,6 +105,12 @@ begin
 		end
 	end
 	
+	if (control_flush)
+	begin
+		dmem_action_cyc = 0;
+		dmem_action_stb = 0;
+		dmem_write = 0;
+	end
 end
 
 register #(.width(2)) mem_curr_ack_counter

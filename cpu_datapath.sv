@@ -28,6 +28,7 @@ module cpu_datapath
 logic load_if_id;
 lc3b_word pc_plus2_out;
 lc3b_word pc_if_id_out;
+lc3b_word imem_rdata_out_flush;
 lc3b_word imem_rdata_out;
 lc3b_word imem_rdata_if_id_out;
 
@@ -36,6 +37,7 @@ logic load_id_ex;
 logic load_regfile;
 logic hazard_stall;
 lc3b_control_word ctrl;
+lc3b_control_word ctrl_in;
 
 lc3b_reg sr1_in;
 lc3b_reg sr2_in;
@@ -49,6 +51,7 @@ lc3b_offset9 offset9;
 lc3b_offset11 offset11;
 
 lc3b_control_word ctrl_id_ex;
+lc3b_control_word ctrl_id_ex_in;
 lc3b_word pc_id_ex_out;
 lc3b_reg sr1_id_ex_in;
 lc3b_reg sr2_id_ex_in;
@@ -88,6 +91,9 @@ logic mem_stall;
 logic dest_mem_forward_sel;
 lc3b_word new_pc;
 
+logic control_flush;
+
+lc3b_control_word ctrl_ex_mem_in;
 lc3b_control_word ctrl_mem_wb;
 lc3b_word pc_mem_wb_out;
 lc3b_word new_pc_mem_wb_out;
@@ -125,6 +131,8 @@ fetch_stage if_stage
 	.imem_rdata_out(imem_rdata_out)
 );
 
+assign imem_rdata_out_flush = control_flush ? 0 : imem_rdata_out;
+
 /* Fetch - Decode Registers (IF/ID) */
 register if_id_pc
 (
@@ -138,7 +146,7 @@ register if_id_ir
 (
 	.clk(clk),
 	.load(load_if_id),
-	.in(imem_rdata_out),
+	.in(imem_rdata_out_flush),
 	.out(imem_rdata_if_id_out)
 );
 
@@ -172,6 +180,8 @@ hazard_detection hazard_detection_unit
 	.dest_id_ex_register(ctrl_id_ex.dest_register),
 	.hazard_stall(hazard_stall)
 );
+
+assign ctrl_in = control_flush ? 0 : ctrl;
 
 /* Decode - Execute Registers (ID/EX) */
 register_control_rom id_ex_ctrl
@@ -317,12 +327,14 @@ execute_forward ex_forward
 	.dest_forward_sel(dest_forward_sel)
 );
 
+assign ctrl_id_ex_in = control_flush ? 0 : ctrl_id_ex;
+
 /* Execute - Memory Registers (EX/MEM) */
 register_control_rom ex_mem_ctrl
 (
 	.clk(clk),
 	.load(load_ex_mem),
-	.in(ctrl_id_ex),
+	.in(ctrl_id_ex_in),
 	.out(ctrl_ex_mem)
 );
 
@@ -389,6 +401,7 @@ memory_stage mem_stage
 	.newpcmux_sel(ctrl_ex_mem.newpcmux_sel),
 	.opcode(ctrl_ex_mem.opcode),
 	.dest_mem_forward_sel(dest_mem_forward_sel),
+	.control_flush(control_flush),
 	.pc_out(new_pc),
 	.dmem_address(dmem_address),
 	.dmem_wdata(dmem_wdata),
@@ -409,12 +422,25 @@ memory_forward mem_forward
 	.dest_mem_forward_sel(dest_mem_forward_sel)
 );
 
+/*control_hazard_detection_unit control_hazard
+(
+	.clk(clk),
+	.branch_enable(branch_enable),
+	.calculated_pc(new_pc),
+	.predicted_pc(pc_ex_mem_out),
+	.control_flush(control_flush)
+);*/
+
+assign control_flush = (branch_enable && (new_pc != pc_ex_mem_out)) ? 1 : 0;
+
+assign ctrl_ex_mem_in = control_flush ? 0 : ctrl_ex_mem;
+
 /* Memory - Write-Back Registers (MEM/WB) */
 register_control_rom mem_wb_ctrl
 (
 	.clk(clk),
 	.load(load_mem_wb),
-	.in(ctrl_ex_mem),
+	.in(ctrl_ex_mem_in),
 	.out(ctrl_mem_wb)
 );
 
