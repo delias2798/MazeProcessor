@@ -431,8 +431,6 @@ memory_forward mem_forward
 	.control_flush(control_flush)
 );*/
 
-assign control_flush = (branch_enable && (new_pc != pc_ex_mem_out)) ? 1 : 0;
-
 assign ctrl_ex_mem_in = control_flush ? 0 : ctrl_ex_mem;
 
 /* Memory - Write-Back Registers (MEM/WB) */
@@ -508,6 +506,8 @@ write_back_stage wb_stage
 	.write_data(write_data),
 	.branch_enable(branch_enable)
 );
+
+assign control_flush = (branch_enable && (new_pc_mem_wb_out != pc_mem_wb_out)) ? 1 : 0;
 
 assign write_register = ctrl_mem_wb.dest_register;
 assign load_regfile = ctrl_mem_wb.load_regfile;
