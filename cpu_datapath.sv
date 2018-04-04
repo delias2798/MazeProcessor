@@ -44,7 +44,6 @@ lc3b_word sr1_out;
 lc3b_word sr2_out;
 lc3b_word sr2mux_out;
 lc3b_word dest_out;
-lc3b_reg dest_register;
 lc3b_offset8 offset8;
 lc3b_offset9 offset9;
 lc3b_offset11 offset11;
@@ -58,7 +57,6 @@ lc3b_word sr1_id_ex_out;
 lc3b_word sr2_id_ex_out;
 lc3b_word sr2mux_id_ex_out;
 lc3b_word dest_id_ex_out;
-lc3b_reg dest_id_ex_register;
 lc3b_offset8 offset8_id_ex_out;
 lc3b_offset9 offset9_id_ex_out;
 lc3b_offset11 offset11_id_ex_out;
@@ -78,7 +76,6 @@ lc3b_word pc_br_ex_mem_out;
 lc3b_word pc_j_ex_mem_out;
 lc3b_word alu_ex_mem_out;
 lc3b_word dest_ex_mem_out;
-lc3b_reg dest_ex_mem_register;
 
 logic [1:0] sr1_forward_sel;
 logic [1:0] sr2_forward_sel;
@@ -98,7 +95,6 @@ lc3b_word pc_br_mem_wb_out;
 lc3b_word dmem_wdata_mem_wb;
 lc3b_word alu_mem_wb_out;
 lc3b_word dmem_address_mem_wb;
-lc3b_reg dest_mem_wb_register;
 lc3b_word dmem_rdata_out;
 
 /* Internal Signals - Write-Back */
@@ -165,8 +161,7 @@ decode_stage id_stage
 	.sr1_out(sr1_out),
 	.sr2_out(sr2_out),
 	.sr2mux_out(sr2mux_out),
-	.dest_out(dest_out),
-	.dest_register(dest_register)
+	.dest_out(dest_out)
 );
 
 hazard_detection hazard_detection_unit
@@ -174,7 +169,7 @@ hazard_detection hazard_detection_unit
 	.clk(clk),
 	.instruction(imem_rdata_if_id_out),
 	.ctrl_id_ex_load(ctrl_id_ex.load_hazard),
-	.dest_id_ex_register(dest_id_ex_register),
+	.dest_id_ex_register(ctrl_id_ex.dest_register),
 	.hazard_stall(hazard_stall)
 );
 
@@ -251,14 +246,6 @@ register id_ex_dest
 	.out(dest_id_ex_out)
 );
 
-register #(.width(3)) id_ex_dest_reg
-(
-	.clk(clk),
-	.load(load_id_ex),
-	.in(dest_register),
-	.out(dest_id_ex_register)
-);
-
 register #(.width(8)) id_ex_offset8
 (
 	.clk(clk),
@@ -319,8 +306,8 @@ execute_forward ex_forward
 	.sr1_in(sr1_id_ex_in),
 	.sr2_in(sr2_id_ex_in),
 	.dest_in(dest_id_ex_in),
-	.dest_ex_mem_register(dest_ex_mem_register),
-	.dest_mem_wb_register(dest_mem_wb_register),
+	.dest_ex_mem_register(ctrl_ex_mem.dest_register),
+	.dest_mem_wb_register(ctrl_mem_wb.dest_register),
 	.ctrl_ex_mem_write(ctrl_ex_mem.alu_forward),
 	.ctrl_mem_wb_write(ctrl_mem_wb.load_regfile),
 	.opcode(ctrl_ex_mem.opcode),
@@ -387,14 +374,6 @@ register ex_mem_dest
 	.out(dest_ex_mem_out)
 );
 
-register #(.width(3)) ex_mem_dest_reg
-(
-	.clk(clk),
-	.load(load_ex_mem),
-	.in(dest_id_ex_register),
-	.out(dest_ex_mem_register)
-);
-
 /* Memory Stage (MEM) */
 memory_stage mem_stage
 (
@@ -425,7 +404,7 @@ memory_forward mem_forward
 (
 	.clk(clk),
 	.dest_in(dest_ex_mem_in),
-	.dest_mem_wb_register(dest_mem_wb_register),
+	.dest_mem_wb_register(ctrl_mem_wb.dest_register),
 	.ctrl_mem_wb_write(ctrl_mem_wb.load_regfile),
 	.dest_mem_forward_sel(dest_mem_forward_sel)
 );
@@ -487,14 +466,6 @@ register mem_wb_alu
 	.out(alu_mem_wb_out)
 );
 
-register #(.width(3)) mem_wb_dest_reg
-(
-	.clk(clk),
-	.load(load_mem_wb),
-	.in(dest_ex_mem_register),
-	.out(dest_mem_wb_register)
-);
-
 /* Write-Back Stage (WB) */
 write_back_stage wb_stage
 (
@@ -504,7 +475,7 @@ write_back_stage wb_stage
 	.dmem_address(dmem_address_mem_wb),
 	.dmem_wdata(dmem_wdata_mem_wb),
 	.alu_out(alu_mem_wb_out),
-	.dest_register(dest_mem_wb_register),
+	.dest_register(ctrl_mem_wb.dest_register),
 	.opcode(ctrl_mem_wb.opcode),
 	.load_cc(ctrl_mem_wb.load_cc),
 	.regfilemux_sel(ctrl_mem_wb.regfilemux_sel),
@@ -512,7 +483,7 @@ write_back_stage wb_stage
 	.branch_enable(branch_enable)
 );
 
-assign write_register = dest_mem_wb_register;
+assign write_register = ctrl_mem_wb.dest_register;
 assign load_regfile = ctrl_mem_wb.load_regfile;
 
 endmodule: cpu_datapath

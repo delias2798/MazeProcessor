@@ -53,7 +53,7 @@ typedef struct packed {
 	/* Decode Stage */
 	logic load_regfile;
 	logic [1:0] sr2mux_sel;
-	logic writemux_sel;
+	lc3b_reg dest_register;
 	logic load_hazard;
 
 	/* Execute Stage */

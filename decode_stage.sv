@@ -20,15 +20,11 @@ module decode_stage
 	output lc3b_word sr1_out,
 	output lc3b_word sr2_out,
 	output lc3b_word sr2mux_out,
-	output lc3b_word dest_out,
-	output lc3b_reg dest_register
+	output lc3b_word dest_out
 );
 
 /* Control Signals */
 logic [1:0] sr2mux_sel;
-logic sr2mux2_sel;
-logic writemux_sel;
-logic destmux_sel;
 
 /* Internal Signals*/
 lc3b_opcode opcode;
@@ -42,9 +38,7 @@ lc3b_word sext5_out;
 lc3b_word sext6_out;
 lc3b_word adj6_out;
 
-/* Insert a NOP */
 lc3b_control_word ctrl_out;
-lc3b_reg dest_register_out;
 
 ir inst_reg
 (
@@ -64,16 +58,17 @@ ir inst_reg
 control_rom ctrl_r
 (
 	.opcode(opcode),
+	.dest_register(instruction[11:9]),
 	.ir4(instruction[4]),
 	.ir5(instruction[5]),
 	.ir11(instruction[11]),
 	.ctrl(ctrl_out)
 );
 
+/* Insert a NOP */
 assign ctrl = hazard_stall ? 1'b0 : ctrl_out;
 
 assign sr2mux_sel = ctrl.sr2mux_sel;
-assign writemux_sel = ctrl.writemux_sel;
 
 regfile reg_file
 (
@@ -122,15 +117,5 @@ mux4 sr2mux
 	.d(zext4_out),
 	.f(sr2mux_out)
 );
-
-mux2 #(.width(3)) writemux
-(
-	.sel(writemux_sel),
-	.a(dest),
-	.b(3'b111),
-	.f(dest_register_out)
-);
-
-assign dest_register = hazard_stall ? 3'b000 : dest_register_out;
 
 endmodule: decode_stage

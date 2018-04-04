@@ -3,6 +3,7 @@ import lc3b_types::*;
 module control_rom
 (
 	input lc3b_opcode opcode,
+	input lc3b_reg dest_register,
 	input logic ir4,
 	input logic ir5,
 	input logic ir11,
@@ -17,7 +18,7 @@ begin
 	ctrl.load_regfile = 0;
 	ctrl.sr2mux_sel = 2'b00;
 	ctrl.sr2mux2_sel = 0;
-	ctrl.writemux_sel = 0;
+	ctrl.dest_register = dest_register;
 	ctrl.load_hazard = 0;
 
 	ctrl.bradd2mux_sel = 0;
@@ -95,7 +96,7 @@ begin
 
 		op_jsr: begin
 			/* R7 <= PC */
-			ctrl.writemux_sel = 1;
+			ctrl.dest_register = 3'b111;
 			ctrl.regfilemux_sel = 3'b010;
 			ctrl.alu_forward = 1;
 			ctrl.load_regfile = 1;
@@ -149,7 +150,7 @@ begin
 
 		op_trap: begin
 			/* R7 = PC */
-			ctrl.writemux_sel = 1;
+			ctrl.dest_register = 3'b111;
 			ctrl.regfilemux_sel = 3'b010;
 			ctrl.alu_forward = 1;
 			ctrl.load_regfile = 1;
