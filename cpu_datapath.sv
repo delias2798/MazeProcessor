@@ -26,6 +26,7 @@ module cpu_datapath
 
 /* Internal Signals - Fetch*/
 logic load_if_id;
+lc3b_word pc_plus2_out_flush;
 lc3b_word pc_plus2_out;
 lc3b_word pc_if_id_out;
 lc3b_word imem_rdata_out_flush;
@@ -118,6 +119,7 @@ assign load_mem_wb = !mem_stall & imem_resp;
 fetch_stage if_stage
 (
 	.clk(clk),
+	.control_flush(control_flush),
 	.imem_rdata(imem_rdata),
 	.new_pc(new_pc_mem_wb_out),
 	.branch_enable(branch_enable),
@@ -132,13 +134,14 @@ fetch_stage if_stage
 );
 
 assign imem_rdata_out_flush = control_flush ? 0 : imem_rdata_out;
+assign pc_plus2_out_flush = control_flush ? 0 : pc_plus2_out;
 
 /* Fetch - Decode Registers (IF/ID) */
 register if_id_pc
 (
 	.clk(clk),
 	.load(load_if_id),
-	.in(pc_plus2_out),
+	.in(pc_plus2_out_flush),
 	.out(pc_if_id_out)
 );
 
@@ -175,20 +178,21 @@ decode_stage id_stage
 hazard_detection hazard_detection_unit
 (
 	.clk(clk),
+	.control_flush(control_flush),
 	.instruction(imem_rdata_if_id_out),
 	.ctrl_id_ex_load(ctrl_id_ex.load_hazard),
 	.dest_id_ex_register(ctrl_id_ex.dest_register),
 	.hazard_stall(hazard_stall)
 );
 
-assign ctrl_in = control_flush ? 0 : ctrl;
+assign ctrl_in = (control_flush || hazard_stall) ? 0 : ctrl;
 
 /* Decode - Execute Registers (ID/EX) */
 register_control_rom id_ex_ctrl
 (
 	.clk(clk),
 	.load(load_id_ex),
-	.in(ctrl),
+	.in(ctrl_in),
 	.out(ctrl_id_ex)
 );
 

@@ -3,6 +3,7 @@ import lc3b_types::*;
 module hazard_detection
 (
 	input clk,
+	input control_flush,
 	input lc3b_word instruction,
 	input ctrl_id_ex_load,
 	input lc3b_reg dest_id_ex_register,
@@ -34,6 +35,9 @@ begin
 		if (instruction[5] == 0 && ((opcode == op_add) || (opcode == op_and)))
 			hazard_stall = 1;
 	end
+	
+	if (control_flush)
+		hazard_stall = 0;
 end
 
 endmodule: hazard_detection

@@ -4,8 +4,6 @@ Control Hazard Logic:
 It can be decided earlier in EX stage by forwarding the value of CC. Need to introduce a NOP between load and BR.
 Need to flush two stages if mispredicted. It can be done by setting registers in IF/ID and ID/EX to NOP.
 
-Need to consider control instructions which can be in MEM and WB stage.
-
 2) JMP/RET
 The address is calculated in EX stage. 
 Need to flush two stages if mispredicted. It can be done by setting registers in IF/ID and ID/EX to NOP.
@@ -14,5 +12,11 @@ Need to flush two stages if mispredicted. It can be done by setting registers in
 The address is calculated in EX stage. 
 Need to flush two stages if mispredicted. It can be done by setting registers in IF/ID and ID/EX to NOP.
 
+Let R7 = PC be set normally in later stages.
+
 4) TRAP
 Detected in WB stage.
+
+
+PS:
+a. Need to consider control instructions which can be in MEM and WB stage when prediction is done early in EX stage.

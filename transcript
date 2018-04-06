@@ -1,4 +1,4 @@
-# do /tmp/tmp.m9n1mYK6Gy/do.do 
+# do /tmp/tmp.tFlFsLqFg9/do.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
@@ -13,7 +13,7 @@
 # Top level modules:
 # 	l1_cache_control
 # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/comparator.sv}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+
 # -- Compiling module comparator
 # 
 # Top level modules:
@@ -407,6 +407,6 @@
 #view structure
 #view signals
 # add list -radix hexadecimal {/testbench/processor/c/cpu_d/id_stage/reg_file/data}
-# run 20000ns
-# write list /tmp/tmp.m9n1mYK6Gy/test_list.lst
+# run 100000ns
+# write list /tmp/tmp.tFlFsLqFg9/test_list.lst
 # exit

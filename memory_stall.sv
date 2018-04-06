@@ -71,17 +71,17 @@ begin
 	begin
 		mem_ack_in = mem_ack_out + 2'b01;
 		mem_ack_load = 1;
-		mem_addr_mux_sel = 1;
-		dmem_action_cyc = 1;
-		dmem_action_stb = 1;
+		//mem_addr_mux_sel = 1;
+		//dmem_action_cyc = 1;
+		//dmem_action_stb = 1;
 		mem_stall = 1;
-		if (opcode == op_sti)
-			dmem_write = 1;
-		else
-			dmem_write = 0;
+		//if (opcode == op_sti)
+		//	dmem_write = 1;
+		//else
+		//	dmem_write = 0;
 	end
 	
-	if (mem_ack_out == 2'b10 && (opcode == op_ldi || opcode == op_sti) && !dmem_resp)
+	if (mem_ack_out == 2'b10 && (opcode == op_ldi || opcode == op_sti))
 	begin
 		mem_addr_mux_sel = 1;
 		dmem_action_cyc = 1;
@@ -100,7 +100,7 @@ begin
 		begin
 			mem_ack_in = mem_ack_out + 2'b01;
 			mem_ack_load = 1;
-			if (mem_ack_out == 2'b00)
+			if (mem_ack_out == 2'b00 || mem_ack_out == 2'b01)
 				mem_stall = 1;
 		end
 	end
@@ -110,7 +110,9 @@ begin
 		dmem_action_cyc = 0;
 		dmem_action_stb = 0;
 		dmem_write = 0;
+		mem_stall = 0;
 	end
+		
 end
 
 register #(.width(2)) mem_curr_ack_counter
