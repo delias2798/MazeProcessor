@@ -28,6 +28,7 @@ module cpu_datapath
 logic load_if_id;
 lc3b_word pc_plus2_out_flush;
 lc3b_word pc_plus2_out;
+lc3b_word pc_if_id_in;
 lc3b_word pc_if_id_out;
 lc3b_word imem_rdata_out_flush;
 lc3b_word imem_rdata_out;
@@ -186,6 +187,7 @@ hazard_detection hazard_detection_unit
 );
 
 assign ctrl_in = (control_flush || hazard_stall) ? 0 : ctrl;
+assign pc_if_id_in = (control_flush || hazard_stall) ? 0 : pc_if_id_out;
 
 /* Decode - Execute Registers (ID/EX) */
 register_control_rom id_ex_ctrl
@@ -200,7 +202,7 @@ register id_ex_pc
 (
 	.clk(clk),
 	.load(load_id_ex),
-	.in(pc_if_id_out),
+	.in(pc_if_id_in),
 	.out(pc_id_ex_out)
 );
 

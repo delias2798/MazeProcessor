@@ -10,7 +10,7 @@ module array #(parameter width = 128)
     output logic [width-1:0] dataout
 );
 
-logic [width-1:0] data [15:0];
+logic [width-1:0] data [7:0];
 
 /* Initialize array */
 initial

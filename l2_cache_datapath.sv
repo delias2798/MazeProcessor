@@ -33,8 +33,8 @@ module l2_cache_datapath
 	output lc3b_word pmem_address
 );
 
-lc3b_tag tag;
-lc3b_index index;
+lc3b_l2_tag tag;
+lc3b_l2_index index;
 lc3b_offset offset;
 
 assign tag = mem_address[15:8];
@@ -47,9 +47,9 @@ logic valid1_out;
 logic dirty0_out;
 logic dirty1_out;
 
-lc3b_tag tag0_out;
-lc3b_tag tag1_out;
-lc3b_tag tag_out;
+lc3b_l2_tag tag0_out;
+lc3b_l2_tag tag1_out;
+lc3b_l2_tag tag_out;
 logic comp0_out;
 logic comp1_out;
 
@@ -61,7 +61,7 @@ lc3b_data cpu_data_out;
 lc3b_word write_back_addr;
 
 /* Valid Arrays */
-array #(.width(1)) valid0
+l2_array #(.width(1)) valid0
 (
 	.clk(clk),
 	.write(valid0_write),
@@ -70,7 +70,7 @@ array #(.width(1)) valid0
 	.dataout(valid0_out)
 );
 
-array #(.width(1)) valid1
+l2_array #(.width(1)) valid1
 (
 	.clk(clk),
 	.write(valid1_write),
@@ -80,7 +80,7 @@ array #(.width(1)) valid1
 );
 
 /* LRU Array */
-array #(.width(1)) lru
+l2_array #(.width(1)) lru
 (
 	.clk(clk),
 	.write(lru_write),
@@ -90,7 +90,7 @@ array #(.width(1)) lru
 );
 
 /* Dirty Arrays */
-array #(.width(1)) dirty0
+l2_array #(.width(1)) dirty0
 (
 	.clk(clk),
 	.write(dirty0_write),
@@ -99,7 +99,7 @@ array #(.width(1)) dirty0
 	.dataout(dirty0_out)
 );
 
-array #(.width(1)) dirty1
+l2_array #(.width(1)) dirty1
 (
 	.clk(clk),
 	.write(dirty1_write),
@@ -117,7 +117,7 @@ mux2 #(.width(1)) dirty_mux
 );
 
 /* Tag Arrays */
-array #(.width(9)) tag0
+l2_array #(.width(8)) tag0
 (
 	.clk(clk),
 	.write(tag0_write),
@@ -126,7 +126,7 @@ array #(.width(9)) tag0
 	.dataout(tag0_out)
 );
 
-array #(.width(9)) tag1
+l2_array #(.width(8)) tag1
 (
 	.clk(clk),
 	.write(tag1_write),
@@ -135,14 +135,14 @@ array #(.width(9)) tag1
 	.dataout(tag1_out)
 );
 
-comparator comp0
+comparator #(.width(8)) comp0
 (
 	.value0(tag0_out),
 	.value1(tag),
 	.out(comp0_out)
 );
 
-comparator comp1
+comparator #(.width(8)) comp1
 (
 	.value0(tag1_out),
 	.value1(tag),
@@ -170,7 +170,7 @@ mux2 #(.width(128)) data_mux
 	.f(data_in)
 );
 
-array data0
+l2_array data0
 (
 	.clk(clk),
 	.write(data0_write),
@@ -179,7 +179,7 @@ array data0
 	.dataout(data0_out)
 );
 
-array data1
+l2_array data1
 (
 	.clk(clk),
 	.write(data1_write),
@@ -205,7 +205,7 @@ mux2 #(.width(128)) pdata_mux
 );
 
 /* Address to Physical Memory*/
-mux2 #(.width(9)) tag_mux
+mux2 #(.width(8)) tag_mux
 (
 	.sel(lru_out),
 	.a(tag0_out),
