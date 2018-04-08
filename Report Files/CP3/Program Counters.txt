@@ -1,0 +1,7 @@
+Our program counters will account for the following:
+
+1) Hits and misses in both hierarchy levels
+2) Misprediction of branches (Ratio)
+3) Stalls in different stages of the pipeline
+
+The counters are stored in memory when evicted from the registers and the registers are cleared. Counter register values are restored on reads.
