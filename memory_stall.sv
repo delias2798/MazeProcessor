@@ -99,6 +99,8 @@ begin
 		if (opcode == op_ldi || opcode == op_sti)
 		begin
 			mem_ack_in = mem_ack_out + 2'b01;
+			if (mem_ack_in == 2'b11)
+				mem_ack_in = 2'b00;
 			mem_ack_load = 1;
 			if (mem_ack_out == 2'b00 || mem_ack_out == 2'b01)
 				mem_stall = 1;

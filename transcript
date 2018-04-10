@@ -1,4 +1,4 @@
-# do /tmp/tmp.LD0DkgpgAx/do.do 
+# do /tmp/tmp.NP7Cl0Y1MR/do.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
@@ -312,6 +312,14 @@
 # 
 # Top level modules:
 # 	hazard_detection
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l2_array.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package l2_array_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module l2_array
+# 
+# Top level modules:
+# 	l2_array
 # 
 # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/testbench.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -339,8 +347,8 @@
 # Loading work.l2_cache
 # Loading work.l2_cache_datapath_sv_unit
 # Loading work.l2_cache_datapath
-# Loading work.array_sv_unit
-# Loading work.array
+# Loading work.l2_array_sv_unit
+# Loading work.l2_array
 # Loading work.mux2
 # Loading work.comparator
 # Loading work.cpudata_sv_unit
@@ -351,6 +359,8 @@
 # Loading work.l1_cache
 # Loading work.l1_cache_datapath_sv_unit
 # Loading work.l1_cache_datapath
+# Loading work.array_sv_unit
+# Loading work.array
 # Loading work.l1_cache_control
 # Loading work.cpu_sv_unit
 # Loading work.cpu
@@ -407,6 +417,6 @@
 #view structure
 #view signals
 # add list -radix hexadecimal {/testbench/processor/c/cpu_d/id_stage/reg_file/data}
-# run 100000ns
-# write list /tmp/tmp.LD0DkgpgAx/test_list.lst
+# run 10000000ns
+# write list /tmp/tmp.NP7Cl0Y1MR/test_list.lst
 # exit
