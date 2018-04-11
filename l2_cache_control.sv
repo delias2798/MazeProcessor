@@ -29,10 +29,7 @@ module l2_cache_control
 	/* Signals from datapath*/
 	input [2:0] lru_out,
 	input dirty_out,
-	input cline0_and,
-	input cline1_and,
-	input cline2_and,
-	input cline3_and,
+	input [1:0] cline_and,
 	input hit,
 	
 	/* Signals from cpu*/
@@ -106,19 +103,19 @@ begin : state_actions
 				if (!cpu_write)
 				begin
 					lru_in = lru_out;
-					if (cline0_and) begin
+					if (cline_and == 2'b00) begin
 						lru_in[0] = 0;
 						lru_in[1] = 0;
 					end
-					else if (cline1_and) begin
+					else if (cline_and == 2'b01) begin
 						lru_in[0] = 0;
 						lru_in[1] = 1;
 					end
-					else if (cline2_and) begin
+					else if (cline_and == 2'b10) begin
 						lru_in[0] = 1;
 						lru_in[2] = 0;
 					end
-					else begin
+					else if (cline_and == 2'b11) begin
 						lru_in[0] = 1;
 						lru_in[2] = 1;
 					end
@@ -132,29 +129,25 @@ begin : state_actions
 				begin
 					lru_in = lru_out;
 					dirty_in = 1;
-					if (cline0_and)
-					begin
+					if (cline_and == 2'b00) begin
 						dirty0_write = 1;
 						data0_write = 1;
 						lru_in[0] = 0;
 						lru_in[1] = 0;
 					end
-					else if (cline1_and)
-					begin
+					else if (cline_and == 2'b01) begin
 						dirty1_write = 1;
 						data1_write = 1;
 						lru_in[0] = 0;
 						lru_in[1] = 1;
 					end
-					else if (cline2_and)
-					begin
+					else if (cline_and == 2'b10) begin
 						dirty2_write = 1;
 						data2_write = 1;
 						lru_in[0] = 1;
 						lru_in[2] = 0;
 					end
-					else if (cline3_and)
-					begin
+					else if (cline_and == 2'b11) begin
 						dirty3_write = 1;
 						data3_write = 1;
 						lru_in[0] = 1;
@@ -199,7 +192,7 @@ begin : state_actions
 					dirty1_write = 1;
 					data1_write = 1;
 				end
-				else if (lru_out[0] == 0 && lru_out[1] == 1)
+				else if (lru_out[0] == 0 && lru_out[2] == 1)
 				begin
 					tag2_write = 1;
 					valid2_write = 1;

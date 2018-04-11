@@ -33,10 +33,7 @@ module l2_cache_datapath
 	
 	output logic [2:0] lru_out,
 	output logic dirty_out,
-	output logic cline0_and,
-	output logic cline1_and,
-	output logic cline2_and,
-	output logic cline3_and,
+	output logic [1:0] cline_and,
 	output logic hit,
 	output lc3b_data data_out,
 	output lc3b_data pdata_out,
@@ -75,7 +72,10 @@ logic comp1_out;
 logic comp2_out;
 logic comp3_out;
 
-logic [1:0] cline_and;
+logic cline0_and;
+logic cline1_and;
+logic cline2_and;
+logic cline3_and;
 
 lc3b_data data_in;
 lc3b_data data0_out;

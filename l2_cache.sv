@@ -31,10 +31,7 @@ logic pmem_addr_sig;
 logic data_sig;
 logic [2:0] lru_out;
 logic dirty_out;
-logic cline0_and;
-logic cline1_and;
-logic cline2_and;
-logic cline3_and;
+logic [1:0] cline_and;
 logic hit;
 lc3b_word mem_address;
 lc3b_word pmem_address;
@@ -74,10 +71,7 @@ l2_cache_datapath cache_d
 	.data_sig(data_sig),
 	.lru_out(lru_out),
 	.dirty_out(dirty_out),
-	.cline0_and(cline0_and),
-	.cline1_and(cline1_and),
-	.cline2_and(cline2_and),
-	.cline3_and(cline3_and),
+	.cline_and(cline_and),
 	.hit(hit),
 	.data_out(cpu_wb.DAT_S),
 	.pdata_out(wb.DAT_M),
@@ -111,10 +105,7 @@ l2_cache_control cache_c
 	.data_sig(data_sig),
 	.lru_out(lru_out),
 	.dirty_out(dirty_out),
-	.cline0_and(cline0_and),
-	.cline1_and(cline1_and),
-	.cline2_and(cline2_and),
-	.cline3_and(cline3_and),
+	.cline_and(cline_and),
 	.hit(hit),
 	.cpu_action_stb(cpu_wb.STB),
 	.cpu_action_cyc(cpu_wb.CYC),
