@@ -84,7 +84,7 @@ lc3b_data data2_out;
 lc3b_data data3_out;
 lc3b_data data_10_out;
 lc3b_data data_32_out;
-lc3b_data cpu_data_out;
+// lc3b_data cpu_data_out;
 
 lc3b_word write_back_addr;
 
@@ -279,19 +279,19 @@ begin
 		cline_and = 2'b11;
 end
 
-/* Data Arrays */
+/* Data Arrays 
 cpudata cpu_data_cal
 (
 	.cpu(cpu_data),
 	.data(data_out),
 	.wmask(mem_byte_enable),
 	.out(cpu_data_out)
-);
+); */
 
 mux2 #(.width(128)) data_mux
 (
 	.sel(data_sig),
-	.a(cpu_data_out),
+	.a(cpu_data),
 	.b(pmem_data),
 	.f(data_in)
 );
