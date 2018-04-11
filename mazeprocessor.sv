@@ -5,6 +5,9 @@ module mazeprocessor
 	wishbone.master pmem_wb
 );
 
+/* Wishbone from Eviction Write Buffer to L2 */
+wishbone eviction_wb_interconnect(pmem_wb.CLK);
+
 /* Wishbone from L2 Cache to Interconnect */
 wishbone l2_interconnect(pmem_wb.CLK);
 
@@ -16,9 +19,15 @@ wishbone dmem_interconnect(pmem_wb.CLK);
 wishbone imem_wb(pmem_wb.CLK);
 wishbone dmem_wb(pmem_wb.CLK);
 
-l2_cache l2_cache
+eviction_wb eviction_wb 
 (
 	.wb(pmem_wb),
+	.cpu_wb(eviction_wb_interconnect)
+);
+
+l2_cache l2_cache
+(
+	.wb(eviction_wb_interconnect),
 	.cpu_wb(l2_interconnect)
 );
 

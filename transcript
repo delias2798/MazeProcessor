@@ -1,4 +1,4 @@
-# do /tmp/tmp.NP7Cl0Y1MR/do.do 
+# do /tmp/tmp.CMpDUM6ukO/do.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
@@ -353,6 +353,7 @@
 # Loading work.comparator
 # Loading work.cpudata_sv_unit
 # Loading work.cpudata
+# Loading work.mux4
 # Loading work.l2_cache_control
 # Loading work.wb_interconnect
 # Loading work.l1_cache_sv_unit
@@ -385,7 +386,6 @@
 # Loading work.sext
 # Loading work.adj_sv_unit
 # Loading work.adj
-# Loading work.mux4
 # Loading work.hazard_detection_sv_unit
 # Loading work.hazard_detection
 # Loading work.register_control_rom_sv_unit
@@ -418,5 +418,5 @@
 #view signals
 # add list -radix hexadecimal {/testbench/processor/c/cpu_d/id_stage/reg_file/data}
 # run 10000000ns
-# write list /tmp/tmp.NP7Cl0Y1MR/test_list.lst
+# write list /tmp/tmp.CMpDUM6ukO/test_list.lst
 # exit
