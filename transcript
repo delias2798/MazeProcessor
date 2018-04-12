@@ -1,4 +1,4 @@
-# do /tmp/tmp.P8vyr66fPl/do.do 
+# do /tmp/tmp.NWPls99vxF/do.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
@@ -350,6 +350,14 @@
 # 
 # Top level modules:
 # 	eviction_wb
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/performance_counter.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package performance_counter_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module performance_counter
+# 
+# Top level modules:
+# 	performance_counter
 # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package mazeprocessor_sv_unit
@@ -451,6 +459,8 @@
 # Loading work.memory_stage
 # Loading work.memory_stall_sv_unit
 # Loading work.memory_stall
+# Loading work.performance_counter_sv_unit
+# Loading work.performance_counter
 # Loading work.memory_forward_sv_unit
 # Loading work.memory_forward
 # Loading work.write_back_stage_sv_unit
@@ -459,11 +469,19 @@
 # Loading work.gencc
 # Loading work.cc_comp_sv_unit
 # Loading work.cc_comp
+# ** Warning: (vsim-3015) /home/bharuka2/ece411/mazeprocessor/performance_counter.sv(51): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'in'. The port definition is at: /home/bharuka2/ece411/mazeprocessor/register.sv(5).
+#         Region: /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/l1_hit
+# ** Warning: (vsim-3015) /home/bharuka2/ece411/mazeprocessor/performance_counter.sv(51): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'out'. The port definition is at: /home/bharuka2/ece411/mazeprocessor/register.sv(6).
+#         Region: /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/l1_hit
+# ** Warning: (vsim-3015) /home/bharuka2/ece411/mazeprocessor/performance_counter.sv(59): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'in'. The port definition is at: /home/bharuka2/ece411/mazeprocessor/register.sv(5).
+#         Region: /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/l2_hit
+# ** Warning: (vsim-3015) /home/bharuka2/ece411/mazeprocessor/performance_counter.sv(59): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'out'. The port definition is at: /home/bharuka2/ece411/mazeprocessor/register.sv(6).
+#         Region: /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/l2_hit
 # 
 #add wave *
 #view structure
 #view signals
 # add list -radix hexadecimal {/testbench/processor/c/cpu_d/id_stage/reg_file/data}
-# run 10000000ns
-# write list /tmp/tmp.P8vyr66fPl/test_list.lst
+# run 15ms
+# write list /tmp/tmp.NWPls99vxF/test_list.lst
 # exit

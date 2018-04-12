@@ -404,6 +404,7 @@ memory_stage mem_stage
 	.dest_out(dest_ex_mem_out),
 	.dmem_resp(dmem_resp),
 	.write_data(write_data),
+	.dest_register(ctrl_ex_mem.dest_register),
 	.newpcmux_sel(ctrl_ex_mem.newpcmux_sel),
 	.opcode(ctrl_ex_mem.opcode),
 	.dest_mem_forward_sel(dest_mem_forward_sel),

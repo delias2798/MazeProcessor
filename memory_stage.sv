@@ -11,6 +11,7 @@ module memory_stage
 	input lc3b_word dest_out,
 	input dmem_resp,
 	input lc3b_word write_data,
+	input lc3b_reg dest_register,
 	
 	/* Control Signals */
 	input [1:0] newpcmux_sel,
@@ -34,6 +35,10 @@ lc3b_word dmem_data_out;
 lc3b_word dest_forward_mux_out;
 lc3b_word dest_lfsh_out;
 lc3b_word destmux_out;
+
+lc3b_word perf_count_data;
+lc3b_word dmem_rdata_inter;
+logic perf_count_sel;
 
 mux2 dest_forwardmux
 (
@@ -63,13 +68,16 @@ memory_stall m_stall
 	.alu_out(alu_out),
 	.dmem_data_out(dmem_data_out),
 	.control_flush(control_flush),
+	.dest_register(dest_register),
 	.dmem_action_stb(dmem_action_stb),
 	.dmem_action_cyc(dmem_action_cyc),
 	.dmem_write(dmem_write),
 	.dmem_byte_enable(dmem_byte_enable),
 	.dmem_wdata(dmem_wdata),
 	.mem_stall(mem_stall),
-	.dmem_address(dmem_address)
+	.dmem_address(dmem_address),
+	.perf_count_sel(perf_count_sel),
+	.perf_count_data(perf_count_data)
 );
 
 mux8 dmem_rdata_mux
@@ -83,14 +91,22 @@ mux8 dmem_rdata_mux
 	.f(dmem_rdata[95:80]),
 	.g(dmem_rdata[111:96]),
 	.h(dmem_rdata[127:112]),
-	.o(dmem_rdata_out)
+	.o(dmem_rdata_inter)
+);
+
+mux2 perf_count
+(
+	.sel(perf_count_sel),
+	.a(dmem_rdata_inter),
+	.b(perf_count_data),
+	.f(dmem_rdata_out)
 );
 
 register dmem_data
 (
 	.clk(clk),
 	.load(dmem_resp),
-	.in(dmem_rdata_out),
+	.in(dmem_rdata_inter),
 	.out(dmem_data_out)
 );
 
@@ -99,8 +115,8 @@ mux4 newpcmux
 	.sel(newpcmux_sel),
 	.a(pc_j_out),
 	.b(pc_br_out),
-	.c(dmem_rdata_out),
-	.d(dmem_rdata_out),
+	.c(dmem_rdata_inter),
+	.d(dmem_rdata_inter),
 	.f(pc_out)
 );
 
