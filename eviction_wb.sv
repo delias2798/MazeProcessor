@@ -23,12 +23,17 @@ logic data3_write;
 logic lru_write;
 logic [2:0] lru_in;
 logic pmem_addr_sig;
-logic data_sig;
 logic [2:0] lru_out;
 logic [1:0] cline_and;
 logic hit;
 lc3b_word mem_address;
 lc3b_word pmem_address;
+
+logic valid0_out;
+logic valid1_out;
+logic valid2_out;
+logic valid3_out;
+logic out_data_sel;
 
 assign mem_address = {cpu_wb.ADR, 4'b0000};
 assign wb.ADR = pmem_address[15:4];
@@ -57,13 +62,17 @@ eviction_wb_datapath cache_d
 	.lru_write(lru_write),
 	.lru_in(lru_in),
 	.pmem_addr_sig(pmem_addr_sig),
-	.data_sig(data_sig),
+	.out_data_sel(out_data_sel),
 	.lru_out(lru_out),
 	.cline_and(cline_and),
 	.hit(hit),
 	.data_out(cpu_wb.DAT_S),
 	.pdata_out(wb.DAT_M),
-	.pmem_address(pmem_address)
+	.pmem_address(pmem_address),
+	.valid0_out(valid0_out),
+	.valid1_out(valid1_out),
+	.valid2_out(valid2_out),
+	.valid3_out(valid3_out)
 );
 
 eviction_wb_control cache_c
@@ -85,10 +94,14 @@ eviction_wb_control cache_c
 	.lru_write(lru_write),
 	.lru_in(lru_in),
 	.pmem_addr_sig(pmem_addr_sig),
-	.data_sig(data_sig),
+	.out_data_sel(out_data_sel),
 	.lru_out(lru_out),
 	.cline_and(cline_and),
 	.hit(hit),
+	.valid0_out(valid0_out),
+	.valid1_out(valid1_out),
+	.valid2_out(valid2_out),
+	.valid3_out(valid3_out),
 	.cpu_action_stb(cpu_wb.STB),
 	.cpu_action_cyc(cpu_wb.CYC),
 	.cpu_write(cpu_wb.WE),

@@ -187,10 +187,10 @@ begin : next_state_logic
 				if (!mem_resp)
 					next_state = write_back;
 				else
-					next_state = stall;
+					next_state = read_mem;
 			end
 			
-			stall: next_state = read_mem;
+			//stall: next_state = read_mem;
 			
 			default: next_state = idle;
 		endcase

@@ -19,12 +19,16 @@ module eviction_wb_control
 	output logic lru_write,
 	output logic [2:0] lru_in,
 	output logic pmem_addr_sig,
-	output logic data_sig,
+	output logic out_data_sel,
 	
 	/* Signals from datapath*/
 	input [2:0] lru_out,
 	input [1:0] cline_and,
 	input hit,
+	input valid0_out,
+	input valid1_out,
+	input valid2_out,
+	input valid3_out,
 	
 	/* Signals from cpu*/
 	input cpu_action_stb,
@@ -46,15 +50,16 @@ module eviction_wb_control
 );
 
 logic resp;
+logic valid;
 
 assign cpu_resp = resp;
 assign cpu_retry = cpu_action_stb & cpu_action_cyc & (!resp);
+assign valid = valid0_out & valid1_out & valid2_out & valid3_out;
 
 enum int unsigned {
     /* List of states */
 	 idle,
 	 write_back,
-	 stall,
 	 read_mem
 } state, next_state;
 
@@ -66,11 +71,6 @@ begin : state_actions
 	 valid2_write = 1'b0;
 	 valid3_write = 1'b0;
 	 valid_in = 1'b0;
-	 dirty0_write = 1'b0;
-	 dirty1_write = 1'b0;
-	 dirty2_write = 1'b0;
-	 dirty3_write = 1'b0;
-	 dirty_in = 1'b0;
 	 tag0_write = 1'b0;
 	 tag1_write = 1'b0;
 	 tag2_write = 1'b0;
@@ -82,11 +82,11 @@ begin : state_actions
 	 lru_write = 1'b0;
 	 lru_in = 3'b000;
 	 pmem_addr_sig = 1'b0;
-	 data_sig = 1'b0;
 	 resp = 1'b0;
 	 mem_action_stb = 1'b0;
 	 mem_action_cyc = 1'b0;
 	 mem_write = 1'b0;
+	 out_data_sel = 1'b0;
 	 
 	 /* Actions for each state */
 	 case(state)
@@ -122,7 +122,6 @@ begin : state_actions
 				if (cpu_write)
 				begin
 					lru_in = lru_out;
-					dirty_in = 1;
 					if (cline_and == 2'b00) begin
 						data0_write = 1;
 						lru_in[0] = 0;
@@ -148,6 +147,44 @@ begin : state_actions
 					resp = 1;
 				end
 			end
+			
+			// Miss + Write + Empty slot
+			if (!hit && cpu_action_stb && cpu_action_cyc && cpu_write && !valid)
+			begin
+				lru_in = lru_out;
+				valid_in = 1;
+				if (valid0_out == 0) begin
+					tag0_write = 1;
+					valid0_write = 1;
+					data0_write = 1;
+					lru_in[0] = 0;
+					lru_in[1] = 0;
+				end
+				else if (valid1_out == 0) begin
+					tag1_write = 1;
+					valid1_write = 1;
+					data1_write = 1;
+					lru_in[0] = 0;
+					lru_in[1] = 1;
+				end
+				else if (valid2_out == 0) begin
+					tag2_write = 1;
+					valid2_write = 1;
+					data2_write = 1;
+					lru_in[0] = 1;
+					lru_in[2] = 0;
+				end
+				else if (valid3_out == 0) begin
+					tag3_write = 1;
+					valid3_write = 1;
+					data3_write = 1;
+					lru_in[0] = 1;
+					lru_in[2] = 1;
+				end
+				
+				lru_write = 1;
+				resp = 1;
+			end
 		end
 		
 		write_back: begin
@@ -155,6 +192,32 @@ begin : state_actions
 			mem_action_stb = 1;
 			mem_action_cyc = 1;
 			mem_write = 1;
+			
+			valid_in = 0;
+			lru_in = lru_out;
+			if (mem_resp) begin
+				if (lru_out[0] == 1 && lru_out[1] == 1) begin
+					valid0_write = 1;
+					lru_in[0] = 0;
+					lru_in[1] = 0;
+				end
+				else if (lru_out[0] == 1 && lru_out[1] == 0) begin
+					valid1_write = 1;
+					lru_in[0] = 0;
+					lru_in[1] = 1;
+				end
+				else if (lru_out[0] == 0 && lru_out[2] == 1) begin
+					valid2_write = 1;
+					lru_in[0] = 1;
+					lru_in[2] = 0;
+				end
+				else begin
+					valid3_write = 1;
+					lru_in[0] = 1;
+					lru_in[2] = 1;
+				end
+				lru_write = 1;
+			end	
 		end
 		
 		read_mem: begin
@@ -163,34 +226,9 @@ begin : state_actions
 			mem_action_cyc = 1;
 			mem_write = 0;
 			
-			data_sig = 1;
-			valid_in = 1;
-			
 			if (mem_resp) begin
-				if (lru_out[0] == 1 && lru_out[1] == 1)
-				begin
-					tag0_write = 1;
-					valid0_write = 1;
-					data0_write = 1;
-				end
-				else if (lru_out[0] == 1 && lru_out[1] == 0)
-				begin
-					tag1_write = 1;
-					valid1_write = 1;
-					data1_write = 1;
-				end
-				else if (lru_out[0] == 0 && lru_out[2] == 1)
-				begin
-					tag2_write = 1;
-					valid2_write = 1;
-					data2_write = 1;
-				end
-				else
-				begin
-					tag3_write = 1;
-					valid3_write = 1;
-					data3_write = 1;
-				end
+				out_data_sel = 1;
+				resp = 1;
 			end
 		end
 		
@@ -205,12 +243,14 @@ begin : next_state_logic
 		next_state = state;
 		case(state)
 			idle: begin
-				if (hit)
+				if (hit || (cpu_action_stb && cpu_action_cyc && cpu_write && !valid))
 					next_state = idle;
-				else if (!hit && !dirty_out && cpu_action_stb && cpu_action_cyc)
+				else if (!hit && cpu_action_stb && cpu_action_cyc && !cpu_write)
 					next_state = read_mem;
-				else if (!hit && dirty_out && cpu_action_stb && cpu_action_cyc)
+				else if (valid0_out || valid1_out || valid2_out || valid3_out)
 					next_state = write_back;
+				else
+					next_state = idle;
 			end
 			
 			read_mem: begin
@@ -224,10 +264,8 @@ begin : next_state_logic
 				if (!mem_resp)
 					next_state = write_back;
 				else
-					next_state = stall;
+					next_state = idle;
 			end
-			
-			stall: next_state = read_mem;
 			
 			default: next_state = idle;
 		endcase

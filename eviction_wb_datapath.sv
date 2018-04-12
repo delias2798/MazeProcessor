@@ -24,14 +24,18 @@ module eviction_wb_datapath
 	input lru_write,
 	input [2:0] lru_in,
 	input pmem_addr_sig,
-	input data_sig,
+	input out_data_sel,
 	
 	output logic [2:0] lru_out,
 	output logic [1:0] cline_and,
 	output logic hit,
 	output lc3b_data data_out,
 	output lc3b_data pdata_out,
-	output lc3b_word pmem_address
+	output lc3b_word pmem_address,
+	output logic valid0_out,
+	output logic valid1_out,
+	output logic valid2_out,
+	output logic valid3_out
 );
 
 lc3b_l2_tag tag;
@@ -39,11 +43,6 @@ lc3b_offset offset;
 
 assign tag = mem_address[15:4];
 assign offset = mem_address[3:1];
-
-logic valid0_out;
-logic valid1_out;
-logic valid2_out;
-logic valid3_out;
 
 lc3b_l2_tag tag0_out;
 lc3b_l2_tag tag1_out;
@@ -62,14 +61,13 @@ logic cline1_and;
 logic cline2_and;
 logic cline3_and;
 
-lc3b_data data_in;
+lc3b_data cdata_out;
 lc3b_data data0_out;
 lc3b_data data1_out;
 lc3b_data data2_out;
 lc3b_data data3_out;
 lc3b_data data_10_out;
 lc3b_data data_32_out;
-lc3b_data cpu_data_out;
 
 lc3b_word write_back_addr;
 
@@ -194,28 +192,11 @@ begin
 		cline_and = 2'b11;
 end
 
-/* Data Arrays */
-cpudata cpu_data_cal
-(
-	.cpu(cpu_data),
-	.data(data_out),
-	.wmask(mem_byte_enable),
-	.out(cpu_data_out)
-);
-
-mux2 #(.width(128)) data_mux
-(
-	.sel(data_sig),
-	.a(cpu_data_out),
-	.b(pmem_data),
-	.f(data_in)
-);
-
 eviction_wb_array data0
 (
 	.clk(clk),
 	.write(data0_write),
-	.datain(data_in),
+	.datain(cpu_data),
 	.dataout(data0_out)
 );
 
@@ -223,7 +204,7 @@ eviction_wb_array data1
 (
 	.clk(clk),
 	.write(data1_write),
-	.datain(data_in),
+	.datain(cpu_data),
 	.dataout(data1_out)
 );
 
@@ -231,7 +212,7 @@ eviction_wb_array data2
 (
 	.clk(clk),
 	.write(data2_write),
-	.datain(data_in),
+	.datain(cpu_data),
 	.dataout(data2_out)
 );
 
@@ -239,7 +220,7 @@ eviction_wb_array data3
 (
 	.clk(clk),
 	.write(data3_write),
-	.datain(data_in),
+	.datain(cpu_data),
 	.dataout(data3_out)
 );
 
@@ -250,59 +231,47 @@ mux4 #(.width(128)) cdata_mux
 	.b(data1_out),
 	.c(data2_out),
 	.d(data3_out),
+	.f(cdata_out)
+);
+
+mux2 #(.width(128)) out_data_mux
+(
+	.sel(out_data_sel),
+	.a(cdata_out),
+	.b(pmem_data),
 	.f(data_out)
 );
 
 /* Address to Physical Memory*/
-mux2 #(.width(128)) pdata_mux10
+evict_line evict_data
 (
-	.sel(lru_out[1]),
-	.a(data1_out),
-	.b(data0_out),
-	.f(data_10_out)
-);
-
-mux2 #(.width(128)) pdata_mux32
-(
-	.sel(lru_out[2]),
-	.a(data3_out),
-	.b(data2_out),
-	.f(data_32_out)
-);
-
-mux2 #(.width(128)) pdata_mux
-(
-	.sel2_arrayl(lru_out[0]),
-	.a(data_32_out),
-	.b(data_10_out),
+	.a(data0_out),
+	.b(data1_out),
+	.c(data2_out),
+	.d(data3_out),
+	.valid_a(valid0_out),
+	.valid_b(valid1_out),
+	.valid_c(valid2_out),
+	.valid_d(valid3_out),
+	.lru(lru_out),
 	.f(pdata_out)
 );
 
-mux2 #(.width(8)) tag_mux10
+evict_line #(.width(8)) evict_tag
 (
-	.sel(lru_out[1]),
-	.a(tag1_out),
-	.b(tag0_out),
-	.f(tag_10_out)
-);
-
-mux2 #(.width(8)) tag_mux32
-(
-	.sel(lru_out[2]),
-	.a(tag3_out),
-	.b(tag2_out),
-	.f(tag_32_out)
-);
-
-mux2 #(.width(8)) tag_mux
-(
-	.sel(lru_out[0]),
-	.a(tag_32_out),
-	.b(tag_10_out),
+	.a(tag0_out),
+	.b(tag1_out),
+	.c(tag2_out),
+	.d(tag3_out),
+	.valid_a(valid0_out),
+	.valid_b(valid1_out),
+	.valid_c(valid2_out),
+	.valid_d(valid3_out),
+	.lru(lru_out),
 	.f(tag_out)
 );
 
-assign write_back_addr = {tag_out, index, 4'b0000};
+assign write_back_addr = {tag_out, 4'b0000};
 
 mux2 #(.width(16)) pmem_addr_mux
 (

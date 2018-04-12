@@ -69,6 +69,20 @@
 # 
 # Top level modules:
 # 	l2_cache_control
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/eviction_wb_controller.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module eviction_wb_control
+# 
+# Top level modules:
+# 	eviction_wb_control
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/eviction_wb_array.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package eviction_wb_array_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module eviction_wb_array
+# 
+# Top level modules:
+# 	eviction_wb_array
 # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l1_cache_datapath.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package l1_cache_datapath_sv_unit
@@ -315,6 +329,22 @@
 # 
 # Top level modules:
 # 	l2_array
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/eviction_wb_datapath.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package eviction_wb_datapath_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module eviction_wb_datapath
+# 
+# Top level modules:
+# 	eviction_wb_datapath
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/eviction_wb.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package eviction_wb_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module eviction_wb
+# 
+# Top level modules:
+# 	eviction_wb
 # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package mazeprocessor_sv_unit
@@ -337,8 +367,8 @@
 # Top level modules:
 # 	physical_memory
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L arriaii_hssi_ver -L arriaii_pcie_hip_ver -L arriaii_ver -L rtl_work -L work -voptargs="+acc"  testbench
-# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L arriaii_hssi_ver -L arriaii_pcie_hip_ver -L arriaii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps testbench 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L stratixiii_ver -L rtl_work -L work -voptargs="+acc"  testbench
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L stratixiii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps testbench 
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.wishbone
@@ -346,15 +376,22 @@
 # Loading work.lc3b_types
 # Loading work.mazeprocessor_sv_unit
 # Loading work.mazeprocessor
+# Loading work.eviction_wb_sv_unit
+# Loading work.eviction_wb
+# Loading work.eviction_wb_datapath_sv_unit
+# Loading work.eviction_wb_datapath
+# Loading work.eviction_wb_array_sv_unit
+# Loading work.eviction_wb_array
+# Loading work.comparator
+# Loading work.mux4
+# Loading work.mux2
+# Loading work.eviction_wb_control
 # Loading work.l2_cache_sv_unit
 # Loading work.l2_cache
 # Loading work.l2_cache_datapath_sv_unit
 # Loading work.l2_cache_datapath
 # Loading work.l2_array_sv_unit
 # Loading work.l2_array
-# Loading work.mux2
-# Loading work.comparator
-# Loading work.mux4
 # Loading work.l2_cache_control
 # Loading work.wb_interconnect
 # Loading work.l1_cache_sv_unit
@@ -422,7 +459,7 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 200 ns
-do wave.do
+do wave_evic.do
 restart -f; run 1ms
 # Loading sv_std.std
 # Loading work.testbench
@@ -431,15 +468,22 @@ restart -f; run 1ms
 # Loading work.lc3b_types
 # Loading work.mazeprocessor_sv_unit
 # Loading work.mazeprocessor
+# Loading work.eviction_wb_sv_unit
+# Loading work.eviction_wb
+# Loading work.eviction_wb_datapath_sv_unit
+# Loading work.eviction_wb_datapath
+# Loading work.eviction_wb_array_sv_unit
+# Loading work.eviction_wb_array
+# Loading work.comparator
+# Loading work.mux4
+# Loading work.mux2
+# Loading work.eviction_wb_control
 # Loading work.l2_cache_sv_unit
 # Loading work.l2_cache
 # Loading work.l2_cache_datapath_sv_unit
 # Loading work.l2_cache_datapath
 # Loading work.l2_array_sv_unit
 # Loading work.l2_array
-# Loading work.mux2
-# Loading work.comparator
-# Loading work.mux4
 # Loading work.l2_cache_control
 # Loading work.wb_interconnect
 # Loading work.l1_cache_sv_unit
