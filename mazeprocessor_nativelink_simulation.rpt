@@ -9,7 +9,7 @@ Quartus root          :  /software/altera/13.1/quartus/linux/
 Quartus sim root      :  /software/altera/13.1/quartus/eda/sim_lib
 Simulation Tool       :  modelsim-altera
 Simulation Language   :  verilog
-Simulation Mode       :  GUI
+Simulation Mode       :  Command Line
 Sim Output File       :  
 Sim SDF file          :  
 Sim dir               :  simulation/modelsim
@@ -19,4 +19,475 @@ Sim dir               :  simulation/modelsim
 Info: Starting NativeLink simulation with ModelSim-Altera software
 Sourced NativeLink script /software/altera/13.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
 Warning: File mazeprocessor_run_msim_rtl_verilog.do already exists - backing up current file as mazeprocessor_run_msim_rtl_verilog.do.bak11
-Info: Spawning ModelSim-Altera Simulation software 
+Probing transcript
+ModelSim-Altera Info: # do mazeprocessor_run_msim_rtl_verilog.do 
+ModelSim-Altera Info: # if {[file exists rtl_work]} {
+ModelSim-Altera Info: # 	vdel -lib rtl_work -all
+ModelSim-Altera Info: # }
+ModelSim-Altera Info: # vlib rtl_work
+ModelSim-Altera Info: # vmap work rtl_work
+ModelSim-Altera Info: # Copying /software/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+ModelSim-Altera Info: # Modifying modelsim.ini
+ModelSim-Altera Warning: # ** Warning: Copied /software/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+ModelSim-Altera Info: #          Updated modelsim.ini.
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l1_cache_control.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module l1_cache_control
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	l1_cache_control
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/comparator.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module comparator
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	comparator
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/lc3b_types.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package lc3b_types
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	--none--
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/register.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module register
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	register
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/wishbone.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling interface wishbone
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	--none--
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mux8.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module mux8
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	mux8
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mux2.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module mux2
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	mux2
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mux4.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module mux4
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	mux4
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/plus2.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module plus2
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	plus2
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l2_cache_control.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module l2_cache_control
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	l2_cache_control
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/eviction_wb_controller.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module eviction_wb_control
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	eviction_wb_control
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/eviction_wb_array.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package eviction_wb_array_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module eviction_wb_array
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	eviction_wb_array
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/evict_line.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package evict_line_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module evict_line
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	evict_line
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l1_cache_datapath.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package l1_cache_datapath_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module l1_cache_datapath
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	l1_cache_datapath
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l1_cache.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package l1_cache_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module l1_cache
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	l1_cache
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/interconnect.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module wb_interconnect
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	wb_interconnect
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/cpudata.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package cpudata_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module cpudata
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	cpudata
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/array.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package array_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module array
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	array
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/memory_stall.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package memory_stall_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module memory_stall
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	memory_stall
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/write_back_stage.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package write_back_stage_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module write_back_stage
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	write_back_stage
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/register_control_rom.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package register_control_rom_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module register_control_rom
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	register_control_rom
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/gencc.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package gencc_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module gencc
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	gencc
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/cc_comp.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package cc_comp_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module cc_comp
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	cc_comp
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/cpu_datapath.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package cpu_datapath_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module cpu_datapath
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	cpu_datapath
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/control_rom.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package control_rom_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module control_rom
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	control_rom
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/regfile.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package regfile_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module regfile
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	regfile
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/zext.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package zext_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module zext
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	zext
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/sext.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package sext_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module sext
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	sext
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/adj.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package adj_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module adj
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	adj
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/ir.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package ir_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module ir
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	ir
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/fetch_stage.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package fetch_stage_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module fetch_stage
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	fetch_stage
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/decode_stage.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package decode_stage_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module decode_stage
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	decode_stage
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/execute_stage.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package execute_stage_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module execute_stage
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	execute_stage
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/br_add.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package br_add_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module br_add
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	br_add
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/alu.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package alu_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module alu
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	alu
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/zext_s.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package zext_s_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module zext_s
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	zext_s
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/memory_stage.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package memory_stage_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module memory_stage
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	memory_stage
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/cpu.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package cpu_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module cpu
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	cpu
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l2_cache_datapath.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package l2_cache_datapath_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module l2_cache_datapath
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	l2_cache_datapath
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l2_cache.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package l2_cache_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module l2_cache
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	l2_cache
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/execute_forward.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package execute_forward_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module execute_forward
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	execute_forward
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/memory_forward.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package memory_forward_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module memory_forward
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	memory_forward
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/hazard_detection.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package hazard_detection_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module hazard_detection
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	hazard_detection
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l2_array.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package l2_array_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module l2_array
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	l2_array
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/eviction_wb_datapath.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package eviction_wb_datapath_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module eviction_wb_datapath
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	eviction_wb_datapath
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/eviction_wb.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package eviction_wb_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module eviction_wb
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	eviction_wb
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling package mazeprocessor_sv_unit
+ModelSim-Altera Info: # -- Importing package lc3b_types
+ModelSim-Altera Info: # -- Compiling module mazeprocessor
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	mazeprocessor
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/testbench.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module testbench
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	testbench
+ModelSim-Altera Info: # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/physical_memory.sv}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module physical_memory
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	physical_memory
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L stratixiii_ver -L rtl_work -L work -voptargs="+acc"  testbench
+ModelSim-Altera Info: # vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L stratixiii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps testbench 
+ModelSim-Altera Info: # Loading sv_std.std
+ModelSim-Altera Info: # Loading work.testbench
+ModelSim-Altera Info: # Loading work.wishbone
+ModelSim-Altera Info: # Loading work.physical_memory
+ModelSim-Altera Info: # Loading work.lc3b_types
+ModelSim-Altera Info: # Loading work.mazeprocessor_sv_unit
+ModelSim-Altera Info: # Loading work.mazeprocessor
+ModelSim-Altera Info: # Loading work.eviction_wb_sv_unit
+ModelSim-Altera Info: # Loading work.eviction_wb
+ModelSim-Altera Info: # Loading work.eviction_wb_datapath_sv_unit
+ModelSim-Altera Info: # Loading work.eviction_wb_datapath
+ModelSim-Altera Info: # Loading work.eviction_wb_array_sv_unit
+ModelSim-Altera Info: # Loading work.eviction_wb_array
+ModelSim-Altera Info: # Loading work.comparator
+ModelSim-Altera Info: # Loading work.mux4
+ModelSim-Altera Info: # Loading work.mux2
+ModelSim-Altera Info: # Loading work.evict_line_sv_unit
+ModelSim-Altera Info: # Loading work.evict_line
+ModelSim-Altera Info: # Loading work.eviction_wb_control
+ModelSim-Altera Info: # Loading work.l2_cache_sv_unit
+ModelSim-Altera Info: # Loading work.l2_cache
+ModelSim-Altera Info: # Loading work.l2_cache_datapath_sv_unit
+ModelSim-Altera Info: # Loading work.l2_cache_datapath
+ModelSim-Altera Info: # Loading work.l2_array_sv_unit
+ModelSim-Altera Info: # Loading work.l2_array
+ModelSim-Altera Info: # Loading work.l2_cache_control
+ModelSim-Altera Info: # Loading work.wb_interconnect
+ModelSim-Altera Info: # Loading work.l1_cache_sv_unit
+ModelSim-Altera Info: # Loading work.l1_cache
+ModelSim-Altera Info: # Loading work.l1_cache_datapath_sv_unit
+ModelSim-Altera Info: # Loading work.l1_cache_datapath
+ModelSim-Altera Info: # Loading work.array_sv_unit
+ModelSim-Altera Info: # Loading work.array
+ModelSim-Altera Info: # Loading work.cpudata_sv_unit
+ModelSim-Altera Info: # Loading work.cpudata
+ModelSim-Altera Info: # Loading work.l1_cache_control
+ModelSim-Altera Info: # Loading work.cpu_sv_unit
+ModelSim-Altera Info: # Loading work.cpu
+ModelSim-Altera Info: # Loading work.cpu_datapath_sv_unit
+ModelSim-Altera Info: # Loading work.cpu_datapath
+ModelSim-Altera Info: # Loading work.fetch_stage_sv_unit
+ModelSim-Altera Info: # Loading work.fetch_stage
+ModelSim-Altera Info: # Loading work.plus2
+ModelSim-Altera Info: # Loading work.register
+ModelSim-Altera Info: # Loading work.mux8
+ModelSim-Altera Info: # Loading work.decode_stage_sv_unit
+ModelSim-Altera Info: # Loading work.decode_stage
+ModelSim-Altera Info: # Loading work.ir_sv_unit
+ModelSim-Altera Info: # Loading work.ir
+ModelSim-Altera Info: # Loading work.control_rom_sv_unit
+ModelSim-Altera Info: # Loading work.control_rom
+ModelSim-Altera Info: # Loading work.regfile_sv_unit
+ModelSim-Altera Info: # Loading work.regfile
+ModelSim-Altera Info: # Loading work.zext_sv_unit
+ModelSim-Altera Info: # Loading work.zext
+ModelSim-Altera Info: # Loading work.sext_sv_unit
+ModelSim-Altera Info: # Loading work.sext
+ModelSim-Altera Info: # Loading work.adj_sv_unit
+ModelSim-Altera Info: # Loading work.adj
+ModelSim-Altera Info: # Loading work.hazard_detection_sv_unit
+ModelSim-Altera Info: # Loading work.hazard_detection
+ModelSim-Altera Info: # Loading work.register_control_rom_sv_unit
+ModelSim-Altera Info: # Loading work.register_control_rom
+ModelSim-Altera Info: # Loading work.execute_stage_sv_unit
+ModelSim-Altera Info: # Loading work.execute_stage
+ModelSim-Altera Info: # Loading work.br_add_sv_unit
+ModelSim-Altera Info: # Loading work.br_add
+ModelSim-Altera Info: # Loading work.alu_sv_unit
+ModelSim-Altera Info: # Loading work.alu
+ModelSim-Altera Info: # Loading work.zext_s_sv_unit
+ModelSim-Altera Info: # Loading work.zext_s
+ModelSim-Altera Info: # Loading work.execute_forward_sv_unit
+ModelSim-Altera Info: # Loading work.execute_forward
+ModelSim-Altera Info: # Loading work.memory_stage_sv_unit
+ModelSim-Altera Info: # Loading work.memory_stage
+ModelSim-Altera Info: # Loading work.memory_stall_sv_unit
+ModelSim-Altera Info: # Loading work.memory_stall
+ModelSim-Altera Info: # Loading work.memory_forward_sv_unit
+ModelSim-Altera Info: # Loading work.memory_forward
+ModelSim-Altera Info: # Loading work.write_back_stage_sv_unit
+ModelSim-Altera Info: # Loading work.write_back_stage
+ModelSim-Altera Info: # Loading work.gencc_sv_unit
+ModelSim-Altera Info: # Loading work.gencc
+ModelSim-Altera Info: # Loading work.cc_comp_sv_unit
+ModelSim-Altera Info: # Loading work.cc_comp
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #add wave *
+ModelSim-Altera Info: #view structure
+ModelSim-Altera Info: #view signals
+ModelSim-Altera Info: # run 200 ns
+ModelSim-Altera Info: # quit -f
+Info: NativeLink simulation flow was successful

@@ -35,22 +35,23 @@ module eviction_wb_datapath
 	output logic valid0_out,
 	output logic valid1_out,
 	output logic valid2_out,
-	output logic valid3_out
+	output logic valid3_out,
+	output logic [1:0] line
 );
 
-lc3b_l2_tag tag;
+lc3b_evict_tag tag;
 lc3b_offset offset;
 
 assign tag = mem_address[15:4];
 assign offset = mem_address[3:1];
 
-lc3b_l2_tag tag0_out;
-lc3b_l2_tag tag1_out;
-lc3b_l2_tag tag2_out;
-lc3b_l2_tag tag3_out;
-lc3b_l2_tag tag_10_out;
-lc3b_l2_tag tag_32_out;
-lc3b_l2_tag tag_out;
+lc3b_evict_tag tag0_out;
+lc3b_evict_tag tag1_out;
+lc3b_evict_tag tag2_out;
+lc3b_evict_tag tag3_out;
+lc3b_evict_tag tag_10_out;
+lc3b_evict_tag tag_32_out;
+lc3b_evict_tag tag_out;
 logic comp0_out;
 logic comp1_out;
 logic comp2_out;
@@ -114,7 +115,7 @@ eviction_wb_array #(.width(3)) lru
 );
 
 /* Tag Arrays */
-eviction_wb_array #(.width(8)) tag0
+eviction_wb_array #(.width(12)) tag0
 (
 	.clk(clk),
 	.write(tag0_write),
@@ -122,7 +123,7 @@ eviction_wb_array #(.width(8)) tag0
 	.dataout(tag0_out)
 );
 
-eviction_wb_array #(.width(8)) tag1
+eviction_wb_array #(.width(12)) tag1
 (
 	.clk(clk),
 	.write(tag1_write),
@@ -130,7 +131,7 @@ eviction_wb_array #(.width(8)) tag1
 	.dataout(tag1_out)
 );
 
-eviction_wb_array #(.width(8)) tag2
+eviction_wb_array #(.width(12)) tag2
 (
 	.clk(clk),
 	.write(tag2_write),
@@ -138,7 +139,7 @@ eviction_wb_array #(.width(8)) tag2
 	.dataout(tag2_out)
 );
 
-eviction_wb_array #(.width(8)) tag3
+eviction_wb_array #(.width(12)) tag3
 (
 	.clk(clk),
 	.write(tag3_write),
@@ -146,28 +147,28 @@ eviction_wb_array #(.width(8)) tag3
 	.dataout(tag3_out)
 );
 
-comparator #(.width(8)) comp0
+comparator #(.width(12)) comp0
 (
 	.value0(tag0_out),
 	.value1(tag),
 	.out(comp0_out)
 );
 
-comparator #(.width(8)) comp1
+comparator #(.width(12)) comp1
 (
 	.value0(tag1_out),
 	.value1(tag),
 	.out(comp1_out)
 );
 
-comparator #(.width(8)) comp2
+comparator #(.width(12)) comp2
 (
 	.value0(tag2_out),
 	.value1(tag),
 	.out(comp2_out)
 );
 
-comparator #(.width(8)) comp3
+comparator #(.width(12)) comp3
 (
 	.value0(tag3_out),
 	.value1(tag),
@@ -245,29 +246,31 @@ mux2 #(.width(128)) out_data_mux
 /* Address to Physical Memory*/
 evict_line evict_data
 (
+	.valid_a(valid0_out),
+	.valid_b(valid1_out),
+	.valid_c(valid2_out),
+	.valid_d(valid3_out),
+	.lru(lru_out),
+	.line(line)
+);
+
+mux4 #(.width(128)) evict_data_mux
+(
+	.sel(line),
 	.a(data0_out),
 	.b(data1_out),
 	.c(data2_out),
 	.d(data3_out),
-	.valid_a(valid0_out),
-	.valid_b(valid1_out),
-	.valid_c(valid2_out),
-	.valid_d(valid3_out),
-	.lru(lru_out),
 	.f(pdata_out)
 );
 
-evict_line #(.width(8)) evict_tag
+mux4 #(.width(12)) evict_tag_mux
 (
+	.sel(line),
 	.a(tag0_out),
 	.b(tag1_out),
 	.c(tag2_out),
 	.d(tag3_out),
-	.valid_a(valid0_out),
-	.valid_b(valid1_out),
-	.valid_c(valid2_out),
-	.valid_d(valid3_out),
-	.lru(lru_out),
 	.f(tag_out)
 );
 

@@ -35,6 +35,8 @@ logic valid2_out;
 logic valid3_out;
 logic out_data_sel;
 
+logic [1:0] line;
+
 assign mem_address = {cpu_wb.ADR, 4'b0000};
 assign wb.ADR = pmem_address[15:4];
 assign wb.SEL = 16'hFFFF;
@@ -72,7 +74,8 @@ eviction_wb_datapath cache_d
 	.valid0_out(valid0_out),
 	.valid1_out(valid1_out),
 	.valid2_out(valid2_out),
-	.valid3_out(valid3_out)
+	.valid3_out(valid3_out),
+	.line(line)
 );
 
 eviction_wb_control cache_c
@@ -97,6 +100,7 @@ eviction_wb_control cache_c
 	.out_data_sel(out_data_sel),
 	.lru_out(lru_out),
 	.cline_and(cline_and),
+	.line(line),
 	.hit(hit),
 	.valid0_out(valid0_out),
 	.valid1_out(valid1_out),

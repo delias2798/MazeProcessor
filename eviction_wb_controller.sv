@@ -24,6 +24,7 @@ module eviction_wb_control
 	/* Signals from datapath*/
 	input [2:0] lru_out,
 	input [1:0] cline_and,
+	input [1:0] line,
 	input hit,
 	input valid0_out,
 	input valid1_out,
@@ -196,17 +197,17 @@ begin : state_actions
 			valid_in = 0;
 			lru_in = lru_out;
 			if (mem_resp) begin
-				if (lru_out[0] == 1 && lru_out[1] == 1) begin
+				if (line == 2'b00) begin
 					valid0_write = 1;
 					lru_in[0] = 0;
 					lru_in[1] = 0;
 				end
-				else if (lru_out[0] == 1 && lru_out[1] == 0) begin
+				else if (line == 2'b01) begin
 					valid1_write = 1;
 					lru_in[0] = 0;
 					lru_in[1] = 1;
 				end
-				else if (lru_out[0] == 0 && lru_out[2] == 1) begin
+				else if (line == 2'b10) begin
 					valid2_write = 1;
 					lru_in[0] = 1;
 					lru_in[2] = 0;

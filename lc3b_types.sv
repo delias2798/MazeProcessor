@@ -1,6 +1,7 @@
 package lc3b_types;
 
 typedef logic [127:0] lc3b_data;
+typedef logic [11:0] lc3b_evict_tag;
 typedef logic [8:0] lc3b_tag;
 typedef logic [7:0] lc3b_l2_tag;
 typedef logic [15:0] lc3b_word;
