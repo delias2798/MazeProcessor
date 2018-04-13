@@ -196,7 +196,7 @@ begin
 				l1_miss_in = l1_miss_out + 1'b1;
 				load_l1_miss = 1;
 			end
-			else if(curr_stall_out <= 5) begin
+			else if(curr_stall_out <= 10) begin
 				evict_hit_in = evict_hit_out + 1'b1;
 				load_evict_hit = 1;
 

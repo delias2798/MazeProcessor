@@ -52,6 +52,9 @@ vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/eviction_wb_datapath.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/eviction_wb.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/performance_counter.sv}
+vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/btb.sv}
+vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/btb_array.sv}
+vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/btb_lru_array.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv}
 
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/testbench.sv}

@@ -6,6 +6,7 @@ module fetch_stage
 	input control_flush,
 	input lc3b_data imem_rdata,
 	input lc3b_word new_pc,
+	input lc3b_word write_pc,
 	input branch_enable,
 	input mem_stall,
 	input hazard_stall,
@@ -14,11 +15,15 @@ module fetch_stage
 	output logic imem_action_stb,
 	output logic imem_action_cyc,
 	output lc3b_word pc_plus2_out,
+	output lc3b_word predicted_pc_out,
 	output lc3b_word imem_rdata_out
 );
 
 /* Control Signals */
 logic load_pc;
+logic taken;
+
+lc3b_word predicted_pc;
 
 assign load_pc = (!mem_stall & imem_resp & !hazard_stall) || control_flush;
 assign imem_action_cyc = 1;
@@ -27,10 +32,18 @@ assign imem_action_stb = 1;
 /* Internal Signals */
 lc3b_word pc_in;
 
+mux2 predicted_pc_mux
+(
+	.sel(taken),
+	.a(pc_plus2_out),
+	.b(predicted_pc),
+	.f(predicted_pc_out)
+);
+
 mux2 pc_mux
 (
-	.sel(branch_enable),
-	.a(pc_plus2_out),
+	.sel(control_flush),
+	.a(predicted_pc_out),
 	.b(new_pc),
 	.f(pc_in)
 );
@@ -61,6 +74,18 @@ mux8 imem_rdata_mux
 	.g(imem_rdata[111:96]),
 	.h(imem_rdata[127:112]),
 	.o(imem_rdata_out)
+);
+
+/* Branch Predictor */
+btb btb
+(
+	.clk(clk),
+	.read_pc(imem_address),
+	.write_pc(write_pc),
+	.write_data(new_pc),
+	.taken(branch_enable),
+	.hit(taken),
+	.predicted_pc(predicted_pc)
 );
 
 endmodule: fetch_stage
