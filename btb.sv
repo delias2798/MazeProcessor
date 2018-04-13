@@ -30,6 +30,18 @@ logic tag1_write;
 logic tag2_write;
 logic tag3_write;
 
+logic valid0_write;
+logic valid1_write;
+logic valid2_write;
+logic valid3_write;
+
+logic valid_in;
+
+logic valid0_out;
+logic valid1_out;
+logic valid2_out;
+logic valid3_out;
+
 lc3b_btb_tag tag0_out;
 lc3b_btb_tag tag1_out;
 lc3b_btb_tag tag2_out;
@@ -50,6 +62,11 @@ logic comp0_out;
 logic comp1_out;
 logic comp2_out;
 logic comp3_out;
+
+logic valid0_and;
+logic valid1_and;
+logic valid2_and;
+logic valid3_and;
 
 logic [1:0] pc_and;
 logic [2:0] lru_in;
@@ -96,6 +113,47 @@ btb_array #(.width(12)) tag3
   .index_in(index_in),
 	.datain(tag_in),
 	.dataout(tag3_out)
+);
+
+/* Valid Arrays */
+btb_array #(.width(1)) valid0
+(
+	.clk(clk),
+	.write(valid0_write),
+	.index(index),
+  .index_in(index_in),
+	.datain(valid_in),
+	.dataout(valid0_out)
+);
+
+btb_array #(.width(1)) valid1
+(
+	.clk(clk),
+	.write(valid1_write),
+	.index(index),
+  .index_in(index_in),
+	.datain(valid_in),
+	.dataout(valid1_out)
+);
+
+btb_array #(.width(1)) valid2
+(
+	.clk(clk),
+	.write(valid2_write),
+	.index(index),
+  .index_in(index_in),
+	.datain(valid_in),
+	.dataout(valid2_out)
+);
+
+btb_array #(.width(1)) valid3
+(
+	.clk(clk),
+	.write(valid3_write),
+	.index(index),
+  .index_in(index_in),
+	.datain(valid_in),
+	.dataout(valid3_out)
 );
 
 /* Data Arrays */
@@ -167,7 +225,11 @@ comparator #(.width(12)) comp3
 	.out(comp3_out)
 );
 
-assign hit = comp0_out | comp1_out | comp2_out | comp3_out;
+assign valid0_and = comp0_out & valid0_out;
+assign valid1_and = comp1_out & valid1_out;
+assign valid2_and = comp2_out & valid2_out;
+assign valid3_and = comp3_out & valid3_out;
+assign hit = valid0_and | valid1_and | valid2_and | valid3_and;
 
 always_comb
 begin
@@ -231,40 +293,51 @@ begin
 	tag1_write = 1'b0;
 	tag2_write = 1'b0;
 	tag3_write = 1'b0;
+	valid0_write = 1'b0;
+	valid1_write = 1'b0;
+	valid2_write = 1'b0;
+	valid3_write = 1'b0;
 	data0_write = 1'b0;
 	data1_write = 1'b0;
 	data2_write = 1'b0;
 	data3_write = 1'b0;
+	valid_in = 1;
   
   // Update lru at write
-  if (lru_out[0] == 1 && lru_out[1] == 1)
-  begin
-    tag0_write = 1;
-    data0_write = 1;
-    lru_in[0] = 0;
-    lru_in[1] = 0;
-  end
-  else if (lru_out[0] == 1 && lru_out[1] == 0)
-  begin
-    tag1_write = 1;
-    data1_write = 1;
-    lru_in[0] = 0;
-    lru_in[1] = 1;
-  end
-  else if (lru_out[0] == 0 && lru_out[2] == 1)
-  begin
-    tag2_write = 1;
-    data2_write = 1;
-    lru_in[0] = 1;
-    lru_in[2] = 0;
-  end
-  else
-  begin
-    tag3_write = 1;
-    data3_write = 1;
-    lru_in[0] = 1;
-    lru_in[2] = 1;
-  end
+  if (taken) begin
+	  if (lru_out[0] == 1 && lru_out[1] == 1)
+	  begin
+		 tag0_write = 1;
+		 valid0_write = 1;
+		 data0_write = 1;
+		 lru_in[0] = 0;
+		 lru_in[1] = 0;
+	  end
+	  else if (lru_out[0] == 1 && lru_out[1] == 0)
+	  begin
+		 tag1_write = 1;
+		 valid1_write = 1;
+		 data1_write = 1;
+		 lru_in[0] = 0;
+		 lru_in[1] = 1;
+	  end
+	  else if (lru_out[0] == 0 && lru_out[2] == 1)
+	  begin
+		 tag2_write = 1;
+		 valid2_write = 1;
+		 data2_write = 1;
+		 lru_in[0] = 1;
+		 lru_in[2] = 0;
+	  end
+	  else
+	  begin
+		 tag3_write = 1;
+		 valid3_write = 1;
+		 data3_write = 1;
+		 lru_in[0] = 1;
+		 lru_in[2] = 1;
+	  end
+	end
 end
 
 endmodule: btb

@@ -16,12 +16,12 @@ module fetch_stage
 	output logic imem_action_cyc,
 	output lc3b_word pc_plus2_out,
 	output lc3b_word predicted_pc_out,
-	output lc3b_word imem_rdata_out
+	output lc3b_word imem_rdata_out,
+	output logic taken
 );
 
 /* Control Signals */
 logic load_pc;
-logic taken;
 
 lc3b_word predicted_pc;
 

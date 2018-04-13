@@ -11,6 +11,7 @@ module write_back_stage
 	input lc3b_reg dest_register,
 	input lc3b_word new_pc_mem_wb_out,
 	input lc3b_word predicted_pc_mem_wb_out,
+	input branch_prediction_mem_wb_out,
 	
 	/* Input Control Signals */
 	input lc3b_opcode opcode,
@@ -89,7 +90,7 @@ begin
 	if (branch_enable && (new_pc_mem_wb_out != predicted_pc_mem_wb_out))
 		control_flush = 1;
 		
-	if (!branch_enable && (new_pc_mem_wb_out == predicted_pc_mem_wb_out))
+	if (!branch_enable && (new_pc_mem_wb_out == predicted_pc_mem_wb_out) && branch_prediction_mem_wb_out)
 		control_flush = 1;
 end
 
