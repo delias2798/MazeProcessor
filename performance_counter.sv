@@ -12,6 +12,8 @@ module performance_counter
 	input load_l1_miss,
 	input load_l2_miss,
 	input load_evict_miss,
+	input load_curr_stall,
+	
 	input lc3b_word branch_in,
 	input lc3b_word branch_mispred_in,
 	input lc3b_word stall_in,
@@ -21,7 +23,8 @@ module performance_counter
 	input lc3b_word l1_miss_in,
 	input lc3b_word l2_miss_in,
 	input lc3b_word evict_miss_in,
-	
+	input lc3b_word curr_stall_in,
+
 	output lc3b_word branch_out,
 	output lc3b_word branch_mispred_out,
 	output lc3b_word stall_out,
@@ -30,7 +33,8 @@ module performance_counter
 	output lc3b_word evict_hit_out,
 	output lc3b_word l1_miss_out,
 	output lc3b_word l2_miss_out,
-	output lc3b_word evict_miss_out
+	output lc3b_word evict_miss_out,
+	output lc3b_word curr_stall_out
 );
 
 /* Branch */
@@ -106,6 +110,14 @@ register evict_miss
 	.load(load_evict_miss),
 	.in(evict_miss_in),
 	.out(evict_miss_out)
+);
+
+register curr_stall
+(
+	.clk(clk),
+	.load(load_curr_stall),
+	.in(curr_stall_in),
+	.out(curr_stall_out)
 );
 
 endmodule: performance_counter

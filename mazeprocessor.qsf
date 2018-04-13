@@ -58,6 +58,8 @@ set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ns" -section_id test
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME testbench -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_FILE testbench.sv -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_FILE physical_memory.sv -section_id testbench
+
+set_global_assignment -name SYSTEMVERILOG_FILE memory_stall.sv
 set_global_assignment -name SYSTEMVERILOG_FILE l1_cache_datapath.sv
 set_global_assignment -name SYSTEMVERILOG_FILE l1_cache_control.sv
 set_global_assignment -name SYSTEMVERILOG_FILE l1_cache.sv
@@ -65,7 +67,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE interconnect.sv
 set_global_assignment -name SYSTEMVERILOG_FILE cpudata.sv
 set_global_assignment -name SYSTEMVERILOG_FILE comparator.sv
 set_global_assignment -name SYSTEMVERILOG_FILE array.sv
-set_global_assignment -name SYSTEMVERILOG_FILE memory_stall.sv
 set_global_assignment -name SYSTEMVERILOG_FILE write_back_stage.sv
 set_global_assignment -name SYSTEMVERILOG_FILE register_control_rom.sv
 set_global_assignment -name SYSTEMVERILOG_FILE gencc.sv
@@ -107,7 +108,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE eviction_wb_datapath.sv
 set_global_assignment -name SYSTEMVERILOG_FILE eviction_wb_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE eviction_wb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE eviction_wb_array.sv
-
 set_global_assignment -name SYSTEMVERILOG_FILE evict_line.sv
 set_global_assignment -name SYSTEMVERILOG_FILE performance_counter.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,6 +1,7 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate -height 15 /testbench/clk
+add wave -noupdate -height 15 /testbench/clk
 add wave -noupdate -height 15 -radix hexadecimal -childformat {{{/testbench/processor/c/cpu_d/id_stage/reg_file/data[7]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[6]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[5]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[4]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[3]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[2]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[1]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[0]} -radix hexadecimal}} -expand -subitemconfig {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[7]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[6]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[5]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[4]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[3]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[2]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[1]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[0]} {-height 16 -radix hexadecimal}} /testbench/processor/c/cpu_d/id_stage/reg_file/data
 add wave -noupdate -color Cyan -height 15 -label if_pc_data -radix hexadecimal /testbench/processor/c/cpu_d/if_stage/pc_regsiter/data
 add wave -noupdate -color Cyan -height 15 -label if_pc_in -radix hexadecimal -childformat {{{/testbench/processor/c/cpu_d/if_id_pc/in[15]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[14]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[13]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[12]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[11]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[10]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[9]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[8]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[7]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[6]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[5]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[4]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[3]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[2]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[1]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/if_id_pc/in[0]} -radix hexadecimal}} -subitemconfig {{/testbench/processor/c/cpu_d/if_id_pc/in[15]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[14]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[13]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[12]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[11]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[10]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[9]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[8]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[7]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[6]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[5]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[4]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[3]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[2]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[1]} {-color Cyan -height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/if_id_pc/in[0]} {-color Cyan -height 16 -radix hexadecimal}} /testbench/processor/c/cpu_d/if_id_pc/in
@@ -40,8 +41,15 @@ add wave -noupdate -color Magenta -height 15 -label mem_alu_in -radix hexadecima
 add wave -noupdate -height 15 -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/branch/data
 add wave -noupdate -height 15 -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/branch_mispred/data
 add wave -noupdate -height 15 -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/stall/data
+add wave -noupdate -height 15 -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/l1_hit/data
+add wave -noupdate -height 15 -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/l2_hit/data
+add wave -noupdate -height 15 -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/evict_hit/data
+add wave -noupdate -height 15 -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/l1_miss/data
+add wave -noupdate -height 15 -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/l2_miss/data
+add wave -noupdate -height 15 -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/evict_miss/data
+add wave -noupdate -height 15 -radix hexadecimal /testbench/processor/c/cpu_d/mem_stage/m_stall/p_counter/curr_stall/data
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {2465871 ps} 0}
+WaveRestoreCursors {{Cursor 1} {9652547 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 160
 configure wave -valuecolwidth 75
@@ -57,4 +65,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {1715210 ps} {3619864 ps}
+WaveRestoreZoom {8190579 ps} {10095233 ps}

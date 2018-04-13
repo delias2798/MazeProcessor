@@ -18,12 +18,12 @@ vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/eviction_wb_controller.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/eviction_wb_array.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/evict_line.sv}
+vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/memory_stall.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l1_cache_datapath.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l1_cache.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/interconnect.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/cpudata.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/array.sv}
-vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/memory_stall.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/write_back_stage.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/register_control_rom.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/gencc.sv}
