@@ -66,9 +66,13 @@ lc3b_offset11 offset11;
 
 lc3b_control_word ctrl_id_ex;
 lc3b_control_word ctrl_id_ex_in;
+lc3b_word pc_id_ex_in;
 lc3b_word pc_id_ex_out;
+logic branch_prediction_id_ex_in;
 logic branch_prediction_id_ex_out;
+lc3b_word curr_pc_id_ex_in;
 lc3b_word curr_pc_id_ex_out;
+lc3b_word predicted_pc_id_ex_in;
 lc3b_word predicted_pc_id_ex_out;
 lc3b_reg sr1_id_ex_in;
 lc3b_reg sr2_id_ex_in;
@@ -91,9 +95,13 @@ lc3b_word destmux_out;
 
 lc3b_control_word ctrl_ex_mem;
 lc3b_reg dest_ex_mem_in;
+lc3b_word pc_ex_mem_in;
 lc3b_word pc_ex_mem_out;
+logic branch_prediction_ex_mem_in;
 logic branch_prediction_ex_mem_out;
+lc3b_word curr_pc_ex_mem_in;
 lc3b_word curr_pc_ex_mem_out;
+lc3b_word predicted_pc_ex_mem_in;
 lc3b_word predicted_pc_ex_mem_out;
 lc3b_word pc_br_ex_mem_out;
 lc3b_word pc_j_ex_mem_out;
@@ -414,6 +422,10 @@ execute_forward ex_forward
 );
 
 assign ctrl_id_ex_in = control_flush ? 0 : ctrl_id_ex;
+assign branch_prediction_id_ex_in = control_flush ? 0 : branch_prediction_id_ex_out;
+assign pc_id_ex_in = control_flush ? 0 : pc_id_ex_out;
+assign curr_pc_id_ex_in = control_flush ? 0 : curr_pc_id_ex_out;
+assign predicted_pc_id_ex_in = control_flush ? 0 : predicted_pc_id_ex_out;
 
 /* Execute - Memory Registers (EX/MEM) */
 register_control_rom ex_mem_ctrl
@@ -428,7 +440,7 @@ register #(.width(1)) ex_mem_branch_pred
 (
 	.clk(clk),
 	.load(load_ex_mem),
-	.in(branch_prediction_id_ex_out),
+	.in(branch_prediction_id_ex_in),
 	.out(branch_prediction_ex_mem_out)
 );
 
@@ -444,7 +456,7 @@ register ex_mem_pc
 (
 	.clk(clk),
 	.load(load_ex_mem),
-	.in(pc_id_ex_out),
+	.in(pc_id_ex_in),
 	.out(pc_ex_mem_out)
 );
 
@@ -452,7 +464,7 @@ register ex_mem_curr_pc
 (
 	.clk(clk),
 	.load(load_ex_mem),
-	.in(curr_pc_id_ex_out),
+	.in(curr_pc_id_ex_in),
 	.out(curr_pc_ex_mem_out)
 );
 
@@ -460,7 +472,7 @@ register ex_mem_predicted_pc
 (
 	.clk(clk),
 	.load(load_ex_mem),
-	.in(predicted_pc_id_ex_out),
+	.in(predicted_pc_id_ex_in),
 	.out(predicted_pc_ex_mem_out)
 );
 
@@ -534,6 +546,10 @@ memory_forward mem_forward
 );
 
 assign ctrl_ex_mem_in = control_flush ? 0 : ctrl_ex_mem;
+assign branch_prediction_ex_mem_in = control_flush ? 0 : branch_prediction_ex_mem_out;
+assign pc_ex_mem_in = control_flush ? 0 : pc_ex_mem_out;
+assign curr_pc_ex_mem_in = control_flush ? 0 : curr_pc_ex_mem_out;
+assign predicted_pc_ex_mem_in = control_flush ? 0 : predicted_pc_ex_mem_out;
 
 /* Memory - Write-Back Registers (MEM/WB) */
 register_control_rom mem_wb_ctrl
@@ -548,7 +564,7 @@ register #(.width(1)) mem_wb_branch_pred
 (
 	.clk(clk),
 	.load(load_mem_wb),
-	.in(branch_prediction_ex_mem_out),
+	.in(branch_prediction_ex_mem_in),
 	.out(branch_prediction_mem_wb_out)
 );
 
@@ -556,7 +572,7 @@ register mem_wb_pc
 (
 	.clk(clk),
 	.load(load_mem_wb),
-	.in(pc_ex_mem_out),
+	.in(pc_ex_mem_in),
 	.out(pc_mem_wb_out)
 );
 
@@ -564,7 +580,7 @@ register mem_wb_curr_pc
 (
 	.clk(clk),
 	.load(load_mem_wb),
-	.in(curr_pc_ex_mem_out),
+	.in(curr_pc_ex_mem_in),
 	.out(curr_pc_mem_wb_out)
 );
 
@@ -572,7 +588,7 @@ register mem_wb_predicted_pc
 (
 	.clk(clk),
 	.load(load_mem_wb),
-	.in(predicted_pc_ex_mem_out),
+	.in(predicted_pc_ex_mem_in),
 	.out(predicted_pc_mem_wb_out)
 );
 
