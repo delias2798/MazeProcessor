@@ -24,10 +24,15 @@ module fetch_stage
 logic load_pc;
 
 lc3b_word predicted_pc;
+lc3b_opcode write_opcode;
+logic btb_hit;
+logic write_bht;
+logic prediction;
 
 assign load_pc = (!mem_stall & imem_resp & !hazard_stall) || control_flush;
 assign imem_action_cyc = 1;
 assign imem_action_stb = 1;
+
 
 /* Internal Signals */
 lc3b_word pc_in;
@@ -84,8 +89,23 @@ btb btb
 	.write_pc(write_pc),
 	.write_data(new_pc),
 	.taken(branch_enable),
-	.hit(taken),
+	.write(write_bht),
+	.hit(btb_hit),
 	.predicted_pc(predicted_pc)
 );
+
+local_bht local_bht
+(
+	.clk(clk),
+	.read_pc(imem_address),
+	.write_pc(write_pc),
+	.taken(branch_enable),
+	.write(write_bht),
+	.prediction(prediction)
+);
+
+assign taken = btb_hit & prediction;
+assign write_opcode = lc3b_opcode'(write_pc[15:12]);
+assign write_bht = load_pc && ((write_opcode == op_br) || (write_opcode == op_jmp) || (write_opcode == op_jsr) || (write_opcode == op_trap));
 
 endmodule: fetch_stage

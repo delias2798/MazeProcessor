@@ -386,6 +386,30 @@
 # 
 # Top level modules:
 # 	btb_lru_array
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/local_bht.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package local_bht_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module local_bht
+# 
+# Top level modules:
+# 	local_bht
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/local_bht_array.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package local_bht_array_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module local_bht_array
+# 
+# Top level modules:
+# 	local_bht_array
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/local_bht_pattern_array.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package local_bht_pattern_array_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module local_bht_pattern_array
+# 
+# Top level modules:
+# 	local_bht_pattern_array
 # vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/mazeprocessor.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package mazeprocessor_sv_unit
@@ -461,6 +485,12 @@
 # Loading work.btb_array
 # Loading work.btb_lru_array_sv_unit
 # Loading work.btb_lru_array
+# Loading work.local_bht_sv_unit
+# Loading work.local_bht
+# Loading work.local_bht_array_sv_unit
+# Loading work.local_bht_array
+# Loading work.local_bht_pattern_array_sv_unit
+# Loading work.local_bht_pattern_array
 # Loading work.decode_stage_sv_unit
 # Loading work.decode_stage
 # Loading work.ir_sv_unit
@@ -509,10 +539,10 @@
 # 
 #           File in use by: bharuka2  Hostname: gelib-4c-31.ews.illinois.edu  ProcessID: 37709
 # 
-#           Attempting to use alternate WLF file "./wlftzz86nd".
+#           Attempting to use alternate WLF file "./wlftibs6ak".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftzz86nd
+#           Using alternate file: ./wlftibs6ak
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
@@ -572,6 +602,12 @@ restart -f; run 1ms
 # Loading work.btb_array
 # Loading work.btb_lru_array_sv_unit
 # Loading work.btb_lru_array
+# Loading work.local_bht_sv_unit
+# Loading work.local_bht
+# Loading work.local_bht_array_sv_unit
+# Loading work.local_bht_array
+# Loading work.local_bht_pattern_array_sv_unit
+# Loading work.local_bht_pattern_array
 # Loading work.decode_stage_sv_unit
 # Loading work.decode_stage
 # Loading work.ir_sv_unit

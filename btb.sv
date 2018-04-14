@@ -8,7 +8,8 @@ module btb
   input lc3b_word write_pc,
   input lc3b_word write_data,
   input taken,
-
+	input write,
+	
   output hit,
   output lc3b_word predicted_pc
 );
@@ -304,7 +305,7 @@ begin
 	valid_in = 1;
   
   // Update lru at write
-  if (taken) begin
+  if (taken && write) begin
 	  if (lru_out[0] == 1 && lru_out[1] == 1)
 	  begin
 		 tag0_write = 1;
