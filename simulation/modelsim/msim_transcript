@@ -92,6 +92,14 @@
 # 
 # Top level modules:
 # 	evict_line
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/global_bht_history_register.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package global_bht_history_register_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module global_bht_history_register
+# 
+# Top level modules:
+# 	global_bht_history_register
 # vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/memory_stall.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package memory_stall_sv_unit
@@ -410,6 +418,30 @@
 # 
 # Top level modules:
 # 	local_bht_pattern_array
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/global_bht.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package global_bht_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module global_bht
+# 
+# Top level modules:
+# 	global_bht
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/global_bht_pattern_array.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package global_bht_pattern_array_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module global_bht_pattern_array
+# 
+# Top level modules:
+# 	global_bht_pattern_array
+# vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/tournament_bht.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package tournament_bht_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module tournament_bht
+# 
+# Top level modules:
+# 	tournament_bht
 # vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/mazeprocessor.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package mazeprocessor_sv_unit
@@ -491,6 +523,14 @@
 # Loading work.local_bht_array
 # Loading work.local_bht_pattern_array_sv_unit
 # Loading work.local_bht_pattern_array
+# Loading work.global_bht_sv_unit
+# Loading work.global_bht
+# Loading work.global_bht_history_register_sv_unit
+# Loading work.global_bht_history_register
+# Loading work.global_bht_pattern_array_sv_unit
+# Loading work.global_bht_pattern_array
+# Loading work.tournament_bht_sv_unit
+# Loading work.tournament_bht
 # Loading work.decode_stage_sv_unit
 # Loading work.decode_stage
 # Loading work.ir_sv_unit
@@ -539,10 +579,10 @@
 # 
 #           File in use by: bharuka2  Hostname: gelib-4c-31.ews.illinois.edu  ProcessID: 37709
 # 
-#           Attempting to use alternate WLF file "./wlftibs6ak".
+#           Attempting to use alternate WLF file "./wlft3wvkh1".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftibs6ak
+#           Using alternate file: ./wlft3wvkh1
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
@@ -608,6 +648,14 @@ restart -f; run 1ms
 # Loading work.local_bht_array
 # Loading work.local_bht_pattern_array_sv_unit
 # Loading work.local_bht_pattern_array
+# Loading work.global_bht_sv_unit
+# Loading work.global_bht
+# Loading work.global_bht_history_register_sv_unit
+# Loading work.global_bht_history_register
+# Loading work.global_bht_pattern_array_sv_unit
+# Loading work.global_bht_pattern_array
+# Loading work.tournament_bht_sv_unit
+# Loading work.tournament_bht
 # Loading work.decode_stage_sv_unit
 # Loading work.decode_stage
 # Loading work.ir_sv_unit

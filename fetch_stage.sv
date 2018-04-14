@@ -4,6 +4,8 @@ module fetch_stage
 (
 	input clk,
 	input control_flush,
+	input lc3b_opcode write_opcode,
+	input lc3b_reg write_register,
 	input lc3b_data imem_rdata,
 	input lc3b_word new_pc,
 	input lc3b_word write_pc,
@@ -11,23 +13,28 @@ module fetch_stage
 	input mem_stall,
 	input hazard_stall,
 	input imem_resp,
+	input unchosen_pred_in,
 	output lc3b_word imem_address,
 	output logic imem_action_stb,
 	output logic imem_action_cyc,
 	output lc3b_word pc_plus2_out,
 	output lc3b_word predicted_pc_out,
 	output lc3b_word imem_rdata_out,
-	output logic taken
+	output logic taken,
+	output logic unchosen_pred_out
 );
 
 /* Control Signals */
 logic load_pc;
 
 lc3b_word predicted_pc;
-lc3b_opcode write_opcode;
 logic btb_hit;
 logic write_bht;
+logic local_prediction;
+logic global_prediction;
+logic tournament_prediction;
 logic prediction;
+logic tournament_taken;
 
 assign load_pc = (!mem_stall & imem_resp & !hazard_stall) || control_flush;
 assign imem_action_cyc = 1;
@@ -101,11 +108,49 @@ local_bht local_bht
 	.write_pc(write_pc),
 	.taken(branch_enable),
 	.write(write_bht),
-	.prediction(prediction)
+	.prediction(local_prediction)
 );
 
-assign taken = btb_hit & prediction;
-assign write_opcode = lc3b_opcode'(write_pc[15:12]);
-assign write_bht = load_pc && ((write_opcode == op_br) || (write_opcode == op_jmp) || (write_opcode == op_jsr) || (write_opcode == op_trap));
+global_bht global_bht
+(
+	.clk(clk),
+	.read_pc(imem_address),
+	.write_pc(write_pc),
+	.taken(branch_enable),
+	.write(write_bht),
+	.prediction(global_prediction)
+);
+
+tournament_bht tournament_bht
+(
+	.clk(clk),
+	.read_pc(imem_address),
+	.write_pc(write_pc),
+	.taken(branch_enable),
+	.write(write_bht),
+	.control_flush(control_flush),
+	.unchosen_pred(unchosen_pred_in),
+	.prediction(tournament_prediction)
+);
+
+mux2 #(.width(1)) tournament_predict
+(
+	.sel(tournament_prediction),
+	.a(local_prediction),
+	.b(global_prediction),
+	.f(tournament_taken)
+);
+
+assign taken = tournament_taken & btb_hit;
+
+mux2 #(.width(1)) tournament_predict_unchosen
+(
+	.sel(tournament_prediction),
+	.a(global_prediction),
+	.b(local_prediction),
+	.f(unchosen_pred_out)
+);
+
+assign write_bht = load_pc && ((write_opcode == op_br && write_register) || (write_opcode == op_jmp) || (write_opcode == op_jsr) || (write_opcode == op_trap));
 
 endmodule: fetch_stage

@@ -18,6 +18,7 @@ vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/EC
 vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/eviction_wb_controller.sv}
 vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/eviction_wb_array.sv}
 vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/evict_line.sv}
+vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/global_bht_history_register.sv}
 vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/memory_stall.sv}
 vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/l1_cache_datapath.sv}
 vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/l1_cache.sv}
@@ -57,6 +58,10 @@ vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/EC
 vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/btb_lru_array.sv}
 vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/local_bht.sv}
 vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/local_bht_array.sv}
+vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/local_bht_pattern_array.sv}
+vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/global_bht.sv}
+vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/global_bht_pattern_array.sv}
+vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/tournament_bht.sv}
 vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/mazeprocessor.sv}
 
 vlog -sv -work work +incdir+D:/Spring2018/ECE411/mazeprocessor {D:/Spring2018/ECE411/mazeprocessor/testbench.sv}
