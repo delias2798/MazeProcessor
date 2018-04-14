@@ -579,10 +579,10 @@
 # 
 #           File in use by: bharuka2  Hostname: gelib-4c-31.ews.illinois.edu  ProcessID: 37709
 # 
-#           Attempting to use alternate WLF file "./wlft3wvkh1".
+#           Attempting to use alternate WLF file "./wlftz9yss2".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlft3wvkh1
+#           Using alternate file: ./wlftz9yss2
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
@@ -590,7 +590,7 @@
 # .main_pane.objects.interior.cs.body.tree
 # run 200 ns
 do wave.do
-restart -f; run 1ms
+restart -f; run 8ms
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.wishbone
