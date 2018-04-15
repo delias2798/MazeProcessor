@@ -12,37 +12,22 @@ module local_bht
 	output prediction
 );
 
-lc3b_local_bht_index index;
-lc3b_local_bht_index index_in;
-
-lc3b_local_bht_pattern_index history_in;
-lc3b_local_bht_pattern_index rhistory_out;
-lc3b_local_bht_pattern_index history_out;
+lc3b_local_bht_pattern_index index;
+lc3b_local_bht_pattern_index index_in;
 
 logic [1:0] pattern_in;
 logic [1:0] rpattern_out;
 logic [1:0] pattern_out;
 
-assign index = read_pc[6:1];
-assign index_in = write_pc[6:1];
-
-local_bht_array #(.width(10)) history_table
-(
-	.clk(clk),
-	.write(write),
-	.index(index),
-	.index_in(index_in),
-	.datain(write_pc[10:1]),
-	.rdataout(rhistory_out),
-	.dataout(history_out)
-);
+assign index = read_pc[10:1];
+assign index_in = write_pc[10:1];
 
 local_bht_pattern_array #(.width(2)) pattern_table
 (
 	.clk(clk),
 	.write(write),
-	.index(rhistory_out),
-	.index_in(history_out),
+	.index(index),
+	.index_in(index_in),
 	.datain(pattern_in),
 	.rdataout(rpattern_out),
 	.dataout(pattern_out)

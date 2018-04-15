@@ -36,7 +36,7 @@
 # -------------------------------------------------------------------------- #
 
 
-set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name FAMILY "Stratix III"
 set_global_assignment -name DEVICE AUTO
 set_global_assignment -name TOP_LEVEL_ENTITY mazeprocessor
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
@@ -59,6 +59,7 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME testbench -section_id tes
 set_global_assignment -name EDA_TEST_BENCH_FILE testbench.sv -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_FILE physical_memory.sv -section_id testbench
 
+set_global_assignment -name SDC_FILE mazeprocessor.out.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE memory_stall.sv
 set_global_assignment -name SYSTEMVERILOG_FILE l1_cache_datapath.sv
 set_global_assignment -name SYSTEMVERILOG_FILE l1_cache_control.sv

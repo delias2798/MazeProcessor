@@ -35,11 +35,11 @@ module l1_cache_datapath
 
 lc3b_tag tag;
 lc3b_index index;
-lc3b_offset offset;
+//lc3b_offset offset;
 
 assign tag = mem_address[15:7];
 assign index = mem_address[6:4];
-assign offset = mem_address[3:1];
+//assign offset = mem_address[3:1];
 
 logic valid0_out;
 logic valid1_out;

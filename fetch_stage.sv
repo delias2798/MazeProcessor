@@ -14,6 +14,7 @@ module fetch_stage
 	input hazard_stall,
 	input imem_resp,
 	input unchosen_pred_in,
+	
 	output lc3b_word imem_address,
 	output logic imem_action_stb,
 	output logic imem_action_cyc,

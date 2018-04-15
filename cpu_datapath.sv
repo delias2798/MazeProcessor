@@ -183,12 +183,12 @@ fetch_stage if_stage
 	.unchosen_pred_out(unchosen_pred_out)
 );
 
-assign imem_rdata_out_flush = control_flush ? 0 : imem_rdata_out;
-assign pc_plus2_out_flush = control_flush ? 0 : pc_plus2_out;
-assign imem_address_flush = control_flush ? 0 : imem_address;
-assign predicted_pc_out_flush = control_flush ? 0 : predicted_pc_out;
-assign branch_prediction_flush = control_flush ? 0 : branch_prediction;
-assign unchosen_pred_flush = control_flush ? 0 : unchosen_pred_out;
+assign imem_rdata_out_flush = control_flush ? 16'b0 : imem_rdata_out;
+assign pc_plus2_out_flush = control_flush ? 16'b0 : pc_plus2_out;
+assign imem_address_flush = control_flush ? 16'b0 : imem_address;
+assign predicted_pc_out_flush = control_flush ? 16'b0 : predicted_pc_out;
+assign branch_prediction_flush = control_flush ? 1'b0 : branch_prediction;
+assign unchosen_pred_flush = control_flush ? 1'b0 : unchosen_pred_out;
 
 /* Fetch - Decode Registers (IF/ID) */
 register #(.width(1)) if_id_branch_prediction
@@ -271,12 +271,12 @@ hazard_detection hazard_detection_unit
 	.hazard_stall(hazard_stall)
 );
 
-assign ctrl_in = (control_flush || hazard_stall) ? 0 : ctrl;
-assign pc_if_id_in = (control_flush || hazard_stall) ? 0 : pc_if_id_out;
-assign curr_pc_if_id_in = (control_flush || hazard_stall) ? 0 : curr_pc_if_id_out;
-assign predicted_pc_if_id_in = (control_flush || hazard_stall) ? 0 : predicted_pc_if_id_out;
-assign branch_prediction_if_id_in = (control_flush || hazard_stall) ? 0 : branch_prediction_if_id_out;
-assign unchosen_pred_if_id_in = (control_flush || hazard_stall) ? 0 : unchosen_pred_if_id_out;
+assign ctrl_in = (control_flush || hazard_stall) ? 25'b0 : ctrl;
+assign pc_if_id_in = (control_flush || hazard_stall) ? 16'b0 : pc_if_id_out;
+assign curr_pc_if_id_in = (control_flush || hazard_stall) ? 16'b0 : curr_pc_if_id_out;
+assign predicted_pc_if_id_in = (control_flush || hazard_stall) ? 16'b0 : predicted_pc_if_id_out;
+assign branch_prediction_if_id_in = (control_flush || hazard_stall) ? 1'b0 : branch_prediction_if_id_out;
+assign unchosen_pred_if_id_in = (control_flush || hazard_stall) ? 1'b0 : unchosen_pred_if_id_out;
 
 /* Decode - Execute Registers (ID/EX) */
 register_control_rom id_ex_ctrl
@@ -454,12 +454,12 @@ execute_forward ex_forward
 	.dest_forward_sel(dest_forward_sel)
 );
 
-assign ctrl_id_ex_in = control_flush ? 0 : ctrl_id_ex;
-assign branch_prediction_id_ex_in = control_flush ? 0 : branch_prediction_id_ex_out;
-assign pc_id_ex_in = control_flush ? 0 : pc_id_ex_out;
-assign curr_pc_id_ex_in = control_flush ? 0 : curr_pc_id_ex_out;
-assign predicted_pc_id_ex_in = control_flush ? 0 : predicted_pc_id_ex_out;
-assign unchosen_pred_id_ex_in = control_flush ? 0 : unchosen_pred_id_ex_out;
+assign ctrl_id_ex_in = control_flush ? 25'b0 : ctrl_id_ex;
+assign branch_prediction_id_ex_in = control_flush ? 1'b0 : branch_prediction_id_ex_out;
+assign pc_id_ex_in = control_flush ? 16'b0 : pc_id_ex_out;
+assign curr_pc_id_ex_in = control_flush ? 16'b0 : curr_pc_id_ex_out;
+assign predicted_pc_id_ex_in = control_flush ? 16'b0 : predicted_pc_id_ex_out;
+assign unchosen_pred_id_ex_in = control_flush ? 1'b0 : unchosen_pred_id_ex_out;
 
 /* Execute - Memory Registers (EX/MEM) */
 register_control_rom ex_mem_ctrl
@@ -587,12 +587,12 @@ memory_forward mem_forward
 	.dest_mem_forward_sel(dest_mem_forward_sel)
 );
 
-assign ctrl_ex_mem_in = control_flush ? 0 : ctrl_ex_mem;
-assign branch_prediction_ex_mem_in = control_flush ? 0 : branch_prediction_ex_mem_out;
-assign pc_ex_mem_in = control_flush ? 0 : pc_ex_mem_out;
-assign curr_pc_ex_mem_in = control_flush ? 0 : curr_pc_ex_mem_out;
-assign predicted_pc_ex_mem_in = control_flush ? 0 : predicted_pc_ex_mem_out;
-assign unchosen_pred_ex_mem_in = control_flush ? 0 : unchosen_pred_ex_mem_out;
+assign ctrl_ex_mem_in = control_flush ? 25'b0 : ctrl_ex_mem;
+assign branch_prediction_ex_mem_in = control_flush ? 1'b0 : branch_prediction_ex_mem_out;
+assign pc_ex_mem_in = control_flush ? 16'b0 : pc_ex_mem_out;
+assign curr_pc_ex_mem_in = control_flush ? 16'b0 : curr_pc_ex_mem_out;
+assign predicted_pc_ex_mem_in = control_flush ? 16'b0 : predicted_pc_ex_mem_out;
+assign unchosen_pred_ex_mem_in = control_flush ? 1'b0 : unchosen_pred_ex_mem_out;
 
 /* Memory - Write-Back Registers (MEM/WB) */
 register_control_rom mem_wb_ctrl
