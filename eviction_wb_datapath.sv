@@ -40,10 +40,10 @@ module eviction_wb_datapath
 );
 
 lc3b_evict_tag tag;
-lc3b_offset offset;
+//lc3b_offset offset;
 
 assign tag = mem_address[15:4];
-assign offset = mem_address[3:1];
+//assign offset = mem_address[3:1];
 
 lc3b_evict_tag tag0_out;
 lc3b_evict_tag tag1_out;

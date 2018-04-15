@@ -178,44 +178,42 @@ begin
 		load_branch_mispred = 1;
 	end
 
-	if (mem_stall) begin
+	if (!load_ex_mem) begin
 		stall_in = stall_out + 1'b1;
 		load_stall = 1;
 		curr_stall_in = curr_stall_out + 1'b1;
 	end
 	else begin
-		if (dmem_action_cyc) begin
-			if (curr_stall_out == 0) begin
-				l1_hit_in = l1_hit_out + 1'b1;
-				load_l1_hit = 1;
-			end
-			else if(curr_stall_out <= 3) begin
-				l2_hit_in = l2_hit_out + 1'b1;
-				load_l2_hit = 1;
+		if (curr_stall_out == 0) begin
+			l1_hit_in = l1_hit_out + 1'b1;
+			load_l1_hit = 1;
+		end
+		else if(curr_stall_out <= 8) begin
+			l2_hit_in = l2_hit_out + 1'b1;
+			load_l2_hit = 1;
 
-				l1_miss_in = l1_miss_out + 1'b1;
-				load_l1_miss = 1;
-			end
-			else if(curr_stall_out <= 5) begin
-				evict_hit_in = evict_hit_out + 1'b1;
-				load_evict_hit = 1;
+			l1_miss_in = l1_miss_out + 1'b1;
+			load_l1_miss = 1;
+		end
+		else if(curr_stall_out <= 19) begin
+			evict_hit_in = evict_hit_out + 1'b1;
+			load_evict_hit = 1;
 
-				l2_miss_in = l2_miss_out + 1'b1;
-				load_l2_miss = 1;
+			l2_miss_in = l2_miss_out + 1'b1;
+			load_l2_miss = 1;
 
-				l1_miss_in = l1_miss_out + 1'b1;
-				load_l1_miss = 1;
-			end
-			else begin
-				evict_miss_in = evict_miss_out + 1'b1;
-				load_evict_miss = 1;
+			l1_miss_in = l1_miss_out + 1'b1;
+			load_l1_miss = 1;
+		end
+		else begin
+			evict_miss_in = evict_miss_out + 1'b1;
+			load_evict_miss = 1;
 
-				l2_miss_in = l2_miss_out + 1'b1;
-				load_l2_miss = 1;
+			l2_miss_in = l2_miss_out + 1'b1;
+			load_l2_miss = 1;
 
-				l1_miss_in = l1_miss_out + 1'b1;
-				load_l1_miss = 1;
-			end
+			l1_miss_in = l1_miss_out + 1'b1;
+			load_l1_miss = 1;
 		end
 	end
 	load_curr_stall = 1;

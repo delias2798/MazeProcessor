@@ -1,0 +1,69 @@
+ORIGIN 0
+SEGMENT CodeSegment1:
+
+START:
+    LEA     R0, DataSegment
+    ADD     R1, R1, 12
+    ADD     R3, R3, -1
+Loop1:
+    ADD  R1, R1, -1
+    ADD  R3, R3, -1
+    ADD  R1, R1, 1
+    ADD  R3, R3, 1
+    ADD  R1, R1, R3
+    BRp Loop1
+    LDR     R2, R0, Initial_1
+    AND     R4, R4, 0
+    AND  R5, R5, 0
+    ADD  R4, R4, 1
+    ADD  R5, R5, 1
+	AND  R1, R1, 0
+	AND  R2, R2, 0
+	AND  R3, R3, 0
+	AND  R4, R4, 0
+	AND  R5, R5, 0
+	ADD  R1, R1, 10
+	ADD  R2, R1, R1
+	ADD  R3, R1, R2
+	ADD  R4, R2, R2
+	ADD  R5, R3, R2
+	STI  R1, R0, L2ACCESS1
+	STI  R2, R0, L2ACCESS2
+	STI  R3, R0, L2ACCESS3
+	STI  R4, R0, L2ACCESS4
+	STI  R5, R0, L2ACCESS5
+	STI  R4, R0, L2ACCESS6
+	STI  R3, R0, L2ACCESS7
+	STI  R2, R0, L2ACCESS8
+	STI  R1, R0, L2ACCESS9
+  LDI  R1, R0, Counters_Mispredict
+  LDI  R2, R0, Counters_TotalBranch
+  LDI  R3, R0, L1_hit
+  LDI  R4, R0, L1_miss
+  LDI  R5, R0, L2_hit
+  LDI  R6, R0, L2_miss
+  LDI  R7, R0, Evict_miss
+HALT:
+  BRnzp HALT
+
+SEGMENT DataSegment:
+Initial_1: DATA2 4x600D
+Initial_2: DATA2 4xBadd
+Counters_Mispredict:  DATA2 4xFFF2
+Counters_TotalBranch: DATA2 4xFFF0
+L1_hit:  DATA2 4xFFFE
+L1_miss: DATA2 4xFFFC
+L2_hit:  DATA2 4xFFFA
+L2_miss: DATA2 4xFFF8
+Evict_hit:  DATA2 4xFFF6
+Evict_miss: DATA2 4xFFF4
+
+L2ACCESS1:	DATA2 4x5000
+L2ACCESS2:  DATA2 4x5100
+L2ACCESS3:	DATA2 4x5200
+L2ACCESS4:  DATA2 4x5300
+L2ACCESS5:	DATA2 4x5400
+L2ACCESS6:  DATA2 4x5500
+L2ACCESS7:	DATA2 4x5600
+L2ACCESS8:  DATA2 4x5700
+L2ACCESS9:  DATA2 4x5800

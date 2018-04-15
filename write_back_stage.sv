@@ -9,6 +9,9 @@ module write_back_stage
 	input lc3b_word dmem_wdata,
 	input lc3b_word alu_out,
 	input lc3b_reg dest_register,
+	input lc3b_word new_pc_mem_wb_out,
+	input lc3b_word predicted_pc_mem_wb_out,
+	input branch_prediction_mem_wb_out,
 	
 	/* Input Control Signals */
 	input lc3b_opcode opcode,
@@ -16,7 +19,9 @@ module write_back_stage
 	input [2:0] regfilemux_sel,
 
 	output lc3b_word write_data,
-	output logic branch_enable
+	output logic branch_enable,
+	output logic control_flush,
+	output lc3b_word new_pc_after_flush
 );
 
 /* Internal Signals */
@@ -77,5 +82,16 @@ cc_comp cccomp
 
 /* Check if opcode is branch/jsr/jsrr/jmp/trap. */
 assign branch_enable = (branch_signal && (opcode == op_br)) || (opcode == op_jmp) || (opcode == op_jsr) || (opcode == op_trap);
+assign new_pc_after_flush = branch_enable ? new_pc_mem_wb_out : pc;
+
+always_comb
+begin
+	control_flush = 0;
+	if (branch_enable && (new_pc_mem_wb_out != predicted_pc_mem_wb_out))
+		control_flush = 1;
+		
+	if (!branch_enable && (new_pc_mem_wb_out == predicted_pc_mem_wb_out) && branch_prediction_mem_wb_out)
+		control_flush = 1;
+end
 
 endmodule: write_back_stage

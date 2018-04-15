@@ -35,6 +35,8 @@ cpu_datapath cpu_d
 );
 
 assign imem_wb.ADR = imem_address[15:4];
+assign imem_wb.DAT_M = 128'b0;
+assign imem_wb.SEL = 16'b0;
 assign imem_wb.WE = 0; // imem doesn't support write operations
 
 assign dmem_wb.ADR = dmem_address[15:4];
