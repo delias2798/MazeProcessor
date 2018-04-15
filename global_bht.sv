@@ -21,7 +21,7 @@ logic [1:0] pattern_in;
 logic [1:0] rpattern_out;
 logic [1:0] pattern_out;
 
-global_bht_history_register #(.width(10)) history_table
+global_bht_history_register #(.width(4)) history_table
 (
 	.clk(clk),
 	.write(write),
@@ -29,8 +29,8 @@ global_bht_history_register #(.width(10)) history_table
 	.dataout(history_out)
 );
 
-assign index = history_out ^ read_pc[10:1];
-assign index_in = history_out ^ write_pc[10:1];
+assign index = history_out ^ read_pc[4:1];
+assign index_in = history_out ^ write_pc[4:1];
 
 global_bht_pattern_array #(.width(2)) pattern_table
 (
@@ -52,7 +52,7 @@ begin
 	history_in = history_out;
 	// Set history and pattern on write
 	if (write) begin
-		history_in = {history_out[8:0], taken};
+		history_in = {history_out[2:0], taken};
 		
 		if (pattern_out == 2'b00 && taken)
 			pattern_in = 2'b01;

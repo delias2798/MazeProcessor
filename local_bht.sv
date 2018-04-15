@@ -19,8 +19,8 @@ logic [1:0] pattern_in;
 logic [1:0] rpattern_out;
 logic [1:0] pattern_out;
 
-assign index = read_pc[10:1];
-assign index_in = write_pc[10:1];
+assign index = read_pc[6:1];
+assign index_in = write_pc[6:1];
 
 local_bht_pattern_array #(.width(2)) pattern_table
 (

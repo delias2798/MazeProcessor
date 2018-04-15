@@ -115,7 +115,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE btb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE btb_array.sv
 set_global_assignment -name SYSTEMVERILOG_FILE btb_lru_array.sv
 set_global_assignment -name SYSTEMVERILOG_FILE local_bht.sv
-set_global_assignment -name SYSTEMVERILOG_FILE local_bht_array.sv
 set_global_assignment -name SYSTEMVERILOG_FILE local_bht_pattern_array.sv
 set_global_assignment -name SYSTEMVERILOG_FILE global_bht.sv
 set_global_assignment -name SYSTEMVERILOG_FILE global_bht_pattern_array.sv
