@@ -1,4 +1,4 @@
-# do /tmp/tmp.kUl0RFGF9F/do.do 
+# do /tmp/tmp.G9xpq7JChN/do.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
@@ -88,6 +88,14 @@
 # 
 # Top level modules:
 # 	evict_line
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/global_bht_history_register.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package global_bht_history_register_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module global_bht_history_register
+# 
+# Top level modules:
+# 	global_bht_history_register
 # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/memory_stall.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package memory_stall_sv_unit
@@ -358,6 +366,70 @@
 # 
 # Top level modules:
 # 	performance_counter
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/btb.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package btb_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module btb
+# 
+# Top level modules:
+# 	btb
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/btb_array.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package btb_array_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module btb_array
+# 
+# Top level modules:
+# 	btb_array
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/btb_lru_array.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package btb_lru_array_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module btb_lru_array
+# 
+# Top level modules:
+# 	btb_lru_array
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/local_bht.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package local_bht_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module local_bht
+# 
+# Top level modules:
+# 	local_bht
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/local_bht_pattern_array.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package local_bht_pattern_array_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module local_bht_pattern_array
+# 
+# Top level modules:
+# 	local_bht_pattern_array
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/global_bht.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package global_bht_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module global_bht
+# 
+# Top level modules:
+# 	global_bht
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/global_bht_pattern_array.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package global_bht_pattern_array_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module global_bht_pattern_array
+# 
+# Top level modules:
+# 	global_bht_pattern_array
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/tournament_bht.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package tournament_bht_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module tournament_bht
+# 
+# Top level modules:
+# 	tournament_bht
 # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package mazeprocessor_sv_unit
@@ -427,6 +499,24 @@
 # Loading work.plus2
 # Loading work.register
 # Loading work.mux8
+# Loading work.btb_sv_unit
+# Loading work.btb
+# Loading work.btb_array_sv_unit
+# Loading work.btb_array
+# Loading work.btb_lru_array_sv_unit
+# Loading work.btb_lru_array
+# Loading work.local_bht_sv_unit
+# Loading work.local_bht
+# Loading work.local_bht_pattern_array_sv_unit
+# Loading work.local_bht_pattern_array
+# Loading work.global_bht_sv_unit
+# Loading work.global_bht
+# Loading work.global_bht_history_register_sv_unit
+# Loading work.global_bht_history_register
+# Loading work.global_bht_pattern_array_sv_unit
+# Loading work.global_bht_pattern_array
+# Loading work.tournament_bht_sv_unit
+# Loading work.tournament_bht
 # Loading work.decode_stage_sv_unit
 # Loading work.decode_stage
 # Loading work.ir_sv_unit
@@ -474,6 +564,6 @@
 #view structure
 #view signals
 # add list -radix hexadecimal {/testbench/processor/c/cpu_d/id_stage/reg_file/data}
-# run 15ms
-# write list /tmp/tmp.kUl0RFGF9F/test_list.lst
+# run 8ms
+# write list /tmp/tmp.G9xpq7JChN/test_list.lst
 # exit

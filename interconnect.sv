@@ -84,9 +84,9 @@ begin : next_state_logic
     case(state)
 			idle: begin
 				if(icache.CYC == 1 && icache.STB == 1)
-					next_state = instruction_stall;
+					next_state = instruction_connect;
 				else if(dcache.CYC == 1 && dcache.STB == 1)
-					next_state = data_stall;
+					next_state = data_connect;
 			end
 			
 			instruction_stall: next_state = instruction_connect;

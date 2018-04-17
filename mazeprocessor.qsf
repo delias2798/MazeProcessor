@@ -72,7 +72,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE write_back_stage.sv
 set_global_assignment -name SYSTEMVERILOG_FILE register_control_rom.sv
 set_global_assignment -name SYSTEMVERILOG_FILE gencc.sv
 set_global_assignment -name SYSTEMVERILOG_FILE cc_comp.sv
-set_global_assignment -name SYSTEMVERILOG_FILE magic_memory_dual_port.sv
 set_global_assignment -name SYSTEMVERILOG_FILE lc3b_types.sv
 set_global_assignment -name SYSTEMVERILOG_FILE cpu_datapath.sv
 set_global_assignment -name SYSTEMVERILOG_FILE control_rom.sv
