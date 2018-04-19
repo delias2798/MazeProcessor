@@ -12,6 +12,11 @@ logic valid1_write;
 logic valid2_write;
 logic valid3_write;
 logic valid_in;
+logic dirty0_write;
+logic dirty1_write;
+logic dirty2_write;
+logic dirty3_write;
+logic dirty_in;
 logic tag0_write;
 logic tag1_write;
 logic tag2_write;
@@ -33,9 +38,14 @@ logic valid0_out;
 logic valid1_out;
 logic valid2_out;
 logic valid3_out;
+logic dirty0_out;
+logic dirty1_out;
+logic dirty2_out;
+logic dirty3_out;
 logic out_data_sel;
 
 logic [1:0] line;
+logic [1:0] ow_line;
 
 assign mem_address = {cpu_wb.ADR, 4'b0000};
 assign wb.ADR = pmem_address[15:4];
@@ -53,6 +63,11 @@ eviction_wb_datapath cache_d
 	.valid2_write(valid2_write),
 	.valid3_write(valid3_write),
 	.valid_in(valid_in),
+	.dirty0_write(dirty0_write),
+	.dirty1_write(dirty1_write),
+	.dirty2_write(dirty2_write),
+	.dirty3_write(dirty3_write),
+	.dirty_in(dirty_in),
 	.tag0_write(tag0_write),
 	.tag1_write(tag1_write),
 	.tag2_write(tag2_write),
@@ -75,7 +90,12 @@ eviction_wb_datapath cache_d
 	.valid1_out(valid1_out),
 	.valid2_out(valid2_out),
 	.valid3_out(valid3_out),
-	.line(line)
+	.dirty0_out(dirty0_out),
+	.dirty1_out(dirty1_out),
+	.dirty2_out(dirty2_out),
+	.dirty3_out(dirty3_out),
+	.line(line),
+	.ow_line(ow_line)
 );
 
 eviction_wb_control cache_c
@@ -86,6 +106,11 @@ eviction_wb_control cache_c
 	.valid2_write(valid2_write),
 	.valid3_write(valid3_write),
 	.valid_in(valid_in),
+	.dirty0_write(dirty0_write),
+	.dirty1_write(dirty1_write),
+	.dirty2_write(dirty2_write),
+	.dirty3_write(dirty3_write),
+	.dirty_in(dirty_in),
 	.tag0_write(tag0_write),
 	.tag1_write(tag1_write),
 	.tag2_write(tag2_write),
@@ -101,11 +126,16 @@ eviction_wb_control cache_c
 	.lru_out(lru_out),
 	.cline_and(cline_and),
 	.line(line),
+	.ow_line(ow_line),
 	.hit(hit),
 	.valid0_out(valid0_out),
 	.valid1_out(valid1_out),
 	.valid2_out(valid2_out),
 	.valid3_out(valid3_out),
+	.dirty0_out(dirty0_out),
+	.dirty1_out(dirty1_out),
+	.dirty2_out(dirty2_out),
+	.dirty3_out(dirty3_out),
 	.cpu_action_stb(cpu_wb.STB),
 	.cpu_action_cyc(cpu_wb.CYC),
 	.cpu_write(cpu_wb.WE),

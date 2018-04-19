@@ -32,6 +32,7 @@ module l2_cache_datapath
 	input data_sig,
 	
 	output logic [2:0] lru_out,
+	output logic valid_out,
 	output logic dirty_out,
 	output logic [1:0] cline_and,
 	output logic hit,
@@ -52,6 +53,8 @@ logic valid0_out;
 logic valid1_out;
 logic valid2_out;
 logic valid3_out;
+logic valid_10_out;
+logic valid_32_out;
 
 logic dirty0_out;
 logic dirty1_out;
@@ -124,6 +127,33 @@ l2_array #(.width(1)) valid3
 	.datain(valid_in),
 	.dataout(valid3_out)
 );
+
+/*
+mux2 #(.width(1)) valid_mux10
+(
+	.sel(lru_out[1]),
+	.a(valid1_out),
+	.b(valid0_out),
+	.f(valid_10_out)
+);
+
+mux2 #(.width(1)) valid_mux32
+(
+	.sel(lru_out[2]),
+	.a(valid3_out),
+	.b(valid2_out),
+	.f(valid_32_out)
+);
+
+mux2 #(.width(1)) valid_mux
+(
+	.sel(lru_out[0]),
+	.a(valid_32_out),
+	.b(valid_10_out),
+	.f(valid_out)
+);
+*/
+assign valid_out = valid0_out & valid1_out & valid2_out & valid3_out;
 
 /* LRU Array */
 l2_array #(.width(3)) lru

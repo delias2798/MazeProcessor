@@ -28,6 +28,7 @@ module l2_cache_control
 	
 	/* Signals from datapath*/
 	input [2:0] lru_out,
+	input valid_out,
 	input dirty_out,
 	input [1:0] cline_and,
 	input hit,
@@ -162,19 +163,18 @@ begin : state_actions
 		
 		write_back: begin
 			pmem_addr_sig = 1;
-			mem_action_stb = 1;
+			mem_action_stb = dirty_out;
 			mem_action_cyc = 1;
 			mem_write = 1;
 		end
 		
 		read_mem: begin
 			pmem_addr_sig = 0;
-			mem_action_stb = 1;
 			mem_action_cyc = 1;
 			mem_write = 0;
 			
 			data_sig = 1;
-			dirty_in = 0;
+			dirty_in = mem_retry;
 			valid_in = 1;
 			
 			if (mem_resp) begin
@@ -222,9 +222,9 @@ begin : next_state_logic
 			idle: begin
 				if (hit)
 					next_state = idle;
-				else if (!hit && !dirty_out && cpu_action_stb && cpu_action_cyc)
+				else if (!hit && !valid_out && cpu_action_stb && cpu_action_cyc)
 					next_state = read_mem;
-				else if (!hit && dirty_out && cpu_action_stb && cpu_action_cyc)
+				else if (!hit && valid_out && cpu_action_stb && cpu_action_cyc)
 					next_state = write_back;
 			end
 			

@@ -1,6 +1,7 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate -height 15 /testbench/clk
+add wave -noupdate -height 15 /testbench/clk
 add wave -noupdate -height 15 -radix hexadecimal -childformat {{{/testbench/processor/c/cpu_d/id_stage/reg_file/data[7]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[6]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[5]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[4]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[3]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[2]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[1]} -radix hexadecimal} {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[0]} -radix hexadecimal}} -expand -subitemconfig {{/testbench/processor/c/cpu_d/id_stage/reg_file/data[7]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[6]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[5]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[4]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[3]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[2]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[1]} {-height 16 -radix hexadecimal} {/testbench/processor/c/cpu_d/id_stage/reg_file/data[0]} {-height 16 -radix hexadecimal}} /testbench/processor/c/cpu_d/id_stage/reg_file/data
 add wave -noupdate -height 15 /testbench/processor/c/cpu_d/if_stage/control_flush
 add wave -noupdate -height 15 /testbench/processor/c/cpu_d/branch_enable
@@ -56,10 +57,10 @@ add wave -noupdate -height 15 -label evict_miss -radix hexadecimal /testbench/pr
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {9953025 ps} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 495
+configure wave -namecolwidth 204
 configure wave -valuecolwidth 75
 configure wave -justifyvalue left
-configure wave -signalnamewidth 0
+configure wave -signalnamewidth 1
 configure wave -snapdistance 10
 configure wave -datasetprefix 0
 configure wave -rowmargin 4
@@ -70,4 +71,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {9773823 ps} {9945935 ps}
+WaveRestoreZoom {6999836494 ps} {7000070669 ps}

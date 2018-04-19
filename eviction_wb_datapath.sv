@@ -13,6 +13,11 @@ module eviction_wb_datapath
 	input valid2_write,
 	input valid3_write,
 	input valid_in,
+	input dirty0_write,
+	input dirty1_write,
+	input dirty2_write,
+	input dirty3_write,
+	input dirty_in,
 	input tag0_write,
 	input tag1_write,
 	input tag2_write,
@@ -36,7 +41,12 @@ module eviction_wb_datapath
 	output logic valid1_out,
 	output logic valid2_out,
 	output logic valid3_out,
-	output logic [1:0] line
+	output logic dirty0_out,
+	output logic dirty1_out,
+	output logic dirty2_out,
+	output logic dirty3_out,
+	output logic [1:0] line,
+	output logic [1:0] ow_line
 );
 
 lc3b_evict_tag tag;
@@ -103,6 +113,39 @@ eviction_wb_array #(.width(1)) valid3
 	.write(valid3_write),
 	.datain(valid_in),
 	.dataout(valid3_out)
+);
+
+/* Dirty Arrays */
+eviction_wb_array #(.width(1)) dirty0
+(
+	.clk(clk),
+	.write(dirty0_write),
+	.datain(dirty_in),
+	.dataout(dirty0_out)
+);
+
+eviction_wb_array #(.width(1)) dirty1
+(
+	.clk(clk),
+	.write(dirty1_write),
+	.datain(dirty_in),
+	.dataout(dirty1_out)
+);
+
+eviction_wb_array #(.width(1)) dirty2
+(
+	.clk(clk),
+	.write(dirty2_write),
+	.datain(dirty_in),
+	.dataout(dirty2_out)
+);
+
+eviction_wb_array #(.width(1)) dirty3
+(
+	.clk(clk),
+	.write(dirty3_write),
+	.datain(dirty_in),
+	.dataout(dirty3_out)
 );
 
 /* LRU Array */
@@ -250,8 +293,26 @@ evict_line evict_data
 	.valid_b(valid1_out),
 	.valid_c(valid2_out),
 	.valid_d(valid3_out),
+	.dirty_a(dirty0_out),
+	.dirty_b(dirty1_out),
+	.dirty_c(dirty2_out),
+	.dirty_d(dirty3_out),
 	.lru(lru_out),
 	.line(line)
+);
+
+overwrite_line overwrite_data
+(
+	.valid_a(valid0_out),
+	.valid_b(valid1_out),
+	.valid_c(valid2_out),
+	.valid_d(valid3_out),
+	.dirty_a(dirty0_out),
+	.dirty_b(dirty1_out),
+	.dirty_c(dirty2_out),
+	.dirty_d(dirty3_out),
+	.lru(lru_out),
+	.line(ow_line)
 );
 
 mux4 #(.width(128)) evict_data_mux

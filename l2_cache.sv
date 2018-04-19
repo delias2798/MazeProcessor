@@ -31,6 +31,7 @@ logic pmem_addr_sig;
 logic data_sig;
 logic [2:0] lru_out;
 logic dirty_out;
+logic valid_out;
 logic [1:0] cline_and;
 logic hit;
 lc3b_word mem_address;
@@ -70,6 +71,7 @@ l2_cache_datapath cache_d
 	.pmem_addr_sig(pmem_addr_sig),
 	.data_sig(data_sig),
 	.lru_out(lru_out),
+	.valid_out(valid_out),
 	.dirty_out(dirty_out),
 	.cline_and(cline_and),
 	.hit(hit),
@@ -104,6 +106,7 @@ l2_cache_control cache_c
 	.pmem_addr_sig(pmem_addr_sig),
 	.data_sig(data_sig),
 	.lru_out(lru_out),
+	.valid_out(valid_out),
 	.dirty_out(dirty_out),
 	.cline_and(cline_and),
 	.hit(hit),

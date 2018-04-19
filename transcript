@@ -1,4 +1,4 @@
-# do /tmp/tmp.G9xpq7JChN/do.do 
+# do /tmp/tmp.uJJxVHmCvF/do.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
@@ -96,6 +96,14 @@
 # 
 # Top level modules:
 # 	global_bht_history_register
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/overwrite_line.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package overwrite_line_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module overwrite_line
+# 
+# Top level modules:
+# 	overwrite_line
 # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/memory_stall.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package memory_stall_sv_unit
@@ -472,6 +480,8 @@
 # Loading work.mux2
 # Loading work.evict_line_sv_unit
 # Loading work.evict_line
+# Loading work.overwrite_line_sv_unit
+# Loading work.overwrite_line
 # Loading work.eviction_wb_control
 # Loading work.l2_cache_sv_unit
 # Loading work.l2_cache
@@ -565,5 +575,5 @@
 #view signals
 # add list -radix hexadecimal {/testbench/processor/c/cpu_d/id_stage/reg_file/data}
 # run 8ms
-# write list /tmp/tmp.G9xpq7JChN/test_list.lst
+# write list /tmp/tmp.uJJxVHmCvF/test_list.lst
 # exit
