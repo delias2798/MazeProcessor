@@ -38,7 +38,7 @@ begin : state_actions
         instruction_connect: begin
         	l2.DAT_M = icache.DAT_M;
         	l2.CYC = icache.CYC;
-        	l2.STB = icache.STB;
+        	l2.STB = 0; // use STB to tell l2 whether it is icache(0) or dcache(1)
         	l2.WE = icache.WE;
         	l2.SEL = icache.SEL;
         	l2.ADR = icache.ADR;
@@ -57,7 +57,7 @@ begin : state_actions
         data_connect: begin
         	l2.DAT_M = dcache.DAT_M;
         	l2.CYC = dcache.CYC;
-        	l2.STB = dcache.STB;
+        	l2.STB = 1;
         	l2.WE = dcache.WE;
         	l2.SEL = dcache.SEL;
         	l2.ADR = dcache.ADR;

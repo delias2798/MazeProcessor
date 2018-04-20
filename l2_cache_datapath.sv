@@ -6,6 +6,7 @@ module l2_cache_datapath
 	input lc3b_word mem_address,
 	input lc3b_data cpu_data,
 	input lc3b_data pmem_data,
+	input lc3b_data pmem_n_data,
 	input lc3b_word mem_byte_enable,
 	
 	input valid0_write,
@@ -29,6 +30,8 @@ module l2_cache_datapath
 	input lru_write,
 	input [2:0] lru_in,
 	input pmem_addr_sig,
+	input pmem_addr_n_sig,
+	input data_n_sig,
 	input data_sig,
 	
 	output logic [2:0] lru_out,
@@ -36,14 +39,19 @@ module l2_cache_datapath
 	output logic dirty_out,
 	output logic [1:0] cline_and,
 	output logic hit,
+	output logic hit_n,
 	output lc3b_data data_out,
 	output lc3b_data pdata_out,
-	output lc3b_word pmem_address
+	output lc3b_word pmem_address,
+	output lc3b_word pmem_n_address
 );
 
 lc3b_l2_tag tag;
 lc3b_l2_index index;
 //lc3b_offset offset;
+
+lc3b_l2_tag tag_n;
+lc3b_l2_index index_n;
 
 assign tag = mem_address[15:8];
 assign index = mem_address[7:4];
@@ -55,6 +63,11 @@ logic valid2_out;
 logic valid3_out;
 logic valid_10_out;
 logic valid_32_out;
+
+logic valid0_n_out;
+logic valid1_n_out;
+logic valid2_n_out;
+logic valid3_n_out;
 
 logic dirty0_out;
 logic dirty1_out;
@@ -75,11 +88,26 @@ logic comp1_out;
 logic comp2_out;
 logic comp3_out;
 
+lc3b_l2_tag tag0_n_out;
+lc3b_l2_tag tag1_n_out;
+lc3b_l2_tag tag2_n_out;
+lc3b_l2_tag tag3_n_out;
+logic comp0_n_out;
+logic comp1_n_out;
+logic comp2_n_out;
+logic comp3_n_out;
+
 logic cline0_and;
 logic cline1_and;
 logic cline2_and;
 logic cline3_and;
 
+logic cline0_n_and;
+logic cline1_n_and;
+logic cline2_n_and;
+logic cline3_n_and;
+
+lc3b_data data_n_in;
 lc3b_data data_in;
 lc3b_data data0_out;
 lc3b_data data1_out;
@@ -90,42 +118,51 @@ lc3b_data data_32_out;
 // lc3b_data cpu_data_out;
 
 lc3b_word write_back_addr;
+lc3b_word pmem_new_address;
 
 /* Valid Arrays */
-l2_array #(.width(1)) valid0
+l2_n_array #(.width(1)) valid0
 (
 	.clk(clk),
 	.write(valid0_write),
 	.index(index),
+	.index_n(index_n),
 	.datain(valid_in),
-	.dataout(valid0_out)
+	.dataout(valid0_out),
+	.dataout_n(valid0_n_out)
 );
 
-l2_array #(.width(1)) valid1
+l2_n_array #(.width(1)) valid1
 (
 	.clk(clk),
 	.write(valid1_write),
 	.index(index),
+	.index_n(index_n),
 	.datain(valid_in),
-	.dataout(valid1_out)
+	.dataout(valid1_out),
+	.dataout_n(valid1_n_out)
 );
 
-l2_array #(.width(1)) valid2
+l2_n_array #(.width(1)) valid2
 (
 	.clk(clk),
 	.write(valid2_write),
 	.index(index),
+	.index_n(index_n),
 	.datain(valid_in),
-	.dataout(valid2_out)
+	.dataout(valid2_out),
+	.dataout_n(valid2_n_out)
 );
 
-l2_array #(.width(1)) valid3
+l2_n_array #(.width(1)) valid3
 (
 	.clk(clk),
 	.write(valid3_write),
 	.index(index),
+	.index_n(index_n),
 	.datain(valid_in),
-	.dataout(valid3_out)
+	.dataout(valid3_out),
+	.dataout_n(valid3_n_out)
 );
 
 /*
@@ -227,40 +264,48 @@ mux2 #(.width(1)) dirty_mux
 );
 
 /* Tag Arrays */
-l2_array #(.width(8)) tag0
+l2_n_array #(.width(8)) tag0
 (
 	.clk(clk),
 	.write(tag0_write),
 	.index(index),
+	.index_n(index_n),
 	.datain(tag),
-	.dataout(tag0_out)
+	.dataout(tag0_out),
+	.dataout_n(tag0_n_out)
 );
 
-l2_array #(.width(8)) tag1
+l2_n_array #(.width(8)) tag1
 (
 	.clk(clk),
 	.write(tag1_write),
 	.index(index),
+	.index_n(index_n),
 	.datain(tag),
-	.dataout(tag1_out)
+	.dataout(tag1_out),
+	.dataout_n(tag1_n_out)
 );
 
-l2_array #(.width(8)) tag2
+l2_n_array #(.width(8)) tag2
 (
 	.clk(clk),
 	.write(tag2_write),
 	.index(index),
+	.index_n(index_n),
 	.datain(tag),
-	.dataout(tag2_out)
+	.dataout(tag2_out),
+	.dataout_n(tag2_n_out)
 );
 
-l2_array #(.width(8)) tag3
+l2_n_array #(.width(8)) tag3
 (
 	.clk(clk),
 	.write(tag3_write),
 	.index(index),
+	.index_n(index_n),
 	.datain(tag),
-	.dataout(tag3_out)
+	.dataout(tag3_out),
+	.dataout_n(tag3_n_out)
 );
 
 comparator #(.width(8)) comp0
@@ -318,11 +363,19 @@ cpudata cpu_data_cal
 	.out(cpu_data_out)
 ); */
 
+mux2 #(.width(128)) data_n_mux
+(
+	.sel(data_n_sig),
+	.a(pmem_data),
+	.b(pmem_n_data),
+	.f(data_n_in)
+);
+
 mux2 #(.width(128)) data_mux
 (
 	.sel(data_sig),
 	.a(cpu_data),
-	.b(pmem_data),
+	.b(data_n_in),
 	.f(data_in)
 );
 
@@ -429,6 +482,59 @@ mux2 #(.width(16)) pmem_addr_mux
 	.a(mem_address),
 	.b(write_back_addr),
 	.f(pmem_address)
+);
+
+/* Prefetch address */
+always_comb
+begin
+	tag_n = tag;
+	if (index == 4'b1111)
+		tag_n = tag + 1'b1;
+	index_n = index + 1'b1;
+end
+
+comparator #(.width(8)) comp0_n
+(
+	.value0(tag0_n_out),
+	.value1(tag_n),
+	.out(comp0_n_out)
+);
+
+comparator #(.width(8)) comp1_n
+(
+	.value0(tag1_n_out),
+	.value1(tag_n),
+	.out(comp1_n_out)
+);
+
+comparator #(.width(8)) comp2_n
+(
+	.value0(tag2_n_out),
+	.value1(tag_n),
+	.out(comp2_n_out)
+);
+
+comparator #(.width(8)) comp3_n
+(
+	.value0(tag3_n_out),
+	.value1(tag_n),
+	.out(comp3_n_out)
+);
+
+assign cline0_n_and = comp0_n_out & valid0_n_out;
+assign cline1_n_and = comp1_n_out & valid1_n_out;
+assign cline2_n_and = comp2_n_out & valid2_n_out;
+assign cline3_n_and = comp3_n_out & valid3_n_out;
+assign hit_n = cline0_n_and | cline1_n_and | cline2_n_and | cline3_n_and;
+
+assign pmem_new_address = {tag_n, index_n, 4'b0000};
+
+mux2 #(.width(16)) pmem_addr_n_mux
+(
+	.sel(pmem_addr_n_sig),
+	.a(mem_address),
+	.b(pmem_new_address),
+	.f(pmem_n_address)
 );
 
 endmodule: l2_cache_datapath

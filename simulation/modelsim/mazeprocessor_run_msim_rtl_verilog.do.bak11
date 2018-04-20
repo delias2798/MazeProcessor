@@ -20,6 +20,7 @@ vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/evict_line.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/global_bht_history_register.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/overwrite_line.sv}
+vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/stream_wb_control.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/memory_stall.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l1_cache_datapath.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l1_cache.sv}
@@ -62,6 +63,10 @@ vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/global_bht.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/global_bht_pattern_array.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/tournament_bht.sv}
+vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/l2_n_array.sv}
+vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/pmem_interconnect.sv}
+vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/stream_wb.sv}
+vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/stream_wb_datapath.sv}
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv}
 
 vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/testbench.sv}

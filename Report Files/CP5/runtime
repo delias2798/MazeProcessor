@@ -1,15 +1,11 @@
 Competition Running Time:
 
 1) Test Code A: 1050478 ns
-
 2) Test Code B: 388327 ns
-
 3) Test Code C: 6014376 ns
 
 Geometric Mean: 1348730 ns
-
 Frequency: 105 MHz
-
 Score = 1284504
 
 (GeometricMean( three competition code times (in ns) ) * 100) / Fmax = Score
