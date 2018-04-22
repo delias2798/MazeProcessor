@@ -122,6 +122,10 @@ logic [1:0] sr2_forward_sel;
 logic pc_forward_sel;
 logic dest_forward_sel;
 
+logic leapfrog_load;
+logic mem_dest_overwrite;
+logic mem_load_cc_overwrite;
+
 /* Internal Signals - Memory */
 logic load_mem_wb;
 logic mem_stall;
@@ -145,6 +149,18 @@ lc3b_word alu_mem_wb_out;
 lc3b_word dmem_address_mem_wb;
 lc3b_word dmem_rdata_out;
 
+lc3b_control_word ctrl_ex_mem_ow;
+logic branch_prediction_ex_mem_out_ow;
+lc3b_word pc_ex_mem_out_ow;
+lc3b_word curr_pc_ex_mem_out_ow;
+lc3b_word predicted_pc_ex_mem_out_ow;
+logic unchosen_pred_ex_mem_out_ow;
+lc3b_word dmem_address_ow;
+lc3b_word new_pc_ow;
+lc3b_word pc_br_ex_mem_out_ow;
+lc3b_word dmem_rdata_out_ow;
+lc3b_word alu_ex_mem_out_ow;
+
 /* Internal Signals - Write-Back */
 lc3b_word write_pc;
 lc3b_opcode opcode;
@@ -153,10 +169,10 @@ lc3b_word write_data;
 logic branch_enable;
 
 /* Assign load signals for CP1 */
-assign load_if_id = !mem_stall & imem_resp & !hazard_stall;
-assign load_id_ex = !mem_stall & imem_resp;
+assign load_if_id = (!mem_stall || leapfrog_load) & imem_resp & !hazard_stall;
+assign load_id_ex = (!mem_stall || leapfrog_load) & imem_resp;
 assign load_ex_mem = !mem_stall & imem_resp;
-assign load_mem_wb = !mem_stall & imem_resp;
+assign load_mem_wb = (!mem_stall || leapfrog_load) & imem_resp;
 
 /* Fetch Stage (IF) */
 fetch_stage if_stage
@@ -170,6 +186,7 @@ fetch_stage if_stage
 	.write_pc(write_pc),
 	.branch_enable(branch_enable),
 	.mem_stall(mem_stall),
+	.leapfrog_load(leapfrog_load),
 	.hazard_stall(hazard_stall),
 	.imem_resp(imem_resp),
 	.unchosen_pred_in(unchosen_pred_in),
@@ -454,7 +471,38 @@ execute_forward ex_forward
 	.dest_forward_sel(dest_forward_sel)
 );
 
-assign ctrl_id_ex_in = control_flush ? 25'b0 : ctrl_id_ex;
+execute_leapfrog ex_leapfrog
+(
+	.sr1_in(sr1_id_ex_in),
+	.sr2_in(sr2_id_ex_in),
+	.dest_in(dest_id_ex_in),
+	.dest_ex_mem_register(ctrl_ex_mem.dest_register),
+	.mem_stall(mem_stall),
+	.opcode(ctrl_id_ex.opcode),
+	.mem_opcode(ctrl_ex_mem.opcode),
+	.dest_write(ctrl_id_ex.load_regfile),
+	.mem_dest_write(ctrl_ex_mem.load_regfile),
+	.load_cc(ctrl_id_ex.load_cc),
+	.mem_load_cc(ctrl_ex_mem.load_cc),
+	.leapfrog_load(leapfrog_load),
+	.mem_dest_overwrite(mem_dest_overwrite),
+	.mem_load_cc_overwrite(mem_load_cc_overwrite)
+);
+
+always_comb
+begin
+	ctrl_id_ex_in = ctrl_id_ex;
+	if (leapfrog_load)
+		ctrl_id_ex_in = ctrl_ex_mem;
+	if (mem_dest_overwrite)
+		ctrl_id_ex_in.load_regfile = 0;
+	if (mem_load_cc_overwrite)
+		ctrl_id_ex_in.load_cc = 0;
+
+	if (control_flush)
+		ctrl_id_ex_in = 25'b0;
+end
+
 assign branch_prediction_id_ex_in = control_flush ? 1'b0 : branch_prediction_id_ex_out;
 assign pc_id_ex_in = control_flush ? 16'b0 : pc_id_ex_out;
 assign curr_pc_id_ex_in = control_flush ? 16'b0 : curr_pc_id_ex_out;
@@ -465,7 +513,7 @@ assign unchosen_pred_id_ex_in = control_flush ? 1'b0 : unchosen_pred_id_ex_out;
 register_control_rom ex_mem_ctrl
 (
 	.clk(clk),
-	.load(load_ex_mem),
+	.load(load_ex_mem || (imem_resp && leapfrog_load && (mem_dest_overwrite || mem_load_cc_overwrite))),
 	.in(ctrl_id_ex_in),
 	.out(ctrl_ex_mem)
 );
@@ -587,12 +635,25 @@ memory_forward mem_forward
 	.dest_mem_forward_sel(dest_mem_forward_sel)
 );
 
-assign ctrl_ex_mem_in = control_flush ? 25'b0 : ctrl_ex_mem;
-assign branch_prediction_ex_mem_in = control_flush ? 1'b0 : branch_prediction_ex_mem_out;
-assign pc_ex_mem_in = control_flush ? 16'b0 : pc_ex_mem_out;
-assign curr_pc_ex_mem_in = control_flush ? 16'b0 : curr_pc_ex_mem_out;
-assign predicted_pc_ex_mem_in = control_flush ? 16'b0 : predicted_pc_ex_mem_out;
-assign unchosen_pred_ex_mem_in = control_flush ? 1'b0 : unchosen_pred_ex_mem_out;
+assign ctrl_ex_mem_ow = leapfrog_load ? ctrl_id_ex : ctrl_ex_mem;
+assign branch_prediction_ex_mem_out_ow = leapfrog_load ? branch_prediction_id_ex_out : branch_prediction_ex_mem_out;
+assign pc_ex_mem_out_ow = leapfrog_load ? pc_id_ex_out : pc_ex_mem_out;
+assign curr_pc_ex_mem_out_ow = leapfrog_load ? curr_pc_id_ex_out : curr_pc_ex_mem_out;
+assign predicted_pc_ex_mem_out_ow = leapfrog_load ? predicted_pc_id_ex_out : predicted_pc_ex_mem_out;
+assign unchosen_pred_ex_mem_out_ow = leapfrog_load ? unchosen_pred_id_ex_out : unchosen_pred_ex_mem_out;
+
+assign dmem_address_ow = leapfrog_load ? alu_out : dmem_address;
+assign new_pc_ow = leapfrog_load ? (ctrl_id_ex.newpcmux_sel[0] ? pc_j_ex_mem_out : pc_br_ex_mem_out) : new_pc;
+assign pc_br_ex_mem_out_ow = leapfrog_load ? pc_br : pc_br_ex_mem_out;
+assign dmem_rdata_out_ow = leapfrog_load ? 16'b0 : dmem_rdata_out;
+assign alu_ex_mem_out_ow = leapfrog_load ? alu_out : alu_ex_mem_out;
+
+assign ctrl_ex_mem_in = control_flush ? 25'b0 : ctrl_ex_mem_ow;
+assign branch_prediction_ex_mem_in = control_flush ? 1'b0 : branch_prediction_ex_mem_out_ow;
+assign pc_ex_mem_in = control_flush ? 16'b0 : pc_ex_mem_out_ow;
+assign curr_pc_ex_mem_in = control_flush ? 16'b0 : curr_pc_ex_mem_out_ow;
+assign predicted_pc_ex_mem_in = control_flush ? 16'b0 : predicted_pc_ex_mem_out_ow;
+assign unchosen_pred_ex_mem_in = control_flush ? 1'b0 : unchosen_pred_ex_mem_out_ow;
 
 /* Memory - Write-Back Registers (MEM/WB) */
 register_control_rom mem_wb_ctrl
@@ -647,7 +708,7 @@ register mem_wb_dmem_address
 (
 	.clk(clk),
 	.load(load_mem_wb),
-	.in(dmem_address),
+	.in(dmem_address_ow),
 	.out(dmem_address_mem_wb)
 );
 
@@ -655,7 +716,7 @@ register mem_wb_new_pc
 (
 	.clk(clk),
 	.load(load_mem_wb),
-	.in(new_pc),
+	.in(new_pc_ow),
 	.out(new_pc_mem_wb_out)
 );
 
@@ -663,7 +724,7 @@ register mem_wb_pc_br
 (
 	.clk(clk),
 	.load(load_mem_wb),
-	.in(pc_br_ex_mem_out),
+	.in(pc_br_ex_mem_out_ow),
 	.out(pc_br_mem_wb_out)
 );
 
@@ -671,7 +732,7 @@ register mem_wb_mem_wdata
 (
 	.clk(clk),
 	.load(load_mem_wb),
-	.in(dmem_rdata_out),
+	.in(dmem_rdata_out_ow),
 	.out(dmem_wdata_mem_wb)
 );
 
@@ -679,7 +740,7 @@ register mem_wb_alu
 (
 	.clk(clk),
 	.load(load_mem_wb),
-	.in(alu_ex_mem_out),
+	.in(alu_ex_mem_out_ow),
 	.out(alu_mem_wb_out)
 );
 

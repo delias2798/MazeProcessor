@@ -11,6 +11,7 @@ module fetch_stage
 	input lc3b_word write_pc,
 	input branch_enable,
 	input mem_stall,
+	input leapfrog_load,
 	input hazard_stall,
 	input imem_resp,
 	input unchosen_pred_in,
@@ -37,7 +38,7 @@ logic tournament_prediction;
 logic prediction;
 logic tournament_taken;
 
-assign load_pc = (!mem_stall & imem_resp & !hazard_stall) || control_flush;
+assign load_pc = ((!mem_stall || leapfrog_load) & imem_resp & !hazard_stall) || control_flush;
 assign imem_action_cyc = 1;
 assign imem_action_stb = 1;
 

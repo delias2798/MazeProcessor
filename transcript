@@ -1,4 +1,4 @@
-# do /tmp/tmp.uJJxVHmCvF/do.do 
+# do /tmp/tmp.uaa6tPuGtZ/do.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
@@ -438,6 +438,14 @@
 # 
 # Top level modules:
 # 	tournament_bht
+# vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/execute_leapfrog.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling package execute_leapfrog_sv_unit
+# -- Importing package lc3b_types
+# -- Compiling module execute_leapfrog
+# 
+# Top level modules:
+# 	execute_leapfrog
 # vlog -sv -work work +incdir+/home/bharuka2/ece411/mazeprocessor {/home/bharuka2/ece411/mazeprocessor/mazeprocessor.sv}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling package mazeprocessor_sv_unit
@@ -555,6 +563,8 @@
 # Loading work.zext_s
 # Loading work.execute_forward_sv_unit
 # Loading work.execute_forward
+# Loading work.execute_leapfrog_sv_unit
+# Loading work.execute_leapfrog
 # Loading work.memory_stage_sv_unit
 # Loading work.memory_stage
 # Loading work.memory_stall_sv_unit
@@ -575,5 +585,5 @@
 #view signals
 # add list -radix hexadecimal {/testbench/processor/c/cpu_d/id_stage/reg_file/data}
 # run 8ms
-# write list /tmp/tmp.uJJxVHmCvF/test_list.lst
+# write list /tmp/tmp.uaa6tPuGtZ/test_list.lst
 # exit
